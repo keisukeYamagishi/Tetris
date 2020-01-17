@@ -59,7 +59,7 @@ class Swiris: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.titleView = self.naviTitle
+        self.navigationItem.titleView = self.navigationTitle(title: "Swiris")
         self.setGesture()
         barSize = Int(self.view.frame.size.width * 0.0533333333334) + 3
     }
@@ -73,14 +73,6 @@ class Swiris: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
-    }
-    
-    
-    var naviTitle:UILabel{
-        let titleLb = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 30))
-        titleLb.textAlignment = .center
-        titleLb.text = "Swirif"
-        return titleLb
     }
     
     func setGesture(){

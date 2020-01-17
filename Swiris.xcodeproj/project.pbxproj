@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708DEEB23D1F576005F6F32 /* UIViewController+.swift */; };
 		C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771B6E71FE7FC7300F0C277 /* BarController.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
 		C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7293F0F1FAD8F66006D4695 /* DebugLog.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C708DEEB23D1F576005F6F32 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		C771B6E71FE7FC7300F0C277 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		C791D7631FE61F2A00983F80 /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C708DEEA23D1F4CE005F6F32 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				C708DEEB23D1F576005F6F32 /* UIViewController+.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		C791D7121FE61E2A00983F80 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				F0B335751F0E517200A8F6DF /* Info.plist */,
 				F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */,
 				F0B3356D1F0E517200A8F6DF /* Main.storyboard */,
+				C708DEEA23D1F4CE005F6F32 /* Extention */,
 				C7CF2BDE2037F5F900889C3C /* ViewController */,
 				C791D75E1FE61F2A00983F80 /* Model */,
 				C791D7121FE61E2A00983F80 /* View */,
@@ -259,6 +270,7 @@
 				C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */,
 				C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */,
 				C791D7BA1FE6205E00983F80 /* BarFactory.swift in Sources */,
+				C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
 				C7E50F6920838EEE00D1B0BC /* HuVertical.swift in Sources */,
 				C7E50F6820838EEE00D1B0BC /* HuTrangitionGhost.swift in Sources */,
