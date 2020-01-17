@@ -75,6 +75,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bih-PD-Ely">
                                 <rect key="frame" x="10" y="62" width="260" height="591.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="591.5" id="efT-Kh-iJQ"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Za-zb-CEb">
                                 <rect key="frame" x="281" y="61" width="74" height="74"/>
@@ -164,6 +167,7 @@
                     </view>
                     <connections>
                         <outlet property="brewView" destination="bih-PD-Ely" id="nmR-TR-5RL"/>
+                        <outlet property="brewViewHeightConstraint" destination="efT-Kh-iJQ" id="ahv-1Z-zjO"/>
                         <outlet property="levelLbl" destination="3r0-h0-tBK" id="8W1-O7-AVd"/>
                         <outlet property="nextBarField" destination="5Za-zb-CEb" id="SEw-Jx-xqU"/>
                         <outlet property="rotstionButton" destination="3H7-Dx-O1d" id="xMp-af-xj1"/>

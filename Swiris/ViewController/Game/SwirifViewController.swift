@@ -22,7 +22,7 @@ class Swiris: UIViewController {
     public var DPY = 0
     var brewrisYoko: Int = 10//7
     var brewrisTate: Int = 20//11
-    var barSize: Int     = 20
+    var barSize: CGFloat     = 20
     var score: Int = 0
     var isMove:Bool = false
     @IBOutlet weak var scoreLabel: UILabel!
@@ -51,6 +51,7 @@ class Swiris: UIViewController {
     var debug: Int = 0
     var isAd: Bool = false
     
+    @IBOutlet weak var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
     var levelCount: Float = 0.0
     
@@ -61,7 +62,7 @@ class Swiris: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.titleView = self.navigationTitle(title: "Swiris")
         self.setGesture()
-        barSize = Int(self.view.frame.size.width * 0.0533333333334) + 3
+//        barSize = Int(self.view.frame.size.width * 0.0533333333334) + 3
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,11 +123,7 @@ class Swiris: UIViewController {
             }
         }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
+
     @IBAction func left(_ sender: Any) {
         swipeLeft()
     }
@@ -134,8 +131,7 @@ class Swiris: UIViewController {
     @IBAction func right(_ sender: Any) {
         swipeRight()
     }
-    
-    
+
     func swipeLeft() {
         if self.noNeed != nil {
             if self.isBarMove(which: .left,
@@ -509,33 +505,44 @@ class Swiris: UIViewController {
         self.nextB.layer.borderWidth = 1.0
     }
     
+    func barSizeCalculation() -> CGFloat {
+        return self.brewView.frame.size.width / CGFloat(self.brewrisYoko)
+    }
+
+    func swirisFieldHeight(barSize: CGFloat) -> CGFloat {
+        return barSize * CGFloat(self.brewrisTate)
+    }
+
     func barInit(){
         
-        var viewTag = 1;
+        var tag = 1
+        self.barSize = self.barSizeCalculation()
+        self.brewViewHeightConstraint.constant = self.swirisFieldHeight(barSize: self.barSize)
         for tate in 0..<self.brewrisTate {
             
             for yoko in 0..<self.brewrisYoko {
                 
-                self.bar = self.brewBar(x: (CGFloat(yoko * self.barSize)),
-                                        y: (CGFloat(tate * self.barSize)))
-                self.bar.tag = viewTag
+                self.bar = self.brewBar(x: CGFloat(yoko) * self.barSize,
+                                        y: CGFloat(tate) * self.barSize)
+                self.bar.tag = tag
                 self.brewView.addSubview(self.bar)
-                viewTag += 1
+                tag += 1
             }
         }
     }
     
     func nextBarInit(){
-        var viewTag = 1;
+        var tag = 1
+        
         for tate in 0..<4 {
             
             for yoko in 0..<4 {
                 
-                self.nextB = self.nextBrew(x: (CGFloat(yoko * self.barSize/*Brewris.barSize*/)),
-                                           y: (CGFloat(tate * self.barSize/*Brewris.barSize*/)))
-                self.nextB.tag = viewTag
+                self.nextB = self.nextBrew(x: CGFloat(yoko) * (74 / 4),
+                                           y: CGFloat(tate) * (74 / 4))
+                self.nextB.tag = tag
                 self.nextBarField.addSubview(self.nextB)
-                viewTag += 1
+                tag += 1
             }
         }
     }
@@ -583,8 +590,8 @@ class Swiris: UIViewController {
     func nextBrew (x: CGFloat, y: CGFloat) -> UIView {
         let brew: UIView = UIView(frame: CGRect(x: x,
                                                 y: y,
-                                                width: CGFloat(self.barSize/*Brewris.barSize*/),
-                                                height: CGFloat(self.barSize/*Brewris.barSize*/)))
+                                                width: CGFloat(18.5),
+                                                height: CGFloat(18.5)))
         brew.backgroundColor = UIColor.white
         brew.clipsToBounds = true
         brew.layer.borderColor = BorderColor.cgColor
