@@ -174,11 +174,11 @@ class Swiris: UIViewController {
         
         for cpVal in noNd {
             
-            if which.rawValue == Which.left.rawValue {
+            if which == .left {
                 if (cpVal.px) <= 0 {
                     return true
                 }
-            }else if which.rawValue == Which.right.rawValue{
+            }else if which == .right {
                 if (cpVal.px) >= (self.brewrisYoko - 1) {
                     return true
                 }
@@ -195,11 +195,11 @@ class Swiris: UIViewController {
             
             let bar: [Bs] = self.brewTate[cPosition.py]
             
-            if which.rawValue == Which.left.rawValue {
+            if which == .left {
                 if bar[cPosition.px-1].bp == 2 {
                     return true
                 }
-            }else if which.rawValue == Which.right.rawValue {
+            }else if which == .right {
                 if bar[cPosition.px+1].bp == 2 {
                     return true
                 }
