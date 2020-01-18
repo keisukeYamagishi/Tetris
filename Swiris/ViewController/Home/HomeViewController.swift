@@ -23,13 +23,13 @@ class HomeViewController: UIViewController,UINavigationControllerDelegate {
         self.navigationController?.pushViewController(brewris, animated: true)
     }
     
-    func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
-        let tngition: HUTransitionAnimator = HUTransitionVerticalLinesAnimator()
-        tngition.presenting = (operation == .pop) ? false:true
-        return tngition
-    }
+//    func navigationController(_ navigationController: UINavigationController,
+//                              animationControllerFor operation: UINavigationController.Operation,
+//                              from fromVC: UIViewController,
+//                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+//        let tngition: HUTransitionAnimator = HUTransitionVerticalLinesAnimator()
+//        tngition.presenting = (operation == .pop) ? false:true
+//        return tngition
+//    }
 }
 
