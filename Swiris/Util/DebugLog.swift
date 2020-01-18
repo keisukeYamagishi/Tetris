@@ -15,16 +15,10 @@ public func print(_ items: Any..., separator: String = " ", terminator: String =
 }
 
 public func BarLog(bar: [Array<Bs>]) {
-    
-    for b in 0..<bar.count {
-        
-        var list: [Int] = []
-        
-        let debug = bar[b]
-        
-        for bs in debug {
-            list.append(bs.bp)
-        }
-        print(list)
+    print ("")
+    for f in bar {
+        print ("")
+        _ = f.map{ print ($0.bp, terminator: "") }
     }
+    print ("")
 }
