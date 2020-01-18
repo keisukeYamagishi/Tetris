@@ -62,7 +62,6 @@ class Swiris: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.titleView = self.navigationTitle(title: "Swiris")
         self.setGesture()
-//        barSize = Int(self.view.frame.size.width * 0.0533333333334) + 3
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,7 +91,6 @@ class Swiris: UIViewController {
         self.barInit()
         self.nextBarInit()
         self.startBrew()
-        
     }
     
     @IBAction func pushInBackButton(_ sender: Any) {
