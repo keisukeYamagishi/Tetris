@@ -245,12 +245,10 @@ class Swiris: UIViewController {
                         for nd in 0..<self.noNeed.count {
                             
                             var n = self.noNeed[nd]
-                            print (n)
                             cp.py = (count - 1) + n.py
                             
                             if cp.py == 1 {
                                 if self.isPopup == false {
-                                    print ("\n\nOVER \n\n")
                                     self.isPopup = true
                                     self.moveBar.invalidate()
                                     gameOverAlert()
@@ -392,9 +390,6 @@ class Swiris: UIViewController {
                     let isRot = brew[cp.px+yoko]
                     
                     if isRot.bp == 2 {
-                        
-                        print( "HIT")
-                        
                         return true
                     }
                 }
@@ -675,7 +670,8 @@ class Swiris: UIViewController {
         if self.isBar == false {
             if self.isMove == false {
                 self.isMove = true
-                self.moveBrewControl(bar: self.theBar);
+                self.moveBrewControl(bar: self.theBar)
+                BarLog(bar: self.brewTate)
                 self.barDisplay()
                 if self.isGameOver == true {
                     self.moveBar.invalidate()
@@ -853,7 +849,6 @@ class Swiris: UIViewController {
             }
             if isRemove != true {
                 removeLists.append(be)
-                print ("HIT bar \(be)")
             }
         }
         
@@ -875,9 +870,6 @@ class Swiris: UIViewController {
             for rm in removeLists {
                 self.brewTate.remove(at: rm)
                 self.brewTate.insert(self.brewYokoInit(), at: 0)
-                for bar in self.brewTate {
-                    print (bar)
-                }
             }
             
             var ViewTag: Int
