@@ -75,6 +75,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bih-PD-Ely">
                                 <rect key="frame" x="10" y="62" width="260" height="591.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="591.5" id="efT-Kh-iJQ"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Za-zb-CEb">
                                 <rect key="frame" x="281" y="61" width="74" height="74"/>
@@ -114,7 +117,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-5e-5dm">
                                 <rect key="frame" x="278" y="563.5" width="80" height="40"/>
                                 <color key="backgroundColor" red="0.26939359307289124" green="0.6034315824508667" blue="0.83142292499542236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -125,7 +128,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-IF-fKy">
                                 <rect key="frame" x="278" y="610.5" width="80" height="40"/>
                                 <color key="backgroundColor" red="0.26939359307289124" green="0.6034315824508667" blue="0.83142292499542236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -164,6 +167,7 @@
                     </view>
                     <connections>
                         <outlet property="brewView" destination="bih-PD-Ely" id="nmR-TR-5RL"/>
+                        <outlet property="brewViewHeightConstraint" destination="efT-Kh-iJQ" id="ahv-1Z-zjO"/>
                         <outlet property="levelLbl" destination="3r0-h0-tBK" id="8W1-O7-AVd"/>
                         <outlet property="nextBarField" destination="5Za-zb-CEb" id="SEw-Jx-xqU"/>
                         <outlet property="rotstionButton" destination="3H7-Dx-O1d" id="xMp-af-xj1"/>

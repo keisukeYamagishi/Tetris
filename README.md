@@ -8,6 +8,9 @@
 
 <img src=./doc/Swirif.gif>
 
+## Travis CI
+
+***Build*** [![Build Status](https://travis-ci.org/keisukeYamagishi/Swiris.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/Swiris)
 
 # tetris ! LOL this is Swirif!!!🎉🎉🎉🎉🎉🎉🎉🎉
  

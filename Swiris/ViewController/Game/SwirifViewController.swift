@@ -22,7 +22,7 @@ class Swiris: UIViewController {
     public var DPY = 0
     var brewrisYoko: Int = 10//7
     var brewrisTate: Int = 20//11
-    var barSize: Int     = 20
+    var barSize: CGFloat     = 20
     var score: Int = 0
     var isMove:Bool = false
     @IBOutlet weak var scoreLabel: UILabel!
@@ -51,6 +51,7 @@ class Swiris: UIViewController {
     var debug: Int = 0
     var isAd: Bool = false
     
+    @IBOutlet weak var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
     var levelCount: Float = 0.0
     
@@ -59,9 +60,8 @@ class Swiris: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.titleView = self.naviTitle
+        self.navigationItem.titleView = self.navigationTitle(title: "Swiris")
         self.setGesture()
-        barSize = Int(self.view.frame.size.width * 0.0533333333334) + 3
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,14 +73,6 @@ class Swiris: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
-    }
-    
-    
-    var naviTitle:UILabel{
-        let titleLb = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 30))
-        titleLb.textAlignment = .center
-        titleLb.text = "Swirif"
-        return titleLb
     }
     
     func setGesture(){
@@ -99,7 +91,6 @@ class Swiris: UIViewController {
         self.barInit()
         self.nextBarInit()
         self.startBrew()
-        
     }
     
     @IBAction func pushInBackButton(_ sender: Any) {
@@ -130,11 +121,7 @@ class Swiris: UIViewController {
             }
         }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
+
     @IBAction func left(_ sender: Any) {
         swipeLeft()
     }
@@ -142,8 +129,7 @@ class Swiris: UIViewController {
     @IBAction func right(_ sender: Any) {
         swipeRight()
     }
-    
-    
+
     func swipeLeft() {
         if self.noNeed != nil {
             if self.isBarMove(which: .left,
@@ -186,11 +172,11 @@ class Swiris: UIViewController {
         
         for cpVal in noNd {
             
-            if which.rawValue == Which.left.rawValue {
+            if which == .left {
                 if (cpVal.px) <= 0 {
                     return true
                 }
-            }else if which.rawValue == Which.right.rawValue{
+            }else if which == .right {
                 if (cpVal.px) >= (self.brewrisYoko - 1) {
                     return true
                 }
@@ -207,11 +193,11 @@ class Swiris: UIViewController {
             
             let bar: [Bs] = self.brewTate[cPosition.py]
             
-            if which.rawValue == Which.left.rawValue {
+            if which == .left {
                 if bar[cPosition.px-1].bp == 2 {
                     return true
                 }
-            }else if which.rawValue == Which.right.rawValue {
+            }else if which == .right {
                 if bar[cPosition.px+1].bp == 2 {
                     return true
                 }
@@ -259,12 +245,10 @@ class Swiris: UIViewController {
                         for nd in 0..<self.noNeed.count {
                             
                             var n = self.noNeed[nd]
-                            print (n)
                             cp.py = (count - 1) + n.py
                             
                             if cp.py == 1 {
                                 if self.isPopup == false {
-                                    print ("\n\nOVER \n\n")
                                     self.isPopup = true
                                     self.moveBar.invalidate()
                                     gameOverAlert()
@@ -406,9 +390,6 @@ class Swiris: UIViewController {
                     let isRot = brew[cp.px+yoko]
                     
                     if isRot.bp == 2 {
-                        
-                        print( "HIT")
-                        
                         return true
                     }
                 }
@@ -517,33 +498,44 @@ class Swiris: UIViewController {
         self.nextB.layer.borderWidth = 1.0
     }
     
+    func barSizeCalculation() -> CGFloat {
+        return self.brewView.frame.size.width / CGFloat(self.brewrisYoko)
+    }
+
+    func swirisFieldHeight(barSize: CGFloat) -> CGFloat {
+        return barSize * CGFloat(self.brewrisTate)
+    }
+
     func barInit(){
         
-        var viewTag = 1;
+        var tag = 1
+        self.barSize = self.barSizeCalculation()
+        self.brewViewHeightConstraint.constant = self.swirisFieldHeight(barSize: self.barSize)
         for tate in 0..<self.brewrisTate {
             
             for yoko in 0..<self.brewrisYoko {
                 
-                self.bar = self.brewBar(x: (CGFloat(yoko * self.barSize)),
-                                        y: (CGFloat(tate * self.barSize)))
-                self.bar.tag = viewTag
+                self.bar = self.brewBar(x: CGFloat(yoko) * self.barSize,
+                                        y: CGFloat(tate) * self.barSize)
+                self.bar.tag = tag
                 self.brewView.addSubview(self.bar)
-                viewTag += 1
+                tag += 1
             }
         }
     }
     
     func nextBarInit(){
-        var viewTag = 1;
+        var tag = 1
+        
         for tate in 0..<4 {
             
             for yoko in 0..<4 {
                 
-                self.nextB = self.nextBrew(x: (CGFloat(yoko * self.barSize/*Brewris.barSize*/)),
-                                           y: (CGFloat(tate * self.barSize/*Brewris.barSize*/)))
-                self.nextB.tag = viewTag
+                self.nextB = self.nextBrew(x: CGFloat(yoko) * (74 / 4),
+                                           y: CGFloat(tate) * (74 / 4))
+                self.nextB.tag = tag
                 self.nextBarField.addSubview(self.nextB)
-                viewTag += 1
+                tag += 1
             }
         }
     }
@@ -591,8 +583,8 @@ class Swiris: UIViewController {
     func nextBrew (x: CGFloat, y: CGFloat) -> UIView {
         let brew: UIView = UIView(frame: CGRect(x: x,
                                                 y: y,
-                                                width: CGFloat(self.barSize/*Brewris.barSize*/),
-                                                height: CGFloat(self.barSize/*Brewris.barSize*/)))
+                                                width: CGFloat(18.5),
+                                                height: CGFloat(18.5)))
         brew.backgroundColor = UIColor.white
         brew.clipsToBounds = true
         brew.layer.borderColor = BorderColor.cgColor
@@ -678,7 +670,8 @@ class Swiris: UIViewController {
         if self.isBar == false {
             if self.isMove == false {
                 self.isMove = true
-                self.moveBrewControl(bar: self.theBar);
+                self.moveBrewControl(bar: self.theBar)
+                BarLog(bar: self.brewTate)
                 self.barDisplay()
                 if self.isGameOver == true {
                     self.moveBar.invalidate()
@@ -856,7 +849,6 @@ class Swiris: UIViewController {
             }
             if isRemove != true {
                 removeLists.append(be)
-                print ("HIT bar \(be)")
             }
         }
         
@@ -878,9 +870,6 @@ class Swiris: UIViewController {
             for rm in removeLists {
                 self.brewTate.remove(at: rm)
                 self.brewTate.insert(self.brewYokoInit(), at: 0)
-                for bar in self.brewTate {
-                    print (bar)
-                }
             }
             
             var ViewTag: Int
