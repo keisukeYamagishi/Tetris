@@ -96,7 +96,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv:1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r0-h0-tBK">
                                 <rect key="frame" x="278" y="165" width="80" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="jS9-ey-ygE"/>
                                     <constraint firstAttribute="height" constant="32" id="kI6-fG-RGx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
