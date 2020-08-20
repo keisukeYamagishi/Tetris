@@ -21,11 +21,11 @@ class Color {
     }
 
     public static func NaviBarColor() -> UIColor {
-        return UIColor(hex: topBarColor)
+        UIColor(hex: topBarColor)
     }
 
     public static func NaviBarTintColor() -> UIColor {
-        return UIColor(hex: topBarTintColor)
+        UIColor(hex: topBarTintColor)
     }
 
     public static func colorList(cNum: Int) -> UIColor {
@@ -34,11 +34,11 @@ class Color {
     }
 
     public static func baviBarTitleColor() -> UIColor {
-        return UIColor(hex: naviBarTitleColor)
+        UIColor(hex: naviBarTitleColor)
     }
 
     public static func ColorNum() -> Int {
-        return Int(arc4random_uniform(UInt32(ColorPattern.count)))
+        Int(arc4random_uniform(UInt32(ColorPattern.count)))
     }
 }
 
