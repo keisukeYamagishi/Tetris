@@ -45,13 +45,12 @@ class Swiris: UIViewController {
     var isDownBar: Bool!
     var isPopup: Bool!
     var userName: String!
-    var level: Int!
+    var levelMng: LevelManager!
     var debug: Int = 0
     var isAd: Bool = false
 
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
-    var levelCount: Float = 0.0
 
     var isDown: Bool = false
 
@@ -59,6 +58,7 @@ class Swiris: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
         navigationItem.titleView = navigationTitle(title: "Swiris")
+        levelMng = LevelManager()
         setGesture()
     }
 
@@ -376,8 +376,8 @@ class Swiris: UIViewController {
     }
 
     func startBrew() {
-        level = 1
-        levelLbl.text = levelManager().levelLabel(lv: level)
+
+        levelLbl.text = levelMng.levelText
         scoreLabel.text = "0"
         score = 0
         isPopup = false
@@ -405,15 +405,14 @@ class Swiris: UIViewController {
     }
 
     func startGame() {
-        if level > 12 {
-            level = 12
+        if levelMng.currentLevel > 12 {
+            levelMng.currentLevel = 12
         }
-        levelCount = Float(levelManager.levels[level - 1])!
         startEngine()
     }
 
     func startEngine() {
-        moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(levelCount / 10),
+        moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(levelMng.levelCount / 10),
                                        target: self,
                                        selector: #selector(Swiris.brewrisEngine),
                                        userInfo: nil, repeats: true)
@@ -422,7 +421,7 @@ class Swiris: UIViewController {
     @objc func brewrisEngine() {
         brewCount += 0.1
 
-        if brewCount >= levelCount {
+        if brewCount >= levelMng.levelCount {
             brewCount = 0
             moveBarBrew()
         }
@@ -819,15 +818,9 @@ class Swiris: UIViewController {
     }
 
     func setScore(sc: Int) {
-        score = score + 10 * sc * (level * 5)
-
-        let lv = levelManager()
-
-        level = lv.islevelUp(score: score)
-
-        if lv.isLvUp == true {
-            lv.isLvUp = false
-            levelLbl.text = lv.levelLabel(lv: level)
+        score = score + 10 * sc * (levelMng.currentLevel * 5)
+        if levelMng.isLevelUp(score: score) {
+            levelLbl.text = levelMng.levelText
             moveBar.invalidate()
             startGame()
         }

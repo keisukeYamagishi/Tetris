@@ -20,8 +20,8 @@ let LEVEL4 = 23000
 let LEVEL3 = 10000
 let LEVEL2 = 3000
 
-class levelManager {
-    public var currentLevel: Int = 0
+class LevelManager {
+    public var currentLevel: Int = 1
 
     public var isLvUp: Bool = false
 
@@ -29,22 +29,23 @@ class levelManager {
 
     public var levelStr: String = "Lv: "
 
-    init() {
-        currentLevel = 1
+    var levelText: String {
+        levelStr + String(currentLevel)
     }
 
-    func levelLabel(lv: Int) -> String {
-        return levelStr + String(lv)
+    var levelCount: Float {
+        Float(LevelManager.levels[currentLevel - 1]) ?? 0.0
     }
 
-    func islevelUp(score: Int) -> Int {
+    
+    func isLevelUp(score: Int) -> Bool {
         let lv = levelSelect(score: score)
         if lv > currentLevel {
             currentLevel = lv
             isLvUp = true
-            return currentLevel
+            return true
         }
-        return lv
+        return false
     }
 
     func levelSelect(score: Int) -> Int {
