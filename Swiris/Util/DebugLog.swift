@@ -17,7 +17,7 @@ public func print(_ items: Any..., separator: String = " ", terminator: String =
 public func BarLog(bar: [[Bs]]) {
     print("Bar")
     for f in bar {
-        f.flatMap { print($0.bc, terminator: "") }
+        f.forEach { print($0.bc, terminator: "") }
         print("")
     }
 }

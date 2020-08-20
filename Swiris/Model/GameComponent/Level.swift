@@ -37,7 +37,6 @@ class LevelManager {
         Float(LevelManager.levels[currentLevel - 1]) ?? 0.0
     }
 
-    
     func isLevelUp(score: Int) -> Bool {
         let lv = levelSelect(score: score)
         if lv > currentLevel {
