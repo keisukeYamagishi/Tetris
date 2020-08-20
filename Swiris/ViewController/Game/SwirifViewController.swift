@@ -59,20 +59,20 @@ class Swiris: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.titleView = self.navigationTitle(title: "Swiris")
-        self.setGesture()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.titleView = navigationTitle(title: "Swiris")
+        setGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.scoreLabel.adjustsFontSizeToFitWidth = true
-        self.scoreLabel.text = "0"
+        scoreLabel.adjustsFontSizeToFitWidth = true
+        scoreLabel.text = "0"
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
     }
     
     func setGesture(){
@@ -87,10 +87,10 @@ class Swiris: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.barLists = BarLists
-        self.barInit()
-        self.nextBarInit()
-        self.startBrew()
+        barLists = BarLists
+        barInit()
+        nextBarInit()
+        startBrew()
     }
     
     @IBAction func pushInBackButton(_ sender: Any) {
@@ -98,19 +98,19 @@ class Swiris: UIViewController {
     }
     
     @IBAction func pushRotation(_ sender: Any) {
-        self.tapRotation()
+        tapRotation()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
-        self.firstTap = touch!.location(in: self.view).x
+        firstTap = touch!.location(in: view).x
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first
-        let newDx = touch?.location(in: self.view).x
-        let move = self.firstTap - newDx!
+        let newDx = touch?.location(in: view).x
+        let move = firstTap - newDx!
         if -11 > move {
             if move.truncatingRemainder(dividingBy: 2) == 0 {
                 swipeRight()
@@ -131,19 +131,19 @@ class Swiris: UIViewController {
     }
 
     func swipeLeft() {
-        if self.noNeed != nil {
-            if self.isBarMove(which: .left,
-                              noNd: self.noNeed) != true {
-                if self.isMoveJusgemnet(which: .left,
-                                        noNd: self.noNeed) != true {
-                    if self.isBar == false {
-                        let cCp: [Cp] = self.noNeed
+        if noNeed != nil {
+            if isBarMove(which: .left,
+                              noNd: noNeed) != true {
+                if isMoveJusgemnet(which: .left,
+                                        noNd: noNeed) != true {
+                    if isBar == false {
+                        let cCp: [Cp] = noNeed
                         removeCurrent(cCp: cCp)
-                        self.cp.px -= 1
-                        self.moveBar.invalidate()
-                        self.moveBrewControl(bar: self.theBar);
-                        self.barDisplay()
-                        self.startEngine()
+                        cp.px -= 1
+                        moveBar.invalidate()
+                        moveBrewControl(bar: theBar);
+                        barDisplay()
+                        startEngine()
                     }
                 }
             }
@@ -151,17 +151,17 @@ class Swiris: UIViewController {
     }
     
     func swipeRight () {
-        if self.noNeed != nil {
-            if self.isBarMove(which: .right,
-                              noNd: self.noNeed) != true {
-                if self.isMoveJusgemnet(which: .right,
-                                        noNd: self.noNeed) != true {
-                    if self.isBar == false {
-                        let cCp: [Cp] = self.noNeed
+        if noNeed != nil {
+            if isBarMove(which: .right,
+                              noNd: noNeed) != true {
+                if isMoveJusgemnet(which: .right,
+                                        noNd: noNeed) != true {
+                    if isBar == false {
+                        let cCp: [Cp] = noNeed
                         removeCurrent(cCp: cCp)
-                        self.cp.px += 1
-                        self.moveBrewControl(bar: self.theBar);
-                        self.barDisplay()
+                        cp.px += 1
+                        moveBrewControl(bar: theBar);
+                        barDisplay()
                     }
                 }
             }
@@ -177,7 +177,7 @@ class Swiris: UIViewController {
                     return true
                 }
             }else if which == .right {
-                if (cpVal.px) >= (self.brewrisYoko - 1) {
+                if (cpVal.px) >= (brewrisYoko - 1) {
                     return true
                 }
             }
@@ -191,7 +191,7 @@ class Swiris: UIViewController {
             
             let cPosition: Cp = noNd[current]
             
-            let bar: [Bs] = self.brewTate[cPosition.py]
+            let bar: [Bs] = brewTate[cPosition.py]
             
             if which == .left {
                 if bar[cPosition.px-1].bp == 2 {
@@ -207,34 +207,34 @@ class Swiris: UIViewController {
     }
     
     @objc func downGes(){
-        self.downBar()
+        downBar()
     }
     
     @objc func downBar(){
         
-        if self.isDownBar == false
-        && self.isPopup == false
-        && self.noNeed != nil {
-            self.isDownBar = true
+        if isDownBar == false
+        && isPopup == false
+        && noNeed != nil {
+            isDownBar = true
             var isBottom = false
             var count = 1
-            let cCp: [Cp] = self.noNeed
+            let cCp: [Cp] = noNeed
             
             removeCurrent(cCp: cCp)
             
-            while count < (self.brewTate.count - 1) {
+            while count < (brewTate.count - 1) {
                 
-                for current in (0..<self.noNeed.count).reversed() {
+                for current in (0..<noNeed.count).reversed() {
                     
-                    let cPosition: Cp = self.noNeed[current]
+                    let cPosition: Cp = noNeed[current]
                     
                     let judge = cPosition.py + count
                     
-                    if judge >= self.brewrisTate {
+                    if judge >= brewrisTate {
                         break
                     }
                     
-                    let bar: [Bs] = self.brewTate[cPosition.py + count]
+                    let bar: [Bs] = brewTate[cPosition.py + count]
                     
                     if bar[cPosition.px].bp == 2 {
                         
@@ -242,24 +242,24 @@ class Swiris: UIViewController {
                         
                         cp.py = (count - 1) + cPosition.py
                         
-                        for nd in 0..<self.noNeed.count {
+                        for nd in 0..<noNeed.count {
                             
-                            var n = self.noNeed[nd]
+                            var n = noNeed[nd]
                             cp.py = (count - 1) + n.py
                             
                             if cp.py == 1 {
-                                if self.isPopup == false {
-                                    self.isPopup = true
-                                    self.moveBar.invalidate()
+                                if isPopup == false {
+                                    isPopup = true
+                                    moveBar.invalidate()
                                     gameOverAlert()
                                     return
                                 }
                             }
                             
                             n.py = cp.py
-                            var tate:[Bs] = self.brewTate[n.py]
+                            var tate:[Bs] = brewTate[n.py]
                             tate[n.px].bp = 1
-                            self.brewTate[n.py] = tate
+                            brewTate[n.py] = tate
                             
                         }
                         break
@@ -273,57 +273,57 @@ class Swiris: UIViewController {
             
             if isBottom == false {
                 cp.py = count - 3
-                for tate in 0..<self.theBar.count {
+                for tate in 0..<theBar.count {
                     
-                    let baryoko: [Int] = self.theBar[tate]
+                    let baryoko: [Int] = theBar[tate]
                     
                     for yoko in 0..<baryoko.count {
                         
                         if baryoko[yoko] == 1 {
                             
-                            var brew: [Bs] = self.brewTate[cp.py+(tate)]
+                            var brew: [Bs] = brewTate[cp.py+(tate)]
                             brew[(yoko)+cp.px].bp = 1
-                            self.brewTate[cp.py+(tate)] = brew
+                            brewTate[cp.py+(tate)] = brew
                         }
                     }
                 }
             }
             theBar = []
             
-            self.brewTate = self.storeBar(store: self.brewTate)
+            brewTate = storeBar(store: brewTate)
             
             var tag: Int
             
             tag = 1
             
-            for tate in 0..<self.brewrisTate {
+            for tate in 0..<brewrisTate {
                 
-                let isBar: [Bs] = self.brewTate[tate]
+                let isBar: [Bs] = brewTate[tate]
                 
-                for yoko in 0..<self.brewrisYoko {
+                for yoko in 0..<brewrisYoko {
                     
                     if isBar[yoko].bp == 2 {
-                        self.Brew(tag: tag, bColor: isBar[yoko].bc)
+                        Brew(tag: tag, bColor: isBar[yoko].bc)
                         
                     }else {
-                        self.noBrew(tag: tag)
+                        noBrew(tag: tag)
                     }
                     tag += 1
                 }
             }
-            self.isBar = false
-            self.cp.px = DPX
-            self.cp.py = DPY
-            self.setNextBar()
-            if self.isGameOver == true {
-                self.isPopup = true
-                self.moveBar.invalidate()
+            isBar = false
+            cp.px = DPX
+            cp.py = DPY
+            setNextBar()
+            if isGameOver == true {
+                isPopup = true
+                moveBar.invalidate()
                 gameOverAlert()
                 return
             }
-            self.brewTate = self.storeBar(store: self.brewTate)
-            self.isInAgreement()
-            self.isDownBar = false
+            brewTate = storeBar(store: brewTate)
+            isInAgreement()
+            isDownBar = false
         }
     }
     
@@ -331,18 +331,18 @@ class Swiris: UIViewController {
         
         for ccp in cCp {
             
-            var br = self.brewTate[ccp.py]
+            var br = brewTate[ccp.py]
             
             br[ccp.px].bp = 0
             br[ccp.px].bc = 0
-            self.brewTate[ccp.py] = br
+            brewTate[ccp.py] = br
             
         }
     }
     
     @objc func tapRotation(){
-        if self.noNeed != nil {
-            self.rotation(bars: self.theBar)
+        if noNeed != nil {
+            rotation(bars: theBar)
         }
     }
     
@@ -356,14 +356,14 @@ class Swiris: UIViewController {
         
         let rotations = BarController.rotation(bars: bars)
         
-        if self.fixPosition(bar: rotations) == true {
+        if fixPosition(bar: rotations) == true {
             return
         }
-        let cCp: [Cp] = self.noNeed
+        let cCp: [Cp] = noNeed
         removeCurrent(cCp: cCp)
-        self.theBar = rotations
-        self.moveBrewControl(bar: self.theBar);
-        self.barDisplay()
+        theBar = rotations
+        moveBrewControl(bar: theBar);
+        barDisplay()
     }
     
     func fixPosition(bar: [Array<Int>]) -> Bool {
@@ -373,8 +373,8 @@ class Swiris: UIViewController {
             //return true
         }
         
-        if cp.px >= (self.brewrisYoko - 3){
-            cp.px = (self.brewrisYoko - 3) - 1
+        if cp.px >= (brewrisYoko - 3){
+            cp.px = (brewrisYoko - 3) - 1
             //return true
         }
         
@@ -386,7 +386,7 @@ class Swiris: UIViewController {
                 
                 if baryoko[yoko] == 1 {
                     
-                    let brew: [Bs] = self.brewTate[cp.py+(tate)]
+                    let brew: [Bs] = brewTate[cp.py+(tate)]
                     let isRot = brew[cp.px+yoko]
                     
                     if isRot.bp == 2 {
@@ -399,45 +399,45 @@ class Swiris: UIViewController {
     }
     
     func startBrew (){
-        self.level = 1
-        self.levelLbl.text = levelManager().levelLabel(lv: self.level)
-        self.scoreLabel.text = "0"
-        self.score = 0
-        self.isPopup = false
-        self.nextTheBar = nil
-        self.theBar = nil
-        self.isDownBar = false
-        self.isBar = false
-        self.isMove = false
-        self.isGameOver = false
-        self.brewrisInit()
-        self.BarInitialze()
-        self.nextBarInitialize()
-        self.displayNextBar()
-        self.cp.px = DPX
-        self.cp.py = DPY
-        self.CBColor = Color.ColorNum()
-        self.theBar = self.getTheBar()
-        self.startGame()
+        level = 1
+        levelLbl.text = levelManager().levelLabel(lv: level)
+        scoreLabel.text = "0"
+        score = 0
+        isPopup = false
+        nextTheBar = nil
+        theBar = nil
+        isDownBar = false
+        isBar = false
+        isMove = false
+        isGameOver = false
+        brewrisInit()
+        BarInitialze()
+        nextBarInitialize()
+        displayNextBar()
+        cp.px = DPX
+        cp.py = DPY
+        CBColor = Color.ColorNum()
+        theBar = getTheBar()
+        startGame()
     }
     
     func getTheBar() -> [Array<Int>] {
         
-        let random:Int = Int(arc4random_uniform(UInt32(self.barLists.count)))
+        let random:Int = Int(arc4random_uniform(UInt32(barLists.count)))
         
-        return self.barLists[random]
+        return barLists[random]
     }
     
     func startGame(){
-        if self.level > 12 {
-            self.level = 12
+        if level > 12 {
+            level = 12
         }
-        self.levelCount = Float(levelManager.levels[self.level-1])!
-        self.startEngine()
+        levelCount = Float(levelManager.levels[level-1])!
+        startEngine()
     }
     
     func startEngine(){
-        self.moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(self.levelCount/10),
+        moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(levelCount/10),
                                             target: self,
                                             selector: #selector(Swiris.brewrisEngine),
                                             userInfo: nil, repeats: true)
@@ -445,11 +445,11 @@ class Swiris: UIViewController {
     
     @objc func brewrisEngine() {
         
-        self.brewCount += 0.1
+        brewCount += 0.1
         
-        if self.brewCount >= self.levelCount {
-            self.brewCount = 0
-            self.moveBarBrew()
+        if brewCount >= levelCount {
+            brewCount = 0
+            moveBarBrew()
         }
     }
     
@@ -461,8 +461,8 @@ class Swiris: UIViewController {
         
         let brew: UIView = UIView(frame: CGRect(x: x,
                                                 y: y,
-                                                width: CGFloat(self.barSize),//Brewris.barSize),
-                                                height: CGFloat(self.barSize)))//Brewris.barSize)))
+                                                width: CGFloat(barSize),//Brewris.barSize),
+                                                height: CGFloat(barSize)))//Brewris.barSize)))
         brew.backgroundColor = UIColor.white
         brew.clipsToBounds = true
         brew.layer.borderColor = BorderColor.cgColor
@@ -471,54 +471,54 @@ class Swiris: UIViewController {
     }
     
     func noBrew(tag: Int) {
-        self.bar = self.brewView.viewWithTag(tag)
-        self.bar.backgroundColor = UIColor.white
-        self.bar.layer.borderColor = BorderColor.cgColor
-        self.bar.layer.borderWidth = 1.0
+        bar = brewView.viewWithTag(tag)
+        bar.backgroundColor = UIColor.white
+        bar.layer.borderColor = BorderColor.cgColor
+        bar.layer.borderWidth = 1.0
     }
     
     func Brew(tag: Int, bColor: Int){
-        self.bar = self.brewView.viewWithTag(tag)
-        self.bar.backgroundColor = Color.colorList(cNum: bColor)
-        self.bar.layer.borderColor = UIColor.white.cgColor
-        self.bar.layer.borderWidth = 1.0
+        bar = brewView.viewWithTag(tag)
+        bar.backgroundColor = Color.colorList(cNum: bColor)
+        bar.layer.borderColor = UIColor.white.cgColor
+        bar.layer.borderWidth = 1.0
     }
     
     func nextBrewBar(tag: Int, bColor: Int) {
-        self.nextB = self.nextBarField.viewWithTag(tag)
-        self.nextB.backgroundColor = Color.colorList(cNum: bColor)
-        self.nextB.layer.borderColor = BorderColor.cgColor
-        self.nextB.layer.borderWidth = 1.0
+        nextB = nextBarField.viewWithTag(tag)
+        nextB.backgroundColor = Color.colorList(cNum: bColor)
+        nextB.layer.borderColor = BorderColor.cgColor
+        nextB.layer.borderWidth = 1.0
     }
     
     func nextBrewNoBar (tag: Int) {
-        self.nextB = self.nextBarField.viewWithTag(tag)
-        self.nextB.backgroundColor = UIColor.white
-        self.nextB.layer.borderColor = BorderColor.cgColor
-        self.nextB.layer.borderWidth = 1.0
+        nextB = nextBarField.viewWithTag(tag)
+        nextB.backgroundColor = UIColor.white
+        nextB.layer.borderColor = BorderColor.cgColor
+        nextB.layer.borderWidth = 1.0
     }
     
     func barSizeCalculation() -> CGFloat {
-        return self.brewView.frame.size.width / CGFloat(self.brewrisYoko)
+        return brewView.frame.size.width / CGFloat(brewrisYoko)
     }
 
     func swirisFieldHeight(barSize: CGFloat) -> CGFloat {
-        return barSize * CGFloat(self.brewrisTate)
+        return barSize * CGFloat(brewrisTate)
     }
 
     func barInit(){
         
         var tag = 1
-        self.barSize = self.barSizeCalculation()
-        self.brewViewHeightConstraint.constant = self.swirisFieldHeight(barSize: self.barSize)
-        for tate in 0..<self.brewrisTate {
+        barSize = barSizeCalculation()
+        brewViewHeightConstraint.constant = swirisFieldHeight(barSize: barSize)
+        for tate in 0..<brewrisTate {
             
-            for yoko in 0..<self.brewrisYoko {
+            for yoko in 0..<brewrisYoko {
                 
-                self.bar = self.brewBar(x: CGFloat(yoko) * self.barSize,
-                                        y: CGFloat(tate) * self.barSize)
-                self.bar.tag = tag
-                self.brewView.addSubview(self.bar)
+                bar = brewBar(x: CGFloat(yoko) * barSize,
+                                        y: CGFloat(tate) * barSize)
+                bar.tag = tag
+                brewView.addSubview(bar)
                 tag += 1
             }
         }
@@ -531,10 +531,10 @@ class Swiris: UIViewController {
             
             for yoko in 0..<4 {
                 
-                self.nextB = self.nextBrew(x: CGFloat(yoko) * (74 / 4),
+                nextB = nextBrew(x: CGFloat(yoko) * (74 / 4),
                                            y: CGFloat(tate) * (74 / 4))
-                self.nextB.tag = tag
-                self.nextBarField.addSubview(self.nextB)
+                nextB.tag = tag
+                nextBarField.addSubview(nextB)
                 tag += 1
             }
         }
@@ -547,7 +547,7 @@ class Swiris: UIViewController {
         for _ in 0..<4 {
             
             for _ in 0..<4 {
-                self.nextBrewNoBar(tag: viewTag)
+                nextBrewNoBar(tag: viewTag)
                 viewTag += 1
             }
         }
@@ -559,20 +559,20 @@ class Swiris: UIViewController {
         
         ViewTag = 1
         
-        self.nextTheBar = self.getTheBar()
-        self.NBColor    = Color.ColorNum()//BarColor()
+        nextTheBar = getTheBar()
+        NBColor    = Color.ColorNum()//BarColor()
         for tate in 0..<4 {
             
-            let nb = self.nextTheBar[tate]
+            let nb = nextTheBar[tate]
             
             for yoko in 0..<4{
         
                 if nb[yoko] == 1 {
                     
-                    self.nextBrewBar(tag: ViewTag, bColor: self.NBColor)
+                    nextBrewBar(tag: ViewTag, bColor: NBColor)
                     
                 }else{
-                    self.nextBrewNoBar(tag: ViewTag)
+                    nextBrewNoBar(tag: ViewTag)
                 }
                 ViewTag += 1
             }
@@ -593,20 +593,20 @@ class Swiris: UIViewController {
     }
     
     func setNextBar(){
-        self.theBar = self.nextTheBar
-        self.isGameOver = self.GameOver(bar: self.theBar)
-        self.CBColor = self.NBColor
-        self.displayNextBar()
+        theBar = nextTheBar
+        isGameOver = GameOver(bar: theBar)
+        CBColor = NBColor
+        displayNextBar()
     }
     
     func brewrisInit(){
         
-        self.brewTate = Array()
-        for _ in 0..<self.brewrisTate {
+        brewTate = Array()
+        for _ in 0..<brewrisTate {
             
-            let brewYoko = self.brewYokoInit()
+            let brewYoko = brewYokoInit()
             
-            self.brewTate.append(brewYoko)
+            brewTate.append(brewYoko)
         }
     }
     
@@ -614,7 +614,7 @@ class Swiris: UIViewController {
         
         var yoko: [Bs] = Array()
         
-        for _ in 0..<self.brewrisYoko {
+        for _ in 0..<brewrisYoko {
             var bs = Bs()
             bs.bp = 0
             bs.bc = 0
@@ -633,7 +633,7 @@ class Swiris: UIViewController {
 
                 if baryoko[yoko] == 1 {
 
-                    let brew: [Bs] = self.brewTate[cp.py+(tate)]
+                    let brew: [Bs] = brewTate[cp.py+(tate)]
                     if brew[(yoko)+cp.px].bp != 0 {
                         print ("GAME OVER")
                         return true
@@ -648,15 +648,15 @@ class Swiris: UIViewController {
     func gameOverAlert() {
         let alert: UIAlertController = UIAlertController(title: "GAME OVER", message: "", preferredStyle:  .alert)
 
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler:{[weak self]
             (action: UIAlertAction!) -> Void in
-            self.startBrew()
+            self?.startBrew()
         })
         
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler:{
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler:{[weak self]
             (action: UIAlertAction!) -> Void in
             print("Cancel")
-            self.startBrew()
+            self?.startBrew()
         })
         
         alert.addAction(defaultAction)
@@ -666,41 +666,41 @@ class Swiris: UIViewController {
     }
     
     @objc func moveBarBrew(){
-//        BarLog(bar: self.theBar)
-        if self.isBar == false {
-            if self.isMove == false {
-                self.isMove = true
-                self.moveBrewControl(bar: self.theBar)
-                BarLog(bar: self.brewTate)
-                self.barDisplay()
-                if self.isGameOver == true {
-                    self.moveBar.invalidate()
-                    self.gameOverAlert()
+//        BarLog(bar: theBar)
+        if isBar == false {
+            if isMove == false {
+                isMove = true
+                moveBrewControl(bar: theBar)
+                BarLog(bar: brewTate)
+                barDisplay()
+                if isGameOver == true {
+                    moveBar.invalidate()
+                    gameOverAlert()
                 }
             }
         }
         
-        if self.isBottom(needs: self.noNeed) == true
-            ||  self.isBar == true {
+        if isBottom(needs: noNeed) == true
+            ||  isBar == true {
             
-            self.noNeed = Array()
-            self.isBar = false
-            self.cp.px = DPX
-            self.cp.py = DPY
-            self.setNextBar()
-            self.brewTate = self.storeBar(store: self.brewTate)
-            self.isGameOver = self.GameOver(bar: self.theBar)
-            self.isInAgreement()
-            self.isDownBar = false
+            noNeed = Array()
+            isBar = false
+            cp.px = DPX
+            cp.py = DPY
+            setNextBar()
+            brewTate = storeBar(store: brewTate)
+            isGameOver = GameOver(bar: theBar)
+            isInAgreement()
+            isDownBar = false
             
         }else{
             
-            self.isBar = self.judgementBrew()
-            if self.isBar == false {
-                self.noNeedEmurate()
-                self.isMove = false
-                self.isDown = true
-                self.cp.py += 1
+            isBar = judgementBrew()
+            if isBar == false {
+                noNeedEmurate()
+                isMove = false
+                isDown = true
+                cp.py += 1
             }
         }
     }
@@ -710,10 +710,10 @@ class Swiris: UIViewController {
         
         ViewTag = 1
         
-        for _ in 0..<self.brewrisTate {
+        for _ in 0..<brewrisTate {
             
-            for _ in 0..<self.brewrisYoko {
-                self.noBrew(tag: ViewTag)
+            for _ in 0..<brewrisYoko {
+                noBrew(tag: ViewTag)
                 ViewTag += 1
             }
         }
@@ -723,17 +723,17 @@ class Swiris: UIViewController {
         
         var tag: Int = 1
         
-        for tate in 0..<self.brewrisTate {
+        for tate in 0..<brewrisTate {
             
-            let isBar: [Bs] = self.brewTate[tate]
+            let isBar: [Bs] = brewTate[tate]
             
-            for yoko in 0..<self.brewrisYoko {
+            for yoko in 0..<brewrisYoko {
                 
                 if isBar[yoko].bp == 1 {
-                    self.Brew(tag: tag, bColor: isBar[yoko].bc)
+                    Brew(tag: tag, bColor: isBar[yoko].bc)
 
                 }else if isBar[yoko].bp != 2{
-                    self.noBrew(tag: tag)
+                    noBrew(tag: tag)
                 }
                 tag += 1
             }
@@ -753,7 +753,7 @@ class Swiris: UIViewController {
                 if yokos[yoko].bp == 1 {
                     
                     yokos[yoko].bp = 2
-                    yokos[yoko].bc = self.CBColor
+                    yokos[yoko].bc = CBColor
                     stores[tate] = yokos
                     
                 }
@@ -764,26 +764,26 @@ class Swiris: UIViewController {
     
     func noNeedEmurate(){
         
-        for yoko in 0..<self.brewTate.count {
+        for yoko in 0..<brewTate.count {
             
-            var tate: [Bs] = self.brewTate[yoko]
+            var tate: [Bs] = brewTate[yoko]
             
             for brew in 0..<tate.count {
                 if tate[brew].bp == 1 {
                     tate[brew].bp = 0
                 }
             }
-            self.brewTate[yoko] = tate
+            brewTate[yoko] = tate
         }
     }
     
     func judgementBrew() -> Bool {
         
-        for current in (0..<self.noNeed.count).reversed() {
+        for current in (0..<noNeed.count).reversed() {
             
-            let cPosition: Cp = self.noNeed[current]
+            let cPosition: Cp = noNeed[current]
             
-            let bar: [Bs] = self.brewTate[cPosition.py+1]
+            let bar: [Bs] = brewTate[cPosition.py+1]
             
             if bar[cPosition.px].bp == 2 {
                 return true
@@ -794,7 +794,7 @@ class Swiris: UIViewController {
     
     func isBottom(needs: [Cp]) -> Bool {
         
-        let bottom = self.brewrisTate - 1
+        let bottom = brewrisTate - 1
         
         for current in needs {
             
@@ -808,7 +808,7 @@ class Swiris: UIViewController {
     func moveBrewControl(bar: [Array<Any>]){
         
         var noNeedCo: Int = 0
-        var storeNoNeed: [Cp] = Array()//self.setNoNeed()
+        var storeNoNeed: [Cp] = Array()//setNoNeed()
         
         for tate in 0..<bar.count {
             
@@ -818,26 +818,26 @@ class Swiris: UIViewController {
                 
                 if baryoko[yoko] == 1 {
                     
-                    var brew: [Bs] = self.brewTate[cp.py+(tate)]
+                    var brew: [Bs] = brewTate[cp.py+(tate)]
                     brew[(yoko)+cp.px].bp = 1
-                    brew[(yoko)+cp.px].bc = self.CBColor
-                    self.brewTate[cp.py+(tate)] = brew
+                    brew[(yoko)+cp.px].bc = CBColor
+                    brewTate[cp.py+(tate)] = brew
                     
                     storeNoNeed.append( Cp(px:(cp.px+yoko) , py:(cp.py+tate)))
                     noNeedCo += 1
                 }
             }
         }
-        self.noNeed = storeNoNeed
+        noNeed = storeNoNeed
     }
     
     func isInAgreement() {
         
         var removeLists: [Int] = []
         
-        for be in 0..<self.brewTate.count {
+        for be in 0..<brewTate.count {
             
-            let agreemnent: [Bs] = self.brewTate[be]
+            let agreemnent: [Bs] = brewTate[be]
             var isRemove: Bool = false
             
             for agr in agreemnent {
@@ -856,9 +856,9 @@ class Swiris: UIViewController {
         
         for rm in removeLists {
             
-            self.brewTate.remove(at: rm)
+            brewTate.remove(at: rm)
             
-            self.brewTate.insert(self.brewYokoInit(), at: rm)
+            brewTate.insert(brewYokoInit(), at: rm)
             
             isRm = true
             
@@ -868,44 +868,44 @@ class Swiris: UIViewController {
             isRm = false
             
             for rm in removeLists {
-                self.brewTate.remove(at: rm)
-                self.brewTate.insert(self.brewYokoInit(), at: 0)
+                brewTate.remove(at: rm)
+                brewTate.insert(brewYokoInit(), at: 0)
             }
             
             var ViewTag: Int
             ViewTag = 1
             
-            for tate in 0..<self.brewrisTate {
+            for tate in 0..<brewrisTate {
                 
-                let Bar: [Bs] = self.brewTate[tate]
+                let Bar: [Bs] = brewTate[tate]
                 
-                for yoko in 0..<self.brewrisYoko {
+                for yoko in 0..<brewrisYoko {
                     
                     if Bar[yoko].bp == 2 {
-                        self.Brew(tag: ViewTag, bColor: Bar[yoko].bc)
+                        Brew(tag: ViewTag, bColor: Bar[yoko].bc)
                     }
                     ViewTag += 1
                 }
             }
-            self.setScore(sc: removeLists.count)
+            setScore(sc: removeLists.count)
         }
-        self.brewTate = self.storeBar(store: self.brewTate)
+        brewTate = storeBar(store: brewTate)
     }
     
     func setScore(sc: Int){
         
-        self.score = self.score + 10 * sc * ((self.level) * 5)
+        score = score + 10 * sc * ((level) * 5)
         
         let lv = levelManager()
         
-        self.level = lv.islevelUp(score: self.score)
+        level = lv.islevelUp(score: score)
         
         if lv.isLvUp == true {
             lv.isLvUp = false
-            self.levelLbl.text = lv.levelLabel(lv: self.level)
+            levelLbl.text = lv.levelLabel(lv: level)
             moveBar.invalidate()
             startGame()
         }
-        self.scoreLabel.text = self.score.description
+        scoreLabel.text = score.description
     }
 }
