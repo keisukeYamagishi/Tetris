@@ -34,7 +34,6 @@ class Swiris: UIViewController {
     var bar: UIView!
     var isGameOver: Bool!
     @IBOutlet var levelLbl: UILabel!
-    var barLists: [[[Int]]]!
     var brewTate: [[Bs]]!
     var noNeed: [Cp]!
     var theBar: [[Int]]!
@@ -85,7 +84,6 @@ class Swiris: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        barLists = BarLists
         barInit()
         nextBarInit()
         startBrew()
@@ -401,9 +399,9 @@ class Swiris: UIViewController {
     }
 
     func getTheBar() -> [[Int]] {
-        let random: Int = Int(arc4random_uniform(UInt32(barLists.count)))
+        let random: Int = Int(arc4random_uniform(UInt32(BarLists.count)))
 
-        return barLists[random]
+        return BarLists[random]
     }
 
     func startGame() {
