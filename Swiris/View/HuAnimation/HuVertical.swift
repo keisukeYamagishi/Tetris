@@ -13,13 +13,13 @@ import UIKit
 
 class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
     let VLANIMATION_TIME1 = 0.01
-    let VLANIMATION_TIME2 = 1.0//4.0
+    let VLANIMATION_TIME2 = 1.0 // 4.0
     /// returns the duration of the verticalLinesAnimation
-    
-    override func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+
+    override func transitionDuration(using _: UIViewControllerContextTransitioning?) -> TimeInterval {
         return VLANIMATION_TIME1 + VLANIMATION_TIME2
     }
-    
+
     let VLINEWIDTH = 4.0
     /**
      verticalLinesTransition
@@ -29,13 +29,13 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
     override func animateTransition(using transitionContext: UIViewControllerContextTransitioning?) {
         let fromVC: UIViewController? = transitionContext?.viewController(forKey: .from)
         let toVC: UIViewController? = transitionContext?.viewController(forKey: .to)
-        //get the container view
+        // get the container view
         let containerView: UIView? = transitionContext?.containerView
-        //lets get a snapshot of the outgoing view
+        // lets get a snapshot of the outgoing view
         let mainSnap: UIView? = fromVC?.view.snapshotView(afterScreenUpdates: false)
-        //cut it into vertical slices
+        // cut it into vertical slices
         let outgoingLineViews = cut(mainSnap!, intoSlicesOfWidth: CGFloat(VLINEWIDTH))
-        //add the slices to the content view.
+        // add the slices to the content view.
         for v in outgoingLineViews! {
 //            if let aV = v {
             containerView?.addSubview(v)
@@ -51,25 +51,25 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
         let toViewStartY: CGFloat? = toView?.frame.origin.y
         toView?.alpha = 0
         fromVC?.view.isHidden = true
-        UIView.animate(withDuration: VLANIMATION_TIME1, delay: 0.0, options: .curveEaseIn, animations: {() -> Void in
-            //This is basically a hack to get the incoming view to render before I snapshot it.
-        }, completion: {(_ finished: Bool) -> Void in
+        UIView.animate(withDuration: VLANIMATION_TIME1, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
+            // This is basically a hack to get the incoming view to render before I snapshot it.
+        }, completion: { (_: Bool) -> Void in
             toVC?.view.alpha = 1
             let mainInSnap: UIView? = toView?.snapshotView(afterScreenUpdates: true)
-            //cut it into vertical slices
+            // cut it into vertical slices
             let incomingLineViews = self.cut(mainInSnap!, intoSlicesOfWidth: CGFloat(self.VLINEWIDTH))
-            //move the slices in to start position (mess them up)
+            // move the slices in to start position (mess them up)
             self.repositionViewSlices(incomingLineViews, moveFirstFrameUp: false)
-            //add the slices to the content view.
+            // add the slices to the content view.
             for v in incomingLineViews! {
                 containerView?.addSubview(v)
             }
-            
+
             toView?.isHidden = true
-            UIView.animate(withDuration: self.VLANIMATION_TIME2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: {() -> Void in
+            UIView.animate(withDuration: self.VLANIMATION_TIME2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseIn, animations: { () -> Void in
                 self.repositionViewSlices(outgoingLineViews, moveFirstFrameUp: true)
                 self.resetViewSlices(views: incomingLineViews!, toYOrigin: toViewStartY!)
-            }, completion: {(_ finished: Bool) -> Void in
+            }, completion: { (_: Bool) -> Void in
                 fromVC?.view.isHidden = false
                 toView?.isHidden = false
                 toView?.setNeedsUpdateConstraints()
@@ -83,7 +83,7 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
             })
         })
     }
-    
+
     /**
      cuts a \a view into an array of smaller views of \a width
      @param view the view to be sliced up
@@ -106,7 +106,7 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
         }
         return lineViews
     }
-    
+
     /**
      repositions an array of \a views alternatively up and down by their frames height
      @param views The array of views to reposition
@@ -119,13 +119,13 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
         for line in views! {
             frame = line.frame
             height = Float(frame.height * HUTransitionAnimator.randomFloat(min: 1.0, max: 4.0))
-            frame.origin.y += CGFloat((up) ? -height : height)
-            //save the new position
+            frame.origin.y += CGFloat(up ? -height : height)
+            // save the new position
             line.frame = frame
             up = !up
         }
     }
-    
+
     /**
      resets the views back to a specified y origin.
      @param views The array of uiview objects to reposition
@@ -136,7 +136,7 @@ class HUTransitionVerticalLinesAnimator: HUTransitionAnimator {
         for line in views {
             frame = line.frame
             frame.origin.y = y
-            //save the new position
+            // save the new position
             line.frame = frame
         }
     }

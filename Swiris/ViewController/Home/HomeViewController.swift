@@ -1,35 +1,34 @@
 import UIKit
 
 @available(iOS 10.0, *)
-class HomeViewController: UIViewController,UINavigationControllerDelegate {
+class HomeViewController: UIViewController, UINavigationControllerDelegate {
+    @IBOutlet var gameTitle: UILabel!
+    @IBOutlet var startGame: UIButton!
 
-    @IBOutlet weak var gameTitle: UILabel!
-    @IBOutlet weak var startGame: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.delegate = self
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.startGame.layer.cornerRadius = 10
-        self.gameTitle.layer.cornerRadius = 10
+        startGame.layer.cornerRadius = 10
+        gameTitle.layer.cornerRadius = 10
     }
-    
-    @IBAction func pushInButton(_ sender: Any) {
-        let brewris = (self.storyboard?.instantiateViewController(withIdentifier: "Swiris"))! as! Swiris
-        self.navigationController?.pushViewController(brewris, animated: true)
+
+    @IBAction func pushInButton(_: Any) {
+        let brewris = (storyboard?.instantiateViewController(withIdentifier: "Swiris"))! as! Swiris
+        navigationController?.pushViewController(brewris, animated: true)
     }
-    
-    func navigationController(_ navigationController: UINavigationController,
+
+    func navigationController(_: UINavigationController,
                               animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+                              from _: UIViewController,
+                              to _: UIViewController) -> UIViewControllerAnimatedTransitioning?
+    {
         let tngition: HUTransitionAnimator = HUTransitionVerticalLinesAnimator()
-        tngition.presenting = (operation == .pop) ? false:true
+        tngition.presenting = (operation == .pop) ? false : true
         return tngition
     }
 }
-
