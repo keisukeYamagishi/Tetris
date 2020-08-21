@@ -27,7 +27,7 @@ class Swiris: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var nextBarField: UIView!
     @IBOutlet var rotstionButton: UIButton!
-    var nextB: UIView!
+    var nextB: Bar!
     var cp: Cp = Cp(px: 0, py: 0)
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: UIView!
@@ -288,10 +288,11 @@ class Swiris: UIViewController {
 
                 for yoko in 0 ..< brewrisYoko {
                     if isBar[yoko].bp == 2 {
-                        Brew(tag: tag, bColor: isBar[yoko].bc)
-
+                        let bar = brewView.viewWithTag(tag) as! Bar
+                        bar.brew(isBar[yoko].bc)
                     } else {
-                        noBrew(tag: tag)
+                        let bar = brewView.viewWithTag(tag) as! Bar
+                        bar.noBrew()
                     }
                     tag += 1
                 }
@@ -426,50 +427,6 @@ class Swiris: UIViewController {
         }
     }
 
-    /*
-     * Nothing Bar Brew (*_*;) 🍺
-     *
-     */
-    func brewBar(x: CGFloat, y: CGFloat) -> UIView {
-        let brew: UIView = UIView(frame: CGRect(x: x,
-                                                y: y,
-                                                width: CGFloat(barSize), // Brewris.barSize),
-                                                height: CGFloat(barSize))) // Brewris.barSize)))
-        brew.backgroundColor = UIColor.white
-        brew.clipsToBounds = true
-        brew.layer.borderColor = BorderColor.cgColor
-        brew.layer.borderWidth = 1.0
-        return brew
-    }
-
-    func noBrew(tag: Int) {
-        bar = brewView.viewWithTag(tag)
-        bar.backgroundColor = UIColor.white
-        bar.layer.borderColor = BorderColor.cgColor
-        bar.layer.borderWidth = 1.0
-    }
-
-    func Brew(tag: Int, bColor: Int) {
-        bar = brewView.viewWithTag(tag)
-        bar.backgroundColor = Color.colorList(cNum: bColor)
-        bar.layer.borderColor = UIColor.white.cgColor
-        bar.layer.borderWidth = 1.0
-    }
-
-    func nextBrewBar(tag: Int, bColor: Int) {
-        nextB = nextBarField.viewWithTag(tag)
-        nextB.backgroundColor = Color.colorList(cNum: bColor)
-        nextB.layer.borderColor = BorderColor.cgColor
-        nextB.layer.borderWidth = 1.0
-    }
-
-    func nextBrewNoBar(tag: Int) {
-        nextB = nextBarField.viewWithTag(tag)
-        nextB.backgroundColor = UIColor.white
-        nextB.layer.borderColor = BorderColor.cgColor
-        nextB.layer.borderWidth = 1.0
-    }
-
     func barSizeCalculation() -> CGFloat {
         return brewView.frame.size.width / CGFloat(brewrisYoko)
     }
@@ -484,9 +441,10 @@ class Swiris: UIViewController {
         brewViewHeightConstraint.constant = swirisFieldHeight(barSize: barSize)
         for tate in 0 ..< brewrisTate {
             for yoko in 0 ..< brewrisYoko {
-                bar = brewBar(x: CGFloat(yoko) * barSize,
-                              y: CGFloat(tate) * barSize)
-                bar.tag = tag
+                let bar: Bar = Bar(frame: CGRect(x: CGFloat(yoko) * barSize,
+                                                 y: CGFloat(tate) * barSize,
+                                                 width: CGFloat(barSize),
+                                                 height: CGFloat(barSize)), tag: tag)
                 brewView.addSubview(bar)
                 tag += 1
             }
@@ -498,9 +456,10 @@ class Swiris: UIViewController {
 
         for tate in 0 ..< 4 {
             for yoko in 0 ..< 4 {
-                nextB = nextBrew(x: CGFloat(yoko) * (74 / 4),
-                                 y: CGFloat(tate) * (74 / 4))
-                nextB.tag = tag
+                nextB = Bar(frame: CGRect(origin: CGPoint(x: CGFloat(yoko) * (74 / 4),
+                                                          y: CGFloat(tate) * (74 / 4)),
+                                          size: CGSize(width: CGFloat(18.5),
+                                                       height: CGFloat(18.5))), tag: tag)
                 nextBarField.addSubview(nextB)
                 tag += 1
             }
@@ -508,21 +467,18 @@ class Swiris: UIViewController {
     }
 
     func nextBarInitialize() {
-        var viewTag = 1
-
+        var tag = 1
         for _ in 0 ..< 4 {
             for _ in 0 ..< 4 {
-                nextBrewNoBar(tag: viewTag)
-                viewTag += 1
+                let bar = nextBarField.viewWithTag(tag) as! Bar
+                bar.noBrew()
+                tag += 1
             }
         }
     }
 
     func displayNextBar() {
-        var ViewTag: Int
-
-        ViewTag = 1
-
+        var tag: Int = 1
         nextTheBar = getTheBar()
         NBColor = Color.ColorNum() // BarColor()
         for tate in 0 ..< 4 {
@@ -530,12 +486,13 @@ class Swiris: UIViewController {
 
             for yoko in 0 ..< 4 {
                 if nb[yoko] == 1 {
-                    nextBrewBar(tag: ViewTag, bColor: NBColor)
-
+                    let bar = nextBarField.viewWithTag(tag) as! Bar
+                    bar.brew(NBColor)
                 } else {
-                    nextBrewNoBar(tag: ViewTag)
+                    let bar = nextBarField.viewWithTag(tag) as! Bar
+                    bar.noBrew()
                 }
-                ViewTag += 1
+                tag += 1
             }
         }
     }
@@ -563,7 +520,6 @@ class Swiris: UIViewController {
         brewTate = Array()
         for _ in 0 ..< brewrisTate {
             let brewYoko = brewYokoInit()
-
             brewTate.append(brewYoko)
         }
     }
@@ -657,14 +613,12 @@ class Swiris: UIViewController {
     }
 
     func BarInitialze() {
-        var ViewTag: Int
-
-        ViewTag = 1
-
+        var tag: Int = 1
         for _ in 0 ..< brewrisTate {
             for _ in 0 ..< brewrisYoko {
-                noBrew(tag: ViewTag)
-                ViewTag += 1
+                let bar: Bar = brewView.viewWithTag(tag) as! Bar
+                bar.noBrew()
+                tag += 1
             }
         }
     }
@@ -677,10 +631,12 @@ class Swiris: UIViewController {
 
             for yoko in 0 ..< brewrisYoko {
                 if isBar[yoko].bp == 1 {
-                    Brew(tag: tag, bColor: isBar[yoko].bc)
+                    let bar = brewView.viewWithTag(tag) as! Bar
+                    bar.brew(isBar[yoko].bc)
 
                 } else if isBar[yoko].bp != 2 {
-                    noBrew(tag: tag)
+                    let bar: Bar = brewView.viewWithTag(tag) as! Bar
+                    bar.noBrew()
                 }
                 tag += 1
             }
@@ -743,7 +699,7 @@ class Swiris: UIViewController {
 
     func moveBrewControl(bar: [[Any]]) {
         var noNeedCo: Int = 0
-        var storeNoNeed: [Cp] = Array() // setNoNeed()
+        var storeNoNeed: [Cp] = []
 
         for tate in 0 ..< bar.count {
             let baryoko: [Int] = bar[tate] as! [Int]
@@ -798,17 +754,17 @@ class Swiris: UIViewController {
                 brewTate.insert(brewYokoInit(), at: 0)
             }
 
-            var ViewTag: Int
-            ViewTag = 1
+            var tag: Int = 1
 
             for tate in 0 ..< brewrisTate {
                 let Bar: [Bs] = brewTate[tate]
 
                 for yoko in 0 ..< brewrisYoko {
                     if Bar[yoko].bp == 2 {
-                        Brew(tag: ViewTag, bColor: Bar[yoko].bc)
+                        let bar = brewView.viewWithTag(tag) as! Bar
+                        bar.brew(Bar[yoko].bc)
                     }
-                    ViewTag += 1
+                    tag += 1
                 }
             }
             setScore(sc: removeLists.count)
