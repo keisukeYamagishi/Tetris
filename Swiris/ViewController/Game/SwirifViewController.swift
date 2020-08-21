@@ -376,7 +376,6 @@ class Swiris: UIViewController {
     }
 
     func startBrew() {
-
         levelLbl.text = levelMng.levelText
         scoreLabel.text = "0"
         score = 0
