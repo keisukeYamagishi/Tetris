@@ -10,7 +10,8 @@ import UIKit
 
 var Yoko: Int = 10 // 7
 var Tate: Int = 20 // 11var brewrisYoko: Int = 10 // 7
-
+var DPX = 4
+var DPY = 0
 public struct Bs {
     var bp = 0
     var bc = 0
@@ -42,7 +43,7 @@ class Bars {
 }
 
 extension Bars {
-    func moveBrewControl(bar: [[Int]], cColor: Int) {
+    func move(bar: [[Int]], cColor: Int) {
         var noNeedCo: Int = 0
         var storeNoNeed: [Cp] = []
 
@@ -62,5 +63,49 @@ extension Bars {
             }
         }
         noneed = storeNoNeed
+    }
+
+    func spin(bars: [[Int]]) -> [[Int]] {
+        var first: [Int] = Array()
+        var second: [Int] = Array()
+        var third: [Int] = Array()
+        var fourth: [Int] = Array()
+
+        for tate in 0 ..< bars.count {
+            let barYoko: [Int] = bars[tate]
+
+            for yoko in 0 ..< barYoko.count {
+                switch yoko {
+                case 3:
+                    first.append(barYoko[yoko])
+                case 2:
+                    second.append(barYoko[yoko])
+                case 1:
+                    third.append(barYoko[yoko])
+                case 0:
+                    fourth.append(barYoko[yoko])
+                default:
+                    break
+                }
+            }
+        }
+
+        var rotations = [first, second, third, fourth]
+
+        for _ in 0 ..< rotations.count {
+            var isFlag = false
+
+            for lv in rotations.last! {
+                if lv == 1 {
+                    isFlag = true
+                }
+            }
+
+            if isFlag != true {
+                rotations.remove(at: rotations.count - 1)
+                rotations.insert([0, 0, 0, 0], at: 0)
+            }
+        }
+        return rotations
     }
 }
