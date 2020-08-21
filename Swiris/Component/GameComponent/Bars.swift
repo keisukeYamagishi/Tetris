@@ -21,14 +21,22 @@ class Bars {
     var noneed: [Cp] = []
     var cp: Cp = Cp(px: 0, py: 0)
     
+    var numberOfCount: Int {
+        values.count
+    }
+
+    var yokoValue: [Bs] {
+        var yoko:[Bs] = []
+        for _ in 0 ..< Yoko {
+            let bs = Bs()
+            yoko.append(bs)
+        }
+        return yoko
+    }
+
     init() {
         for _ in 0 ..< Tate {
-            var yoko:[Bs] = []
-            for _ in 0 ..< Yoko {
-                let bs = Bs()
-                yoko.append(bs)
-            }
-            values.append(yoko)
+            values.append(yokoValue)
         }
     }
 }

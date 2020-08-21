@@ -27,7 +27,6 @@ class Swiris: UIViewController {
     var bar: UIView!
     var isGameOver: Bool!
     @IBOutlet var levelLbl: UILabel!
-    var barsHairetu: [[Bs]]!
     var noNeed: [Cp]!
     var theBar: [[Int]]!
     var nextTheBar: [[Int]]!
@@ -180,7 +179,7 @@ class Swiris: UIViewController {
         for current in 0 ..< noNeed.count {
             let cPosition: Cp = noNd[current]
 
-            let bar: [Bs] = barsHairetu[cPosition.py]
+            let bar: [Bs] = bars.values[cPosition.py]
 
             if which == .left {
                 if bar[cPosition.px - 1].bp == 2 {
@@ -211,7 +210,7 @@ class Swiris: UIViewController {
 
             removeCurrent(cCp: cCp)
 
-            while count < (barsHairetu.count - 1) {
+            while count < (bars.numberOfCount - 1) {
                 for current in (0 ..< noNeed.count).reversed() {
                     let cPosition: Cp = noNeed[current]
 
@@ -221,7 +220,7 @@ class Swiris: UIViewController {
                         break
                     }
 
-                    let bar: [Bs] = barsHairetu[cPosition.py + count]
+                    let bar: [Bs] = bars.values[cPosition.py + count]
 
                     if bar[cPosition.px].bp == 2 {
                         isBottom = true
@@ -242,9 +241,9 @@ class Swiris: UIViewController {
                             }
 
                             n.py = cp.py
-                            var tate: [Bs] = barsHairetu[n.py]
+                            var tate: [Bs] = bars.values[n.py]
                             tate[n.px].bp = 1
-                            barsHairetu[n.py] = tate
+                            bars.values[n.py] = tate
                         }
                         break
                     }
@@ -262,23 +261,22 @@ class Swiris: UIViewController {
 
                     for yoko in 0 ..< baryoko.count {
                         if baryoko[yoko] == 1 {
-                            var brew: [Bs] = barsHairetu[cp.py + tate]
+                            var brew: [Bs] = bars.values[cp.py + tate]
                             brew[yoko + cp.px].bp = 1
-                            barsHairetu[cp.py + tate] = brew
+                            bars.values[cp.py + tate] = brew
                         }
                     }
                 }
             }
             theBar = []
-
-            barsHairetu = storeBar(store: barsHairetu)
+            bars.values = storeBar(store: bars.values)
 
             var tag: Int
 
             tag = 1
 
             for tate in 0 ..< Tate {
-                let isBar: [Bs] = barsHairetu[tate]
+                let isBar: [Bs] = bars.values[tate]
 
                 for yoko in 0 ..< Yoko {
                     if isBar[yoko].bp == 2 {
@@ -301,7 +299,7 @@ class Swiris: UIViewController {
                 gameOverAlert()
                 return
             }
-            barsHairetu = storeBar(store: barsHairetu)
+            bars.values = storeBar(store: bars.values)
             isInAgreement()
             isDownBar = false
         }
@@ -309,11 +307,11 @@ class Swiris: UIViewController {
 
     func removeCurrent(cCp: [Cp]) {
         for ccp in cCp {
-            var br = barsHairetu[ccp.py]
+            var br = bars.values[ccp.py]
 
             br[ccp.px].bp = 0
             br[ccp.px].bc = 0
-            barsHairetu[ccp.py] = br
+            bars.values[ccp.py] = br
         }
     }
 
@@ -358,7 +356,7 @@ class Swiris: UIViewController {
 
             for yoko in 0 ..< baryoko.count {
                 if baryoko[yoko] == 1 {
-                    let brew: [Bs] = barsHairetu[cp.py + tate]
+                    let brew: [Bs] = bars.values[cp.py + tate]
                     let isRot = brew[cp.px + yoko]
 
                     if isRot.bp == 2 {
@@ -381,7 +379,6 @@ class Swiris: UIViewController {
         isBar = false
         isMove = false
         isGameOver = false
-        brewrisInit()
         BarInitialze()
         nextBarInitialize()
         displayNextBar()
@@ -498,33 +495,13 @@ class Swiris: UIViewController {
         displayNextBar()
     }
 
-    func brewrisInit() {
-        barsHairetu = Array()
-        for _ in 0 ..< Tate {
-            let brewYoko = brewYokoInit()
-            barsHairetu.append(brewYoko)
-        }
-    }
-
-    func brewYokoInit() -> [Bs] {
-        var yoko: [Bs] = Array()
-
-        for _ in 0 ..< Yoko {
-            var bs = Bs()
-            bs.bp = 0
-            bs.bc = 0
-            yoko.append(bs)
-        }
-        return yoko
-    }
-
     func GameOver(bar: [[Int]]) -> Bool {
         for tate in (0 ..< bar.count).reversed() {
             let baryoko: [Int] = bar[tate]
 
             for yoko in 0 ..< baryoko.count {
                 if baryoko[yoko] == 1 {
-                    let brew: [Bs] = barsHairetu[cp.py + tate]
+                    let brew: [Bs] = bars.values[cp.py + tate]
                     if brew[yoko + cp.px].bp != 0 {
                         print("GAME OVER")
                         return true
@@ -561,7 +538,7 @@ class Swiris: UIViewController {
             if isMove == false {
                 isMove = true
                 moveBrewControl(bar: theBar)
-                BarLog(bar: barsHairetu)
+                BarLog(bar: bars.values)
                 barDisplay()
                 if isGameOver == true {
                     moveBar.invalidate()
@@ -578,7 +555,7 @@ class Swiris: UIViewController {
             cp.px = DPX
             cp.py = DPY
             setNextBar()
-            barsHairetu = storeBar(store: barsHairetu)
+            bars.values = storeBar(store: bars.values)
             isGameOver = GameOver(bar: theBar)
             isInAgreement()
             isDownBar = false
@@ -609,7 +586,7 @@ class Swiris: UIViewController {
         var tag: Int = 1
 
         for tate in 0 ..< Tate {
-            let isBar: [Bs] = barsHairetu[tate]
+            let isBar: [Bs] = bars.values[tate]
 
             for yoko in 0 ..< Yoko {
                 if isBar[yoko].bp == 1 {
@@ -643,15 +620,15 @@ class Swiris: UIViewController {
     }
 
     func noNeedEmurate() {
-        for yoko in 0 ..< barsHairetu.count {
-            var tate: [Bs] = barsHairetu[yoko]
+        for yoko in 0 ..< bars.numberOfCount {
+            var tate: [Bs] = bars.values[yoko]
 
             for brew in 0 ..< tate.count {
                 if tate[brew].bp == 1 {
                     tate[brew].bp = 0
                 }
             }
-            barsHairetu[yoko] = tate
+            bars.values[yoko] = tate
         }
     }
 
@@ -659,13 +636,13 @@ class Swiris: UIViewController {
         for current in (0 ..< noNeed.count).reversed() {
             let cPosition: Cp = noNeed[current]
 
-            let bar: [Bs] = barsHairetu[cPosition.py + 1]
+            let bar: [Bs] = bars.values[cPosition.py + 1]
 
             if bar[cPosition.px].bp == 2 {
                 return true
             }
         }
-        return false // isBar
+        return false
     }
 
     func isBottom(needs: [Cp]) -> Bool {
@@ -688,11 +665,10 @@ class Swiris: UIViewController {
 
             for yoko in 0 ..< baryoko.count {
                 if baryoko[yoko] == 1 {
-                    var brew: [Bs] = barsHairetu[cp.py + tate]
+                    var brew: [Bs] = bars.values[cp.py + tate]
                     brew[yoko + cp.px].bp = 1
                     brew[yoko + cp.px].bc = CBColor
-                    barsHairetu[cp.py + tate] = brew
-
+                    bars.values[cp.py + tate] = brew
                     storeNoNeed.append(Cp(px: cp.px + yoko, py: cp.py + tate))
                     noNeedCo += 1
                 }
@@ -704,8 +680,8 @@ class Swiris: UIViewController {
     func isInAgreement() {
         var removeLists: [Int] = []
 
-        for be in 0 ..< barsHairetu.count {
-            let agreemnent: [Bs] = barsHairetu[be]
+        for be in 0 ..< bars.numberOfCount {
+            let agreemnent: [Bs] = bars.values[be]
             var isRemove: Bool = false
 
             for agr in agreemnent {
@@ -721,9 +697,9 @@ class Swiris: UIViewController {
         var isRm = false
 
         for rm in removeLists {
-            barsHairetu.remove(at: rm)
+            bars.values.remove(at: rm)
 
-            barsHairetu.insert(brewYokoInit(), at: rm)
+            bars.values.insert(bars.yokoValue, at: rm)
 
             isRm = true
         }
@@ -732,14 +708,14 @@ class Swiris: UIViewController {
             isRm = false
 
             for rm in removeLists {
-                barsHairetu.remove(at: rm)
-                barsHairetu.insert(brewYokoInit(), at: 0)
+                bars.values.remove(at: rm)
+                bars.values.insert(bars.yokoValue, at: 0)
             }
 
             var tag: Int = 1
 
             for tate in 0 ..< Tate {
-                let Bar: [Bs] = barsHairetu[tate]
+                let Bar: [Bs] = bars.values[tate]
 
                 for yoko in 0 ..< Yoko {
                     if Bar[yoko].bp == 2 {
@@ -751,7 +727,7 @@ class Swiris: UIViewController {
             }
             setScore(sc: removeLists.count)
         }
-        barsHairetu = storeBar(store: barsHairetu)
+        bars.values = storeBar(store: bars.values)
     }
 
     func setScore(sc: Int) {
