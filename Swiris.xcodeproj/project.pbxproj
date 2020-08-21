@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
+		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708DEEB23D1F576005F6F32 /* UIViewController+.swift */; };
 		C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771B6E71FE7FC7300F0C277 /* BarController.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		C708DEEB23D1F576005F6F32 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		C771B6E71FE7FC7300F0C277 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
@@ -110,13 +112,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C791D75E1FE61F2A00983F80 /* Model */ = {
+		C791D75E1FE61F2A00983F80 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				C791D7631FE61F2A00983F80 /* ColorPattern.swift */,
 				C791D7651FE61F2A00983F80 /* GameComponent */,
 			);
-			path = Model;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		C791D7651FE61F2A00983F80 /* GameComponent */ = {
@@ -125,6 +127,7 @@
 				C771B6E71FE7FC7300F0C277 /* BarController.swift */,
 				C791D7661FE61F2A00983F80 /* BarFactory.swift */,
 				C791D76A1FE61F2A00983F80 /* Level.swift */,
+				90453DA524EF61DA00B56A91 /* Bars.swift */,
 			);
 			path = GameComponent;
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 				F0B3356D1F0E517200A8F6DF /* Main.storyboard */,
 				C708DEEA23D1F4CE005F6F32 /* Extention */,
 				C7CF2BDE2037F5F900889C3C /* ViewController */,
-				C791D75E1FE61F2A00983F80 /* Model */,
+				C791D75E1FE61F2A00983F80 /* Component */,
 				C791D7121FE61E2A00983F80 /* View */,
 				F0A5C62C1F7CDDB0000BC9CE /* Util */,
 			);
@@ -353,6 +356,7 @@
 				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
 				C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */,
 				C7E50F6620838EEE00D1B0BC /* HorizonLine.swift in Sources */,
+				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,
 			);
