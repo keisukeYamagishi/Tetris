@@ -491,18 +491,6 @@ class Swiris: UIViewController {
         }
     }
 
-//    func nextBrew(x: CGFloat, y: CGFloat) -> UIView {
-//        let brew: UIView = UIView(frame: CGRect(x: x,
-//                                                y: y,
-//                                                width: CGFloat(18.5),
-//                                                height: CGFloat(18.5)))
-//        brew.backgroundColor = UIColor.white
-//        brew.clipsToBounds = true
-//        brew.layer.borderColor = BorderColor.cgColor
-//        brew.layer.borderWidth = 1.0
-//        return brew
-//    }
-
     func setNextBar() {
         theBar = nextTheBar
         isGameOver = GameOver(bar: theBar)
