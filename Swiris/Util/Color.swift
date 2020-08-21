@@ -37,7 +37,7 @@ class Color {
         UIColor(hex: naviBarTitleColor)
     }
 
-    public static func ColorNum() -> Int {
+    public static func radomNum() -> Int {
         Int(arc4random_uniform(UInt32(ColorPattern.count)))
     }
 }

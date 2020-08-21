@@ -16,7 +16,7 @@ class Swiris: UIViewController {
     var score: Int = 0
     var isMove: Bool = false
     @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet var nextBarField: UIView!
+    @IBOutlet var nextBarField: NextBarField!
     @IBOutlet var rotstionButton: UIButton!
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: UIView!
@@ -27,7 +27,6 @@ class Swiris: UIViewController {
     var moveBar: Timer!
     var isBar: Bool = false
     var CBColor: Int!
-    var NBColor: Int!
     var isDownBar: Bool!
     var isPopup: Bool!
     var levelMng: LevelManager!
@@ -69,7 +68,6 @@ class Swiris: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         barInit()
-        nextBarInit()
         startBrew()
     }
 
@@ -371,19 +369,14 @@ class Swiris: UIViewController {
         isMove = false
         isGameOver = false
         BarInitialze()
-        nextBarInitialize()
-        displayNextBar()
+        nextBarField.initializeField()
+        theBar = Bars.getTheBar
+        nextBarField.displayNextBar()
         bars.cp.px = DPX
         bars.cp.py = DPY
-        CBColor = Color.ColorNum()
-        theBar = getTheBar()
+        CBColor = Color.radomNum()
+        theBar = Bars.getTheBar // getTheBar()
         startGame()
-    }
-
-    func getTheBar() -> [[Int]] {
-        let random: Int = Int(arc4random_uniform(UInt32(BarLists.count)))
-
-        return BarLists[random]
     }
 
     func startGame() {
@@ -433,57 +426,11 @@ class Swiris: UIViewController {
         }
     }
 
-    func nextBarInit() {
-        var tag = 1
-
-        for tate in 0 ..< 4 {
-            for yoko in 0 ..< 4 {
-                let nextBar = Bar(frame: CGRect(origin: CGPoint(x: CGFloat(yoko) * (74 / 4),
-                                                                y: CGFloat(tate) * (74 / 4)),
-                                                size: CGSize(width: CGFloat(18.5),
-                                                             height: CGFloat(18.5))), tag: tag)
-                nextBarField.addSubview(nextBar)
-                tag += 1
-            }
-        }
-    }
-
-    func nextBarInitialize() {
-        var tag = 1
-        for _ in 0 ..< 4 {
-            for _ in 0 ..< 4 {
-                let bar = nextBarField.viewWithTag(tag) as! Bar
-                bar.noBrew()
-                tag += 1
-            }
-        }
-    }
-
-    func displayNextBar() {
-        var tag: Int = 1
-        nextTheBar = getTheBar()
-        NBColor = Color.ColorNum() // BarColor()
-        for tate in 0 ..< 4 {
-            let nb = nextTheBar[tate]
-
-            for yoko in 0 ..< 4 {
-                if nb[yoko] == 1 {
-                    let bar = nextBarField.viewWithTag(tag) as! Bar
-                    bar.brew(NBColor)
-                } else {
-                    let bar = nextBarField.viewWithTag(tag) as! Bar
-                    bar.noBrew()
-                }
-                tag += 1
-            }
-        }
-    }
-
     func setNextBar() {
-        theBar = nextTheBar
+        theBar = nextBarField.nextBar
         isGameOver = GameOver(bar: theBar)
-        CBColor = NBColor
-        displayNextBar()
+        CBColor = nextBarField.NBColor
+        nextBarField.displayNextBar()
     }
 
     func GameOver(bar: [[Int]]) -> Bool {

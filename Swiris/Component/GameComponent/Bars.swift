@@ -108,4 +108,8 @@ extension Bars {
         }
         return rotations
     }
+
+    static var getTheBar: [[Int]] {
+        BarLists[Int(arc4random_uniform(UInt32(BarLists.count)))]
+    }
 }
