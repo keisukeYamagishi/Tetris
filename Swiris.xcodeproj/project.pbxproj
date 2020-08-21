@@ -10,7 +10,6 @@
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708DEEB23D1F576005F6F32 /* UIViewController+.swift */; };
-		C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771B6E71FE7FC7300F0C277 /* BarController.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
 		C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7293F0F1FAD8F66006D4695 /* DebugLog.swift */; };
 		C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D7631FE61F2A00983F80 /* ColorPattern.swift */; };
@@ -56,7 +55,6 @@
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		C708DEEB23D1F576005F6F32 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
-		C771B6E71FE7FC7300F0C277 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		C791D7631FE61F2A00983F80 /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
 		C791D7661FE61F2A00983F80 /* BarFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFactory.swift; sourceTree = "<group>"; };
 		C791D76A1FE61F2A00983F80 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		C791D7651FE61F2A00983F80 /* GameComponent */ = {
 			isa = PBXGroup;
 			children = (
-				C771B6E71FE7FC7300F0C277 /* BarController.swift */,
 				C791D7661FE61F2A00983F80 /* BarFactory.swift */,
 				C791D76A1FE61F2A00983F80 /* Level.swift */,
 				90453DA524EF61DA00B56A91 /* Bars.swift */,
@@ -346,7 +343,6 @@
 				C791D7AB1FE6205E00983F80 /* Color.swift in Sources */,
 				C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */,
 				C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */,
-				C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */,
 				C791D7BA1FE6205E00983F80 /* BarFactory.swift in Sources */,
 				C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
