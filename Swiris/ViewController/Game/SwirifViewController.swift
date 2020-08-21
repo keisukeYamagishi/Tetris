@@ -18,7 +18,6 @@ class Swiris: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var nextBarField: UIView!
     @IBOutlet var rotstionButton: UIButton!
-    var nextB: Bar!
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: UIView!
     var isGameOver: Bool!
@@ -31,10 +30,7 @@ class Swiris: UIViewController {
     var NBColor: Int!
     var isDownBar: Bool!
     var isPopup: Bool!
-    var userName: String!
     var levelMng: LevelManager!
-    var debug: Int = 0
-    var isAd: Bool = false
     var bars: Bars! = Bars()
 
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
@@ -442,11 +438,11 @@ class Swiris: UIViewController {
 
         for tate in 0 ..< 4 {
             for yoko in 0 ..< 4 {
-                nextB = Bar(frame: CGRect(origin: CGPoint(x: CGFloat(yoko) * (74 / 4),
-                                                          y: CGFloat(tate) * (74 / 4)),
-                                          size: CGSize(width: CGFloat(18.5),
-                                                       height: CGFloat(18.5))), tag: tag)
-                nextBarField.addSubview(nextB)
+                let nextBar = Bar(frame: CGRect(origin: CGPoint(x: CGFloat(yoko) * (74 / 4),
+                                                                y: CGFloat(tate) * (74 / 4)),
+                                                size: CGSize(width: CGFloat(18.5),
+                                                             height: CGFloat(18.5))), tag: tag)
+                nextBarField.addSubview(nextBar)
                 tag += 1
             }
         }

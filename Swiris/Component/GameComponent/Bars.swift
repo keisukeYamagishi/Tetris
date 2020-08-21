@@ -12,6 +12,7 @@ var Yoko: Int = 10 // 7
 var Tate: Int = 20 // 11var brewrisYoko: Int = 10 // 7
 var DPX = 4
 var DPY = 0
+
 public struct Bs {
     var bp = 0
     var bc = 0
@@ -21,13 +22,12 @@ class Bars {
     var values: [[Bs]] = []
     var noneed: [Cp] = []
     var cp: Cp = Cp(px: 0, py: 0)
-    
     var numberOfCount: Int {
         values.count
     }
 
     var yokoValue: [Bs] {
-        var yoko:[Bs] = []
+        var yoko: [Bs] = []
         for _ in 0 ..< Yoko {
             let bs = Bs()
             yoko.append(bs)
