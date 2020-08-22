@@ -267,7 +267,7 @@ extension Bars {
             values[ccp.py] = br
         }
     }
-    
+
     func isSwipe(which: Which) -> Bool {
         let flg = !isBarMove(which: which) && !isMoveJusgemnet(which: which)
         return flg
