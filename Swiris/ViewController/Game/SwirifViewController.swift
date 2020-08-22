@@ -36,17 +36,8 @@ class Swiris: UIViewController {
         navigationItem.titleView = navigationTitle(title: "Swiris")
         levelMng = LevelManager()
         setGesture()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         scoreLabel.adjustsFontSizeToFitWidth = true
         scoreLabel.text = "0"
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        view.layoutIfNeeded()
     }
 
     func setGesture() {
@@ -177,7 +168,7 @@ class Swiris: UIViewController {
         score = 0
         nextTheBar = nil
         theBar = nil
-        BarInitialze()
+        barInitialze()
         nextBarField.initializeField()
         theBar = Bars.getTheBar
         nextBarField.displayNextBar()
@@ -266,9 +257,7 @@ class Swiris: UIViewController {
         if bars.isBottom
             || bars.judgementBrew()
         {
-            bars.noneed = Array()
-            bars.cp.px = DPX
-            bars.cp.py = DPY
+            bars.initalize()
             setNextBar()
             bars.store(cbColor: CBColor)
             if bars.isInAgreement() {
@@ -285,7 +274,7 @@ class Swiris: UIViewController {
         }
     }
 
-    func BarInitialze() {
+    func barInitialze() {
         var tag: Int = 1
         for _ in 0 ..< Tate {
             for _ in 0 ..< Yoko {

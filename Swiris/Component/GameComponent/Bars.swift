@@ -44,6 +44,12 @@ class Bars {
             values.append(yokoValue)
         }
     }
+    
+    func initalize(){
+        noneed = Array()
+        cp.px = DPX
+        cp.py = DPY
+    }
 }
 
 extension Bars {
@@ -158,20 +164,20 @@ extension Bars {
 
         while count < (numberOfCount - 1) {
             for current in (0 ..< noneed.count).reversed() {
-                let cPosition: Cp = noneed[current]
+                let cP: Cp = noneed[current]
 
-                let judge = cPosition.py + count
+                let judge = cP.py + count
 
                 if judge >= Tate {
                     break
                 }
 
-                let bar: [Bs] = values[cPosition.py + count]
+                let bar: [Bs] = values[cP.py + count]
 
-                if bar[cPosition.px].bp == Bars.Store {
+                if bar[cP.px].bp == Bars.Store {
                     isBottom = true
 
-                    cp.py = (count - 1) + cPosition.py
+                    cp.py = (count - 1) + cP.py
 
                     for nd in 0 ..< noneed.count {
                         var n = noneed[nd]
@@ -179,8 +185,6 @@ extension Bars {
 
                         if cp.py == 1 {
                             gameOver()
-//                            moveBar.invalidate()
-//                            gameOverAlert()
                             return
                         }
 
