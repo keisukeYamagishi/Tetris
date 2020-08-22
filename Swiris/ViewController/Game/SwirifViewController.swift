@@ -26,7 +26,6 @@ class Swiris: UIViewController {
     var moveBar: Timer!
     var CBColor: Int!
     var isDownBar: Bool!
-    var isPopup: Bool!
     var levelMng: LevelManager!
     var bars: Bars! = Bars()
 
@@ -136,9 +135,7 @@ class Swiris: UIViewController {
     }
 
     @objc func downBar() {
-        if isDownBar == false,
-            isPopup == false
-        {
+        if isDownBar == false {
             isDownBar = true
             var isBottom = false
             var count = 1
@@ -168,12 +165,9 @@ class Swiris: UIViewController {
                             bars.cp.py = (count - 1) + n.py
 
                             if bars.cp.py == 1 {
-                                if isPopup == false {
-                                    isPopup = true
-                                    moveBar.invalidate()
-                                    gameOverAlert()
-                                    return
-                                }
+                                moveBar.invalidate()
+                                gameOverAlert()
+                                return
                             }
 
                             n.py = bars.cp.py
@@ -264,7 +258,6 @@ class Swiris: UIViewController {
         levelLbl.text = levelMng.levelText
         scoreLabel.text = "0"
         score = 0
-        isPopup = false
         nextTheBar = nil
         theBar = nil
         isDownBar = false
