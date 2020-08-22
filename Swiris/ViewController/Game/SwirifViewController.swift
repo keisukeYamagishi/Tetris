@@ -253,7 +253,7 @@ class Swiris: UIViewController {
                 }
             }
             theBar = []
-            bars.values = storeBar(store: bars.values)
+            bars.store(cbColor: CBColor)
 
             var tag: Int
 
@@ -283,8 +283,11 @@ class Swiris: UIViewController {
                 gameOverAlert()
                 return
             }
-            bars.values = storeBar(store: bars.values)
-            isInAgreement()
+            bars.store(cbColor: CBColor)
+            if bars.isInAgreement() {
+                barDisplay()
+                setScore(sc: bars.removeLists.count)
+            }
             isDownBar = false
         }
     }
@@ -459,9 +462,14 @@ class Swiris: UIViewController {
             bars.cp.px = DPX
             bars.cp.py = DPY
             setNextBar()
-            bars.values = storeBar(store: bars.values)
+            bars.store(cbColor: CBColor)
             isGameOver = GameOver(bar: theBar)
-            isInAgreement()
+            
+            if bars.isInAgreement() {
+                barDisplay()
+                setScore(sc: bars.removeLists.count)
+            }
+            bars.store(cbColor: CBColor)
             isDownBar = false
 
         } else {
@@ -506,23 +514,6 @@ class Swiris: UIViewController {
         }
     }
 
-    func storeBar(store: [[Bs]]) -> [[Bs]] {
-        var stores = store
-
-        for tate in 0 ..< stores.count {
-            var yokos: [Bs] = stores[tate]
-
-            for yoko in 0 ..< yokos.count {
-                if yokos[yoko].bp == Bars.Move {
-                    yokos[yoko].bp = Bars.Store
-                    yokos[yoko].bc = CBColor
-                    stores[tate] = yokos
-                }
-            }
-        }
-        return stores
-    }
-
     func noNeedEmurate() {
         for yoko in 0 ..< bars.numberOfCount {
             var tate: [Bs] = bars.values[yoko]
@@ -558,59 +549,6 @@ class Swiris: UIViewController {
             }
         }
         return false
-    }
-
-    func isInAgreement() {
-        var removeLists: [Int] = []
-
-        for be in 0 ..< bars.numberOfCount {
-            let agreemnent: [Bs] = bars.values[be]
-            var isRemove: Bool = false
-
-            for agr in agreemnent {
-                if agr.bp == 0 {
-                    isRemove = true
-                }
-            }
-            if isRemove != true {
-                removeLists.append(be)
-            }
-        }
-
-        var isRm = false
-
-        for rm in removeLists {
-            bars.values.remove(at: rm)
-
-            bars.values.insert(bars.yokoValue, at: rm)
-
-            isRm = true
-        }
-
-        if isRm == true {
-            isRm = false
-
-            for rm in removeLists {
-                bars.values.remove(at: rm)
-                bars.values.insert(bars.yokoValue, at: 0)
-            }
-
-            var tag: Int = 1
-
-            for tate in 0 ..< Tate {
-                let Bar: [Bs] = bars.values[tate]
-
-                for yoko in 0 ..< Yoko {
-                    if Bar[yoko].bp == Bars.Move {
-                        let bar = brewView.viewWithTag(tag) as! Bar
-                        bar.brew(Bar[yoko].bc)
-                    }
-                    tag += 1
-                }
-            }
-            setScore(sc: removeLists.count)
-        }
-        bars.values = storeBar(store: bars.values)
     }
 
     func setScore(sc: Int) {

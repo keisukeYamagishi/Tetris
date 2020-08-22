@@ -25,6 +25,7 @@ class Bars {
     var values: [[Bs]] = []
     var noneed: [Cp] = []
     var cp: Cp = Cp(px: 0, py: 0)
+    var removeLists: [Int] = []
     var numberOfCount: Int {
         values.count
     }
@@ -140,6 +141,66 @@ extension Bars {
                     }
                 }
             }
+        }
+        return false
+    }
+    
+    func store(cbColor: Int) {
+        values = storeBar(store: values, cbColor: cbColor)
+    }
+    
+    func storeBar(store: [[Bs]], cbColor: Int) -> [[Bs]] {
+        var stores = store
+
+        for tate in 0 ..< stores.count {
+            var yokos: [Bs] = stores[tate]
+
+            for yoko in 0 ..< yokos.count {
+                if yokos[yoko].bp == Bars.Move {
+                    yokos[yoko].bp = Bars.Store
+                    yokos[yoko].bc = cbColor
+                    stores[tate] = yokos
+                }
+            }
+        }
+        return stores
+    }
+
+    func isInAgreement() -> Bool {
+        removeLists = []
+
+        for be in 0 ..< numberOfCount {
+            let agreemnent: [Bs] = values[be]
+            var isRemove: Bool = false
+
+            for agr in agreemnent {
+                if agr.bp == 0 {
+                    isRemove = true
+                }
+            }
+            if isRemove != true {
+                removeLists.append(be)
+            }
+        }
+
+        var isRm = false
+
+        for rm in removeLists {
+            values.remove(at: rm)
+
+            values.insert(yokoValue, at: rm)
+
+            isRm = true
+        }
+
+        if isRm {
+            isRm = false
+
+            for rm in removeLists {
+                values.remove(at: rm)
+                values.insert(yokoValue, at: 0)
+            }
+            return true
         }
         return false
     }
