@@ -447,7 +447,7 @@ class Swiris: UIViewController {
         } else {
             isBar = bars.judgementBrew()
             if isBar == false {
-                noNeedEmurate()
+                bars.noNeedEmurate()
                 isMove = false
                 isDown = true
                 bars.cp.py += 1
@@ -483,19 +483,6 @@ class Swiris: UIViewController {
                 }
                 tag += 1
             }
-        }
-    }
-
-    func noNeedEmurate() {
-        for yoko in 0 ..< bars.numberOfCount {
-            var tate: [Bs] = bars.values[yoko]
-
-            for brew in 0 ..< tate.count {
-                if tate[brew].bp == Bars.Move {
-                    tate[brew].bp = 0
-                }
-            }
-            bars.values[yoko] = tate
         }
     }
 

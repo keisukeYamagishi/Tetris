@@ -244,4 +244,17 @@ extension Bars {
         }
         return false
     }
+
+    func noNeedEmurate() {
+        for yoko in 0 ..< numberOfCount {
+            var tate: [Bs] = values[yoko]
+
+            for brew in 0 ..< tate.count {
+                if tate[brew].bp == Bars.Move {
+                    tate[brew].bp = 0
+                }
+            }
+            values[yoko] = tate
+        }
+    }
 }
