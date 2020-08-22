@@ -108,29 +108,26 @@ class Swiris: UIViewController {
     }
 
     func swipeLeft() {
-        if bars.noneed != nil {
-            if isBarMove(which: .left,
-                         noNd: bars.noneed) != true
+        if isBarMove(which: .left,
+                     noNd: bars.noneed) != true
+        {
+            if isMoveJusgemnet(which: .left,
+                               noNd: bars.noneed) != true
             {
-                if isMoveJusgemnet(which: .left,
-                                   noNd: bars.noneed) != true
-                {
-                    if isBar == false {
-                        let cCp: [Cp] = bars.noneed
-                        removeCurrent(cCp: cCp)
-                        bars.cp.px -= 1
-                        moveBar.invalidate()
-                        bars.move(bar: theBar, cColor: CBColor)
-                        barDisplay()
-                        startEngine()
-                    }
+                if isBar == false {
+                    let cCp: [Cp] = bars.noneed
+                    removeCurrent(cCp: cCp)
+                    bars.cp.px -= 1
+                    moveBar.invalidate()
+                    bars.move(bar: theBar, cColor: CBColor)
+                    barDisplay()
+                    startEngine()
                 }
             }
         }
     }
 
     func swipeRight() {
-        if bars.noneed != nil {
             if isBarMove(which: .right,
                          noNd: bars.noneed) != true
             {
@@ -146,7 +143,6 @@ class Swiris: UIViewController {
                     }
                 }
             }
-        }
     }
 
     func isBarMove(which: Which, noNd: [Cp]) -> Bool {
@@ -189,8 +185,7 @@ class Swiris: UIViewController {
 
     @objc func downBar() {
         if isDownBar == false,
-            isPopup == false,
-            bars.noneed != nil
+            isPopup == false
         {
             isDownBar = true
             var isBottom = false
@@ -305,9 +300,7 @@ class Swiris: UIViewController {
     }
 
     @objc func tapRotation() {
-        if bars.noneed != nil {
-            rotation(bar: theBar)
-        }
+        rotation(bar: theBar)
     }
 
     /*
@@ -344,6 +337,7 @@ class Swiris: UIViewController {
         nextBarField.initializeField()
         theBar = Bars.getTheBar
         nextBarField.displayNextBar()
+        bars = Bars()
         bars.cp.px = DPX
         bars.cp.py = DPY
         CBColor = Color.radomNum()
