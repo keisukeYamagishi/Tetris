@@ -131,88 +131,13 @@ class Swiris: UIViewController {
     }
 
     @objc func downBar() {
-        var isBottom = false
-        var count = 1
-        let cCp: [Cp] = bars.noneed
-
-        bars.removeCurrent(cCp: cCp)
-
-        while count < (bars.numberOfCount - 1) {
-            for current in (0 ..< bars.noneed.count).reversed() {
-                let cPosition: Cp = bars.noneed[current]
-
-                let judge = cPosition.py + count
-
-                if judge >= Tate {
-                    break
-                }
-
-                let bar: [Bs] = bars.values[cPosition.py + count]
-
-                if bar[cPosition.px].bp == Bars.Store {
-                    isBottom = true
-
-                    bars.cp.py = (count - 1) + cPosition.py
-
-                    for nd in 0 ..< bars.noneed.count {
-                        var n = bars.noneed[nd]
-                        bars.cp.py = (count - 1) + n.py
-
-                        if bars.cp.py == 1 {
-                            moveBar.invalidate()
-                            gameOverAlert()
-                            return
-                        }
-
-                        n.py = bars.cp.py
-                        var tate: [Bs] = bars.values[n.py]
-                        tate[n.px].bp = 1
-                        bars.values[n.py] = tate
-                    }
-                    break
-                }
-            }
-            if isBottom == true {
-                break
-            }
-            count += 1
-        }
-
-        if isBottom == false {
-            bars.cp.py = count - 3
-            for tate in 0 ..< theBar.count {
-                let baryoko: [Int] = theBar[tate]
-
-                for yoko in 0 ..< baryoko.count {
-                    if baryoko[yoko] == Bars.Move {
-                        var brew: [Bs] = bars.values[bars.cp.py + tate]
-                        brew[yoko + bars.cp.px].bp = 1
-                        bars.values[bars.cp.py + tate] = brew
-                    }
-                }
-            }
+        bars.down(bar: theBar) {
+            moveBar.invalidate()
+            gameOverAlert()
         }
         theBar = []
         bars.store(cbColor: CBColor)
-
-        var tag: Int
-
-        tag = 1
-
-        for tate in 0 ..< Tate {
-            let isBar: [Bs] = bars.values[tate]
-
-            for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Store {
-                    let bar = brewView.viewWithTag(tag) as! Bar
-                    bar.brew(isBar[yoko].bc)
-                } else {
-                    let bar = brewView.viewWithTag(tag) as! Bar
-                    bar.noBrew()
-                }
-                tag += 1
-            }
-        }
+        storedDisplay()
         bars.cp.px = DPX
         bars.cp.py = DPY
         setNextBar()
@@ -384,6 +309,24 @@ class Swiris: UIViewController {
 
                 } else if isBar[yoko].bp != Bars.Store {
                     let bar: Bar = brewView.viewWithTag(tag) as! Bar
+                    bar.noBrew()
+                }
+                tag += 1
+            }
+        }
+    }
+
+    func storedDisplay() {
+        var tag: Int = 1
+        for tate in 0 ..< Tate {
+            let isBar: [Bs] = bars.values[tate]
+
+            for yoko in 0 ..< Yoko {
+                if isBar[yoko].bp == Bars.Store {
+                    let bar = brewView.viewWithTag(tag) as! Bar
+                    bar.brew(isBar[yoko].bc)
+                } else {
+                    let bar = brewView.viewWithTag(tag) as! Bar
                     bar.noBrew()
                 }
                 tag += 1

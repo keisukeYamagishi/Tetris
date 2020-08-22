@@ -149,6 +149,71 @@ extension Bars {
         values = storeBar(store: values, cbColor: cbColor)
     }
 
+    func down(bar: [[Int]], gameOver: () -> Void) {
+        var isBottom = false
+        var count = 1
+        let cCp: [Cp] = noneed
+
+        removeCurrent(cCp: cCp)
+
+        while count < (numberOfCount - 1) {
+            for current in (0 ..< noneed.count).reversed() {
+                let cPosition: Cp = noneed[current]
+
+                let judge = cPosition.py + count
+
+                if judge >= Tate {
+                    break
+                }
+
+                let bar: [Bs] = values[cPosition.py + count]
+
+                if bar[cPosition.px].bp == Bars.Store {
+                    isBottom = true
+
+                    cp.py = (count - 1) + cPosition.py
+
+                    for nd in 0 ..< noneed.count {
+                        var n = noneed[nd]
+                        cp.py = (count - 1) + n.py
+
+                        if cp.py == 1 {
+                            gameOver()
+//                            moveBar.invalidate()
+//                            gameOverAlert()
+                            return
+                        }
+
+                        n.py = cp.py
+                        var tate: [Bs] = values[n.py]
+                        tate[n.px].bp = 1
+                        values[n.py] = tate
+                    }
+                    break
+                }
+            }
+            if isBottom == true {
+                break
+            }
+            count += 1
+        }
+
+        if isBottom == false {
+            cp.py = count - 3
+            for tate in 0 ..< bar.count {
+                let baryoko: [Int] = bar[tate]
+
+                for yoko in 0 ..< baryoko.count {
+                    if baryoko[yoko] == Bars.Move {
+                        var brew: [Bs] = values[cp.py + tate]
+                        brew[yoko + cp.px].bp = 1
+                        values[cp.py + tate] = brew
+                    }
+                }
+            }
+        }
+    }
+
     func storeBar(store: [[Bs]], cbColor: Int) -> [[Bs]] {
         var stores = store
 
