@@ -24,7 +24,6 @@ class Swiris: UIViewController {
     var theBar: [[Int]]!
     var nextTheBar: [[Int]]!
     var moveBar: Timer!
-    var isBar: Bool = false
     var CBColor: Int!
     var isDownBar: Bool!
     var isPopup: Bool!
@@ -226,7 +225,6 @@ class Swiris: UIViewController {
                     tag += 1
                 }
             }
-            isBar = false
             bars.cp.px = DPX
             bars.cp.py = DPY
             setNextBar()
@@ -270,7 +268,6 @@ class Swiris: UIViewController {
         nextTheBar = nil
         theBar = nil
         isDownBar = false
-        isBar = false
         isMove = false
         BarInitialze()
         nextBarField.initializeField()
@@ -363,7 +360,7 @@ class Swiris: UIViewController {
 
     @objc func moveBarBrew() {
 //        BarLog(bar: theBar)
-        if isBar == false {
+        if !bars.judgementBrew() {
             if isMove == false {
                 isMove = true
                 bars.move(bar: theBar, cColor: CBColor)
@@ -373,10 +370,9 @@ class Swiris: UIViewController {
         }
 
         if bars.isBottom
-            || isBar
+            || bars.judgementBrew()
         {
             bars.noneed = Array()
-            isBar = false
             bars.cp.px = DPX
             bars.cp.py = DPY
             setNextBar()
@@ -389,8 +385,7 @@ class Swiris: UIViewController {
             isDownBar = false
 
         } else {
-            isBar = bars.judgementBrew()
-            if isBar == false {
+            if !bars.judgementBrew() {
                 bars.noNeedEmurate()
                 isMove = false
                 isDown = true
