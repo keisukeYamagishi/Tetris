@@ -60,9 +60,7 @@ final class Bars {
         cp.px = DPX
         cp.py = DPY
     }
-}
 
-extension Bars {
     func move(bar: [[Int]], cColor: Int) {
         var noNeedCo: Int = 0
         var storeNoNeed: [Cp] = []
