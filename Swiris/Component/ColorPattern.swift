@@ -8,19 +8,19 @@
 
 import UIKit
 
-public var ColorPattern = ["5AC8FA",
-                           "FFCC00",
-                           "FF9500",
-                           "FF2D55",
-                           "007AFF",
-                           "4CD964",
-                           "FF3B30",
-                           "8E8E93",
-                           "EFEFF4",
-                           "CECED2",
-                           "007AFF"]
+var ColorPattern = ["5AC8FA",
+                    "FFCC00",
+                    "FF9500",
+                    "FF2D55",
+                    "007AFF",
+                    "4CD964",
+                    "FF3B30",
+                    "8E8E93",
+                    "EFEFF4",
+                    "CECED2",
+                    "007AFF"]
 
-public let topBarColor = "4CD964"
-public let topBarTintColor = "34AADC"
-public let BorderColor = UIColor(hex: "EFEFF4")
-public let naviBarTitleColor = "FF3B30"
+let topBarColor = "4CD964"
+let topBarTintColor = "34AADC"
+let BorderColor = UIColor(hex: "EFEFF4")
+let naviBarTitleColor = "FF3B30"

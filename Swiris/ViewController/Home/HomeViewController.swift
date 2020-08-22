@@ -1,7 +1,7 @@
 import UIKit
 
 @available(iOS 10.0, *)
-class HomeViewController: UIViewController, UINavigationControllerDelegate {
+final class HomeViewController: UIViewController {
     @IBOutlet var gameTitle: UILabel!
     @IBOutlet var startGame: UIButton!
 
@@ -21,7 +21,10 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate {
         let brewris = (storyboard?.instantiateViewController(withIdentifier: "Swiris"))! as! Swiris
         navigationController?.pushViewController(brewris, animated: true)
     }
+}
 
+@available(iOS 10.0, *)
+extension HomeViewController: UINavigationControllerDelegate {
     func navigationController(_: UINavigationController,
                               animationControllerFor operation: UINavigationController.Operation,
                               from _: UIViewController,

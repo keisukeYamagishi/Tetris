@@ -20,14 +20,14 @@ let LEVEL4 = 23000
 let LEVEL3 = 10000
 let LEVEL2 = 3000
 
-class LevelManager {
-    public var currentLevel: Int = 1
+final class LevelManager {
+    var currentLevel: Int = 1
 
-    public var isLvUp: Bool = false
+    var isLvUp: Bool = false
 
-    public static let levels: [String] = ["0.9", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2", "0.15", "0.1", "0.09", "0.085"]
+    static let levels: [String] = ["0.9", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2", "0.15", "0.1", "0.09", "0.085"]
 
-    public var levelStr: String = "Lv: "
+    var levelStr: String = "Lv: "
 
     var levelText: String {
         levelStr + String(currentLevel)

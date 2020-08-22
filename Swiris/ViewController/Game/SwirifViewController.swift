@@ -1,17 +1,7 @@
 import UIKit
 
-public struct Cp {
-    var px = 0
-    var py = 0
-}
-
-public enum Which: Int {
-    case left = 0
-    case right = 1
-}
-
 @available(iOS 10.0, *)
-class Swiris: UIViewController {
+final class Swiris: UIViewController {
     var barSize: CGFloat = 20
     var score: Int = 0
     @IBOutlet var scoreLabel: UILabel!
@@ -176,7 +166,7 @@ class Swiris: UIViewController {
         bars.cp.px = DPX
         bars.cp.py = DPY
         CBColor = Color.radomNum()
-        theBar = Bars.getTheBar // getTheBar()
+        theBar = Bars.getTheBar
         startGame()
     }
 
@@ -247,7 +237,6 @@ class Swiris: UIViewController {
     }
 
     @objc func moveBarBrew() {
-//        BarLog(bar: theBar)
         if !bars.judgementBrew() {
             bars.move(bar: theBar, cColor: CBColor)
             BarLog(bar: bars.values)

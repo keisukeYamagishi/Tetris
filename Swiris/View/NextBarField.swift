@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NextBarField: UIView {
+final class NextBarField: UIView {
     var bar: Bar!
     var nextBar: [[Int]] = []
     var NBColor: Int = 0
@@ -57,8 +57,8 @@ class NextBarField: UIView {
 
     func displayNextBar() {
         var tag: Int = 1
-        nextBar = Bars.getTheBar // getTheBar()
-        NBColor = Color.radomNum() // BarColor()
+        nextBar = Bars.getTheBar
+        NBColor = Color.radomNum()
         for tate in 0 ..< 4 {
             let nb = nextBar[tate]
 

@@ -13,12 +13,22 @@ var Tate: Int = 20 // 11var brewrisYoko: Int = 10 // 7
 var DPX = 4
 var DPY = 0
 
-public struct Bs {
+struct Cp {
+    var px = 0
+    var py = 0
+}
+
+enum Which: Int {
+    case left = 0
+    case right = 1
+}
+
+struct Bs {
     var bp = 0
     var bc = 0
 }
 
-class Bars {
+final class Bars {
     static let Noting = 0
     static let Move = 1
     static let Store = 2
@@ -44,8 +54,8 @@ class Bars {
             values.append(yokoValue)
         }
     }
-    
-    func initalize(){
+
+    func initalize() {
         noneed = Array()
         cp.px = DPX
         cp.py = DPY

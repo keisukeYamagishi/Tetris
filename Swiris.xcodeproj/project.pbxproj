@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9002525624F0DA0300879652 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525524F0DA0300879652 /* UIViewController+.swift */; };
+		9002525824F0E7AF00879652 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525724F0E7AF00879652 /* UIColor+.swift */; };
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		9002525524F0DA0300879652 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		9002525724F0E7AF00879652 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				9002525524F0DA0300879652 /* UIViewController+.swift */,
+				9002525724F0E7AF00879652 /* UIColor+.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,
+				9002525824F0E7AF00879652 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
