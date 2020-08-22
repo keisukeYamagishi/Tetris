@@ -257,4 +257,14 @@ extension Bars {
             values[yoko] = tate
         }
     }
+
+    func removeCurrent(cCp: [Cp]) {
+        for ccp in cCp {
+            var br = values[ccp.py]
+
+            br[ccp.px].bp = 0
+            br[ccp.px].bc = 0
+            values[ccp.py] = br
+        }
+    }
 }

@@ -115,7 +115,7 @@ class Swiris: UIViewController {
             {
                 if isBar == false {
                     let cCp: [Cp] = bars.noneed
-                    removeCurrent(cCp: cCp)
+                    bars.removeCurrent(cCp: cCp)
                     bars.cp.px -= 1
                     moveBar.invalidate()
                     bars.move(bar: theBar, cColor: CBColor)
@@ -135,7 +135,7 @@ class Swiris: UIViewController {
             {
                 if isBar == false {
                     let cCp: [Cp] = bars.noneed
-                    removeCurrent(cCp: cCp)
+                    bars.removeCurrent(cCp: cCp)
                     bars.cp.px += 1
                     bars.move(bar: theBar, cColor: CBColor)
                     barDisplay()
@@ -191,7 +191,7 @@ class Swiris: UIViewController {
             var count = 1
             let cCp: [Cp] = bars.noneed
 
-            removeCurrent(cCp: cCp)
+            bars.removeCurrent(cCp: cCp)
 
             while count < (bars.numberOfCount - 1) {
                 for current in (0 ..< bars.noneed.count).reversed() {
@@ -285,16 +285,6 @@ class Swiris: UIViewController {
         }
     }
 
-    func removeCurrent(cCp: [Cp]) {
-        for ccp in cCp {
-            var br = bars.values[ccp.py]
-
-            br[ccp.px].bp = 0
-            br[ccp.px].bc = 0
-            bars.values[ccp.py] = br
-        }
-    }
-
     @objc func tapRotation() {
         rotation(bar: theBar)
     }
@@ -312,7 +302,7 @@ class Swiris: UIViewController {
             return
         }
         let cCp: [Cp] = bars.noneed
-        removeCurrent(cCp: cCp)
+        bars.removeCurrent(cCp: cCp)
         theBar = rotations
         bars.move(bar: theBar, cColor: CBColor)
         barDisplay()
