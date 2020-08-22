@@ -267,4 +267,43 @@ extension Bars {
             values[ccp.py] = br
         }
     }
+    
+    func isSwipe(which: Which) -> Bool {
+        let flg = !isBarMove(which: which) && !isMoveJusgemnet(which: which)
+        return flg
+    }
+
+    func isBarMove(which: Which) -> Bool {
+        for cpVal in noneed {
+            if which == .left {
+                if cpVal.px <= 0 {
+                    return true
+                }
+            } else if which == .right {
+                if cpVal.px >= (Yoko - 1) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+    func isMoveJusgemnet(which: Which) -> Bool {
+        for current in 0 ..< noneed.count {
+            let cPosition: Cp = noneed[current]
+
+            let bar: [Bs] = values[cPosition.py]
+
+            if which == .left {
+                if bar[cPosition.px - 1].bp == Bars.Store {
+                    return true
+                }
+            } else if which == .right {
+                if bar[cPosition.px + 1].bp == Bars.Store {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }

@@ -107,75 +107,29 @@ class Swiris: UIViewController {
     }
 
     func swipeLeft() {
-        if isBarMove(which: .left,
-                     noNd: bars.noneed) != true
-        {
-            if isMoveJusgemnet(which: .left,
-                               noNd: bars.noneed) != true
-            {
-                if isBar == false {
-                    let cCp: [Cp] = bars.noneed
-                    bars.removeCurrent(cCp: cCp)
-                    bars.cp.px -= 1
-                    moveBar.invalidate()
-                    bars.move(bar: theBar, cColor: CBColor)
-                    barDisplay()
-                    startEngine()
-                }
+        if bars.isSwipe(which: .left) {
+            if !bars.judgementBrew() {
+                let cCp: [Cp] = bars.noneed
+                bars.removeCurrent(cCp: cCp)
+                bars.cp.px -= 1
+                moveBar.invalidate()
+                bars.move(bar: theBar, cColor: CBColor)
+                barDisplay()
+                startEngine()
             }
         }
     }
 
     func swipeRight() {
-        if isBarMove(which: .right,
-                     noNd: bars.noneed) != true
-        {
-            if isMoveJusgemnet(which: .right,
-                               noNd: bars.noneed) != true
-            {
-                if isBar == false {
-                    let cCp: [Cp] = bars.noneed
-                    bars.removeCurrent(cCp: cCp)
-                    bars.cp.px += 1
-                    bars.move(bar: theBar, cColor: CBColor)
-                    barDisplay()
-                }
+        if bars.isSwipe(which: .right) {
+            if !bars.judgementBrew() {
+                let cCp: [Cp] = bars.noneed
+                bars.removeCurrent(cCp: cCp)
+                bars.cp.px += 1
+                bars.move(bar: theBar, cColor: CBColor)
+                barDisplay()
             }
         }
-    }
-
-    func isBarMove(which: Which, noNd: [Cp]) -> Bool {
-        for cpVal in noNd {
-            if which == .left {
-                if cpVal.px <= 0 {
-                    return true
-                }
-            } else if which == .right {
-                if cpVal.px >= (Yoko - 1) {
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-    func isMoveJusgemnet(which: Which, noNd: [Cp]) -> Bool {
-        for current in 0 ..< bars.noneed.count {
-            let cPosition: Cp = noNd[current]
-
-            let bar: [Bs] = bars.values[cPosition.py]
-
-            if which == .left {
-                if bar[cPosition.px - 1].bp == Bars.Store {
-                    return true
-                }
-            } else if which == .right {
-                if bar[cPosition.px + 1].bp == Bars.Store {
-                    return true
-                }
-            }
-        }
-        return false
     }
 
     @objc func downGes() {
