@@ -19,6 +19,9 @@ public struct Bs {
 }
 
 class Bars {
+    static let Noting = 0
+    static let Move = 1
+    static let Store = 2
     var values: [[Bs]] = []
     var noneed: [Cp] = []
     var cp: Cp = Cp(px: 0, py: 0)
@@ -111,5 +114,33 @@ extension Bars {
 
     static var getTheBar: [[Int]] {
         BarLists[Int(arc4random_uniform(UInt32(BarLists.count)))]
+    }
+
+    func fixPosition(bar: [[Int]]) -> Bool {
+        if cp.px <= 0 {
+            cp.px = 0
+            // return true
+        }
+
+        if cp.px >= (Yoko - 3) {
+            cp.px = (Yoko - 3) - 1
+            // return true
+        }
+
+        for tate in 0 ..< bar.count {
+            let baryoko: [Int] = bar[tate]
+
+            for yoko in 0 ..< baryoko.count {
+                if baryoko[yoko] == 1 {
+                    let brew: [Bs] = values[cp.py + tate]
+                    let isRot = brew[cp.px + yoko]
+
+                    if isRot.bp == 2 {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
     }
 }

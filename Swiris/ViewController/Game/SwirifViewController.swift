@@ -319,7 +319,7 @@ class Swiris: UIViewController {
     func rotation(bar: [[Int]]) {
         let rotations = bars.spin(bars: bar)
 
-        if fixPosition(bar: rotations) == true {
+        if bars.fixPosition(bar: rotations) == true {
             return
         }
         let cCp: [Cp] = bars.noneed
@@ -327,34 +327,6 @@ class Swiris: UIViewController {
         theBar = rotations
         bars.move(bar: theBar, cColor: CBColor)
         barDisplay()
-    }
-
-    func fixPosition(bar: [[Int]]) -> Bool {
-        if bars.cp.px <= 0 {
-            bars.cp.px = 0
-            // return true
-        }
-
-        if bars.cp.px >= (Yoko - 3) {
-            bars.cp.px = (Yoko - 3) - 1
-            // return true
-        }
-
-        for tate in 0 ..< bar.count {
-            let baryoko: [Int] = bar[tate]
-
-            for yoko in 0 ..< baryoko.count {
-                if baryoko[yoko] == 1 {
-                    let brew: [Bs] = bars.values[bars.cp.py + tate]
-                    let isRot = brew[bars.cp.px + yoko]
-
-                    if isRot.bp == 2 {
-                        return true
-                    }
-                }
-            }
-        }
-        return false
     }
 
     func startBrew() {
