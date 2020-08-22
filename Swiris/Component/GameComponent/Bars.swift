@@ -227,4 +227,21 @@ extension Bars {
         }
         return false
     }
+
+    func isGameOver(bar: [[Int]]) -> Bool {
+        for tate in (0 ..< bar.count).reversed() {
+            let baryoko: [Int] = bar[tate]
+
+            for yoko in 0 ..< baryoko.count {
+                if baryoko[yoko] == 1 {
+                    let brew: [Bs] = values[cp.py + tate]
+                    if brew[yoko + cp.px].bp != 0 {
+                        print("GAME OVER")
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
 }

@@ -20,7 +20,6 @@ class Swiris: UIViewController {
     @IBOutlet var rotstionButton: UIButton!
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: UIView!
-    var isGameOver: Bool!
     @IBOutlet var levelLbl: UILabel!
     var theBar: [[Int]]!
     var nextTheBar: [[Int]]!
@@ -277,12 +276,6 @@ class Swiris: UIViewController {
             bars.cp.px = DPX
             bars.cp.py = DPY
             setNextBar()
-            if isGameOver == true {
-                isPopup = true
-                moveBar.invalidate()
-                gameOverAlert()
-                return
-            }
             bars.store(cbColor: CBColor)
             if bars.isInAgreement() {
                 barDisplay()
@@ -335,7 +328,6 @@ class Swiris: UIViewController {
         isDownBar = false
         isBar = false
         isMove = false
-        isGameOver = false
         BarInitialze()
         nextBarField.initializeField()
         theBar = Bars.getTheBar
@@ -397,26 +389,12 @@ class Swiris: UIViewController {
 
     func setNextBar() {
         theBar = nextBarField.nextBar
-        isGameOver = GameOver(bar: theBar)
+        if bars.isGameOver(bar: theBar) {
+            moveBar.invalidate()
+            gameOverAlert()
+        }
         CBColor = nextBarField.NBColor
         nextBarField.displayNextBar()
-    }
-
-    func GameOver(bar: [[Int]]) -> Bool {
-        for tate in (0 ..< bar.count).reversed() {
-            let baryoko: [Int] = bar[tate]
-
-            for yoko in 0 ..< baryoko.count {
-                if baryoko[yoko] == 1 {
-                    let brew: [Bs] = bars.values[bars.cp.py + tate]
-                    if brew[yoko + bars.cp.px].bp != 0 {
-                        print("GAME OVER")
-                        return true
-                    }
-                }
-            }
-        }
-        return false
     }
 
     func gameOverAlert() {
@@ -447,10 +425,6 @@ class Swiris: UIViewController {
                 bars.move(bar: theBar, cColor: CBColor)
                 BarLog(bar: bars.values)
                 barDisplay()
-                if isGameOver == true {
-                    moveBar.invalidate()
-                    gameOverAlert()
-                }
             }
         }
 
@@ -463,8 +437,6 @@ class Swiris: UIViewController {
             bars.cp.py = DPY
             setNextBar()
             bars.store(cbColor: CBColor)
-            isGameOver = GameOver(bar: theBar)
-
             if bars.isInAgreement() {
                 barDisplay()
                 setScore(sc: bars.removeLists.count)
