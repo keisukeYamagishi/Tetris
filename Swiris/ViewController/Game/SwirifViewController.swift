@@ -171,11 +171,11 @@ class Swiris: UIViewController {
             let bar: [Bs] = bars.values[cPosition.py]
 
             if which == .left {
-                if bar[cPosition.px - 1].bp == 2 {
+                if bar[cPosition.px - 1].bp == Bars.Store {
                     return true
                 }
             } else if which == .right {
-                if bar[cPosition.px + 1].bp == 2 {
+                if bar[cPosition.px + 1].bp == Bars.Store {
                     return true
                 }
             }
@@ -211,7 +211,7 @@ class Swiris: UIViewController {
 
                     let bar: [Bs] = bars.values[cPosition.py + count]
 
-                    if bar[cPosition.px].bp == 2 {
+                    if bar[cPosition.px].bp == Bars.Store {
                         isBottom = true
 
                         bars.cp.py = (count - 1) + cPosition.py
@@ -249,7 +249,7 @@ class Swiris: UIViewController {
                     let baryoko: [Int] = theBar[tate]
 
                     for yoko in 0 ..< baryoko.count {
-                        if baryoko[yoko] == 1 {
+                        if baryoko[yoko] == Bars.Move {
                             var brew: [Bs] = bars.values[bars.cp.py + tate]
                             brew[yoko + bars.cp.px].bp = 1
                             bars.values[bars.cp.py + tate] = brew
@@ -268,7 +268,7 @@ class Swiris: UIViewController {
                 let isBar: [Bs] = bars.values[tate]
 
                 for yoko in 0 ..< Yoko {
-                    if isBar[yoko].bp == 2 {
+                    if isBar[yoko].bp == Bars.Store {
                         let bar = brewView.viewWithTag(tag) as! Bar
                         bar.brew(isBar[yoko].bc)
                     } else {
@@ -499,11 +499,11 @@ class Swiris: UIViewController {
             let isBar: [Bs] = bars.values[tate]
 
             for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == 1 {
+                if isBar[yoko].bp == Bars.Move {
                     let bar = brewView.viewWithTag(tag) as! Bar
                     bar.brew(isBar[yoko].bc)
 
-                } else if isBar[yoko].bp != 2 {
+                } else if isBar[yoko].bp != Bars.Store {
                     let bar: Bar = brewView.viewWithTag(tag) as! Bar
                     bar.noBrew()
                 }
@@ -519,8 +519,8 @@ class Swiris: UIViewController {
             var yokos: [Bs] = stores[tate]
 
             for yoko in 0 ..< yokos.count {
-                if yokos[yoko].bp == 1 {
-                    yokos[yoko].bp = 2
+                if yokos[yoko].bp == Bars.Move {
+                    yokos[yoko].bp = Bars.Store
                     yokos[yoko].bc = CBColor
                     stores[tate] = yokos
                 }
@@ -534,7 +534,7 @@ class Swiris: UIViewController {
             var tate: [Bs] = bars.values[yoko]
 
             for brew in 0 ..< tate.count {
-                if tate[brew].bp == 1 {
+                if tate[brew].bp == Bars.Move {
                     tate[brew].bp = 0
                 }
             }
@@ -548,7 +548,7 @@ class Swiris: UIViewController {
 
             let bar: [Bs] = bars.values[cPosition.py + 1]
 
-            if bar[cPosition.px].bp == 2 {
+            if bar[cPosition.px].bp == Bars.Store {
                 return true
             }
         }
@@ -607,7 +607,7 @@ class Swiris: UIViewController {
                 let Bar: [Bs] = bars.values[tate]
 
                 for yoko in 0 ..< Yoko {
-                    if Bar[yoko].bp == 2 {
+                    if Bar[yoko].bp == Bars.Move {
                         let bar = brewView.viewWithTag(tag) as! Bar
                         bar.brew(Bar[yoko].bc)
                     }
