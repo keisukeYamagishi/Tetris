@@ -527,19 +527,6 @@ class Swiris: UIViewController {
         }
     }
 
-//    func judgementBrew() -> Bool {
-//        for current in (0 ..< bars.noneed.count).reversed() {
-//            let cPosition: Cp = bars.noneed[current]
-//
-//            let bar: [Bs] = bars.values[cPosition.py + 1]
-//
-//            if bar[cPosition.px].bp == Bars.Store {
-//                return true
-//            }
-//        }
-//        return false
-//    }
-
     func setScore(sc: Int) {
         score = score + 10 * sc * (levelMng.currentLevel * 5)
         if levelMng.isLevelUp(score: score) {
