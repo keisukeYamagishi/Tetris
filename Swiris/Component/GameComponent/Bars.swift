@@ -144,11 +144,11 @@ extension Bars {
         }
         return false
     }
-    
+
     func store(cbColor: Int) {
         values = storeBar(store: values, cbColor: cbColor)
     }
-    
+
     func storeBar(store: [[Bs]], cbColor: Int) -> [[Bs]] {
         var stores = store
 
@@ -216,15 +216,15 @@ extension Bars {
     }
 
     func judgementBrew() -> Bool {
-           for current in (0 ..< noneed.count).reversed() {
-               let cPosition: Cp = noneed[current]
+        for current in (0 ..< noneed.count).reversed() {
+            let cPosition = noneed[current]
 
-               let bar = values[cPosition.py + 1]
+            let bar = values[cPosition.py + 1]
 
-               if bar[cPosition.px].bp == Bars.Store {
-                   return true
-               }
-           }
-           return false
-       }
+            if bar[cPosition.px].bp == Bars.Store {
+                return true
+            }
+        }
+        return false
+    }
 }

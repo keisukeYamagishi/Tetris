@@ -128,21 +128,21 @@ class Swiris: UIViewController {
     }
 
     func swipeRight() {
-            if isBarMove(which: .right,
-                         noNd: bars.noneed) != true
+        if isBarMove(which: .right,
+                     noNd: bars.noneed) != true
+        {
+            if isMoveJusgemnet(which: .right,
+                               noNd: bars.noneed) != true
             {
-                if isMoveJusgemnet(which: .right,
-                                   noNd: bars.noneed) != true
-                {
-                    if isBar == false {
-                        let cCp: [Cp] = bars.noneed
-                        removeCurrent(cCp: cCp)
-                        bars.cp.px += 1
-                        bars.move(bar: theBar, cColor: CBColor)
-                        barDisplay()
-                    }
+                if isBar == false {
+                    let cCp: [Cp] = bars.noneed
+                    removeCurrent(cCp: cCp)
+                    bars.cp.px += 1
+                    bars.move(bar: theBar, cColor: CBColor)
+                    barDisplay()
                 }
             }
+        }
     }
 
     func isBarMove(which: Which, noNd: [Cp]) -> Bool {
@@ -464,7 +464,7 @@ class Swiris: UIViewController {
             setNextBar()
             bars.store(cbColor: CBColor)
             isGameOver = GameOver(bar: theBar)
-            
+
             if bars.isInAgreement() {
                 barDisplay()
                 setScore(sc: bars.removeLists.count)
