@@ -23,7 +23,7 @@ enum Which: Int {
     case right = 1
 }
 
-struct Bs {
+public struct Bs {
     var bp = 0
     var bc = 0
 }

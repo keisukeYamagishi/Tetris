@@ -10,19 +10,19 @@ import UIKit
 
 // MARK: - Action
 
-struct AlertAction {
-    let title: String
-    let type: Int
-    let textField: UITextField?
-    let style: UIAlertAction.Style
-    var handler: ((UIAlertAction, [UITextField]?) -> Void)?
+public struct AlertAction {
+    public let title: String
+    public let type: Int
+    public let textField: UITextField?
+    public let style: UIAlertAction.Style
+    public var handler: ((UIAlertAction, [UITextField]?) -> Void)?
 
-    init(title: String = "",
-         type: Int = 0,
-         textField: UITextField? = nil,
-         placeholder: String? = nil,
-         style: UIAlertAction.Style = .default,
-         handler: ((UIAlertAction, [UITextField]?) -> Void)? = nil)
+    public init(title: String = "",
+                type: Int = 0,
+                textField: UITextField? = nil,
+                placeholder: String? = nil,
+                style: UIAlertAction.Style = .default,
+                handler: ((UIAlertAction, [UITextField]?) -> Void)? = nil)
     {
         self.title = title
         self.type = type
