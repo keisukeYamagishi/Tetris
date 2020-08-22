@@ -454,8 +454,8 @@ class Swiris: UIViewController {
             }
         }
 
-        if isBottom(needs: bars.noneed) == true
-            || isBar == true
+        if bars.isBottom
+            || isBar
         {
             bars.noneed = Array()
             isBar = false
@@ -473,7 +473,7 @@ class Swiris: UIViewController {
             isDownBar = false
 
         } else {
-            isBar = judgementBrew()
+            isBar = bars.judgementBrew()
             if isBar == false {
                 noNeedEmurate()
                 isMove = false
@@ -527,29 +527,18 @@ class Swiris: UIViewController {
         }
     }
 
-    func judgementBrew() -> Bool {
-        for current in (0 ..< bars.noneed.count).reversed() {
-            let cPosition: Cp = bars.noneed[current]
-
-            let bar: [Bs] = bars.values[cPosition.py + 1]
-
-            if bar[cPosition.px].bp == Bars.Store {
-                return true
-            }
-        }
-        return false
-    }
-
-    func isBottom(needs: [Cp]) -> Bool {
-        let bottom = Tate - 1
-
-        for current in needs {
-            if bottom <= current.py {
-                return true
-            }
-        }
-        return false
-    }
+//    func judgementBrew() -> Bool {
+//        for current in (0 ..< bars.noneed.count).reversed() {
+//            let cPosition: Cp = bars.noneed[current]
+//
+//            let bar: [Bs] = bars.values[cPosition.py + 1]
+//
+//            if bar[cPosition.px].bp == Bars.Store {
+//                return true
+//            }
+//        }
+//        return false
+//    }
 
     func setScore(sc: Int) {
         score = score + 10 * sc * (levelMng.currentLevel * 5)

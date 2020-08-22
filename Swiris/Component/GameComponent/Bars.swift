@@ -204,4 +204,27 @@ extension Bars {
         }
         return false
     }
+
+    var isBottom: Bool {
+        let bottom = Tate - 1
+        for current in noneed {
+            if bottom <= current.py {
+                return true
+            }
+        }
+        return false
+    }
+
+    func judgementBrew() -> Bool {
+           for current in (0 ..< noneed.count).reversed() {
+               let cPosition: Cp = noneed[current]
+
+               let bar = values[cPosition.py + 1]
+
+               if bar[cPosition.px].bp == Bars.Store {
+                   return true
+               }
+           }
+           return false
+       }
 }
