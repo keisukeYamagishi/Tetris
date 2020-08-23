@@ -86,10 +86,8 @@ final class Swiris: UIViewController {
                 let cCp: [Cp] = bars.noneed
                 bars.removeCurrent(cCp: cCp)
                 bars.cp.px -= 1
-                moveBar.invalidate()
                 bars.move(bar: theBar, cColor: CBColor)
                 brewView.barDisplay(bars: bars.values)
-                startEngine()
             }
         }
     }
@@ -115,17 +113,7 @@ final class Swiris: UIViewController {
             moveBar.invalidate()
             gameOverAlert()
         }
-        theBar = []
-        bars.store(cbColor: CBColor)
-        brewView.storedDisplay(bars: bars.values)
-        bars.cp.px = DPX
-        bars.cp.py = DPY
-        setNextBar()
-        bars.store(cbColor: CBColor)
-        if bars.isInAgreement() {
-            brewView.barDisplay(bars: bars.values)
-            setScore(sc: bars.removeLists.count)
-        }
+        onTheBar()
     }
 
     @objc func tapRotation() {
@@ -216,23 +204,16 @@ final class Swiris: UIViewController {
     }
 
     @objc func moveBarBrew() {
+        BarLog(bar: bars.values)
         if !bars.judgementBrew() {
             bars.move(bar: theBar, cColor: CBColor)
-            BarLog(bar: bars.values)
             brewView.barDisplay(bars: bars.values)
         }
 
         if bars.isBottom
             || bars.judgementBrew()
         {
-            bars.initalize()
-            bars.store(cbColor: CBColor)
-            if bars.isInAgreement() {
-                brewView.barDisplay(bars: bars.values)
-                setScore(sc: bars.removeLists.count)
-                bars.store(cbColor: CBColor)
-            }
-            setNextBar()
+            onTheBar()
 
         } else {
             if !bars.judgementBrew() {
@@ -240,6 +221,19 @@ final class Swiris: UIViewController {
                 bars.cp.py += 1
             }
         }
+    }
+
+    func onTheBar() {
+        bars.initalize()
+        bars.store(cbColor: CBColor)
+        BarLog(bar: bars.values)
+        if bars.isInAgreement() {
+            BarLog(bar: bars.values)
+            brewView.barDisplay(bars: bars.values)
+            setScore(sc: bars.removeLists.count)
+            bars.store(cbColor: CBColor)
+        }
+        setNextBar()
     }
 
     func setScore(sc: Int) {
