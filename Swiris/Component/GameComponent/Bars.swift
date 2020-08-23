@@ -346,8 +346,7 @@ final class Bars {
     }
 
     func isSwipe(which: Which) -> Bool {
-        let flg = !isBarMove(which: which) && !isMoveJusgemnet(which: which)
-        return flg
+        !isBarMove(which: which) && !isMoveJusgemnet(which: which)
     }
 
     func isBarMove(which: Which) -> Bool {

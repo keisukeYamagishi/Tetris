@@ -12,6 +12,7 @@
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
+		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
 		90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EB67AA24F0D42E0051F920 /* Alert.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
 		C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7293F0F1FAD8F66006D4695 /* DebugLog.swift */; };
@@ -59,6 +60,7 @@
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
+		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		90EB67AA24F0D42E0051F920 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		C791D7631FE61F2A00983F80 /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				C7E50F6120838EEE00D1B0BC /* HuAnimation */,
 				90453DA324EF4EA600B56A91 /* Bar.swift */,
 				90453DA724EFD2A400B56A91 /* NextBarField.swift */,
+				9045D85424F0F53C002A3BE7 /* BrewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,10 +310,9 @@
 			};
 			buildConfigurationList = F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Swiris" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -357,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */,
 				C791D7AB1FE6205E00983F80 /* Color.swift in Sources */,
 				C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */,
 				C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */,

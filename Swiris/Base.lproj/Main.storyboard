@@ -73,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bih-PD-Ely">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bih-PD-Ely" customClass="BrewView" customModule="Swiris" customModuleProvider="target">
                                 <rect key="frame" x="10" y="62" width="260" height="591.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="591.5" id="efT-Kh-iJQ"/>
@@ -94,7 +94,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv:1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r0-h0-tBK">
-                                <rect key="frame" x="278" y="165" width="80" height="32"/>
+                                <rect key="frame" x="331" y="165" width="27" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="kI6-fG-RGx"/>
                                 </constraints>
@@ -142,7 +142,6 @@
                             <constraint firstItem="3H7-Dx-O1d" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.304348" constant="-112.00011599999999" id="2al-gP-TZQ"/>
                             <constraint firstAttribute="trailing" secondItem="Kfe-ys-axO" secondAttribute="trailing" constant="6" id="7m9-Nm-c7J"/>
                             <constraint firstItem="3H7-Dx-O1d" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.34" constant="55.609999999999957" id="Cgf-BH-esE"/>
-                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="leading" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="8" id="G20-s6-sk4"/>
                             <constraint firstItem="5Xi-IF-fKy" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.05997" id="IdT-Cz-xlY"/>
                             <constraint firstItem="dKw-ww-4ik" firstAttribute="top" secondItem="bih-PD-Ely" secondAttribute="bottom" constant="13.5" id="Lpx-pL-1zF"/>
                             <constraint firstItem="5Xi-IF-fKy" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="N94-jx-MfL"/>
@@ -151,15 +150,16 @@
                             <constraint firstItem="3H7-Dx-O1d" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="T5b-hN-17E"/>
                             <constraint firstItem="bih-PD-Ely" firstAttribute="top" secondItem="Kfe-ys-axO" secondAttribute="bottom" constant="15" id="Ukn-Bz-tEs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Za-zb-CEb" secondAttribute="trailing" constant="4" id="Vpr-79-6sB"/>
+                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="trailing" secondItem="3r0-h0-tBK" secondAttribute="trailing" id="W3X-GP-qhb"/>
                             <constraint firstItem="5Za-zb-CEb" firstAttribute="leading" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="11" id="YNX-qI-9TU"/>
                             <constraint firstItem="5Za-zb-CEb" firstAttribute="top" secondItem="Kfe-ys-axO" secondAttribute="bottom" constant="14" id="c8Q-NX-LJ5"/>
                             <constraint firstItem="fQd-5e-5dm" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.75" id="cEJ-0o-Wb9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3r0-h0-tBK" secondAttribute="trailing" constant="1" id="dUH-sw-sbi"/>
                             <constraint firstItem="Kfe-ys-axO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ufc-N4-nEf" secondAttribute="leading" constant="20" symbolic="YES" id="eXe-3B-I1t"/>
                             <constraint firstItem="fQd-5e-5dm" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="fpz-Ca-z7L"/>
+                            <constraint firstItem="3r0-h0-tBK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="8" symbolic="YES" id="oIB-xj-x3p"/>
                             <constraint firstItem="5Xi-IF-fKy" firstAttribute="leading" secondItem="3H7-Dx-O1d" secondAttribute="leading" id="sjl-TN-M0c"/>
                             <constraint firstItem="fQd-5e-5dm" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.05997" id="t9f-HA-skU"/>
-                            <constraint firstItem="3r0-h0-tBK" firstAttribute="leading" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="8" id="tj8-Li-65r"/>
                             <constraint firstItem="fQd-5e-5dm" firstAttribute="leading" secondItem="5Xi-IF-fKy" secondAttribute="leading" id="uGe-yt-I2y"/>
                             <constraint firstItem="5Xi-IF-fKy" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.89" id="wLU-3w-6ak"/>
                         </constraints>

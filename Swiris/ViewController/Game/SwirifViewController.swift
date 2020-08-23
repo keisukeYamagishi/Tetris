@@ -2,13 +2,12 @@ import UIKit
 
 @available(iOS 10.0, *)
 final class Swiris: UIViewController {
-    var barSize: CGFloat = 20
     var score: Int = 0
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var nextBarField: NextBarField!
     @IBOutlet var rotstionButton: UIButton!
     var firstTap: CGFloat = 0
-    @IBOutlet var brewView: UIView!
+    @IBOutlet var brewView: BrewView!
     @IBOutlet var levelLbl: UILabel!
     var theBar: [[Int]]!
     var nextTheBar: [[Int]]!
@@ -89,7 +88,7 @@ final class Swiris: UIViewController {
                 bars.cp.px -= 1
                 moveBar.invalidate()
                 bars.move(bar: theBar, cColor: CBColor)
-                barDisplay()
+                brewView.barDisplay(bars: bars.values)
                 startEngine()
             }
         }
@@ -102,7 +101,7 @@ final class Swiris: UIViewController {
                 bars.removeCurrent(cCp: cCp)
                 bars.cp.px += 1
                 bars.move(bar: theBar, cColor: CBColor)
-                barDisplay()
+                brewView.barDisplay(bars: bars.values)
             }
         }
     }
@@ -118,13 +117,13 @@ final class Swiris: UIViewController {
         }
         theBar = []
         bars.store(cbColor: CBColor)
-        storedDisplay()
+        brewView.storedDisplay(bars: bars.values)
         bars.cp.px = DPX
         bars.cp.py = DPY
         setNextBar()
         bars.store(cbColor: CBColor)
         if bars.isInAgreement() {
-            barDisplay()
+            brewView.barDisplay(bars: bars.values)
             setScore(sc: bars.removeLists.count)
         }
     }
@@ -149,7 +148,7 @@ final class Swiris: UIViewController {
         bars.removeCurrent(cCp: cCp)
         theBar = rotations
         bars.move(bar: theBar, cColor: CBColor)
-        barDisplay()
+        brewView.barDisplay(bars: bars.values)
     }
 
     func startBrew() {
@@ -158,7 +157,7 @@ final class Swiris: UIViewController {
         score = 0
         nextTheBar = nil
         theBar = nil
-        barInitialze()
+        brewView.barInitialze()
         nextBarField.initializeField()
         theBar = Bars.getTheBar
         nextBarField.displayNextBar()
@@ -193,28 +192,9 @@ final class Swiris: UIViewController {
         }
     }
 
-    func barSizeCalculation() -> CGFloat {
-        return brewView.frame.size.width / CGFloat(Yoko)
-    }
-
-    func swirisFieldHeight(barSize: CGFloat) -> CGFloat {
-        return barSize * CGFloat(Tate)
-    }
-
     func barInit() {
-        var tag = 1
-        barSize = barSizeCalculation()
-        brewViewHeightConstraint.constant = swirisFieldHeight(barSize: barSize)
-        for tate in 0 ..< Tate {
-            for yoko in 0 ..< Yoko {
-                let bar: Bar = Bar(frame: CGRect(x: CGFloat(yoko) * barSize,
-                                                 y: CGFloat(tate) * barSize,
-                                                 width: CGFloat(barSize),
-                                                 height: CGFloat(barSize)), tag: tag)
-                brewView.addSubview(bar)
-                tag += 1
-            }
-        }
+        brewViewHeightConstraint.constant = brewView.fieldHeight
+        brewView.configure()
     }
 
     func setNextBar() {
@@ -240,7 +220,7 @@ final class Swiris: UIViewController {
         if !bars.judgementBrew() {
             bars.move(bar: theBar, cColor: CBColor)
             BarLog(bar: bars.values)
-            barDisplay()
+            brewView.barDisplay(bars: bars.values)
         }
 
         if bars.isBottom
@@ -250,7 +230,7 @@ final class Swiris: UIViewController {
             setNextBar()
             bars.store(cbColor: CBColor)
             if bars.isInAgreement() {
-                barDisplay()
+                brewView.barDisplay(bars: bars.values)
                 setScore(sc: bars.removeLists.count)
             }
             bars.store(cbColor: CBColor)
@@ -259,55 +239,6 @@ final class Swiris: UIViewController {
             if !bars.judgementBrew() {
                 bars.noNeedEmurate()
                 bars.cp.py += 1
-            }
-        }
-    }
-
-    func barInitialze() {
-        var tag: Int = 1
-        for _ in 0 ..< Tate {
-            for _ in 0 ..< Yoko {
-                let bar: Bar = brewView.viewWithTag(tag) as! Bar
-                bar.noBrew()
-                tag += 1
-            }
-        }
-    }
-
-    func barDisplay() {
-        var tag: Int = 1
-
-        for tate in 0 ..< Tate {
-            let isBar: [Bs] = bars.values[tate]
-
-            for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Move {
-                    let bar = brewView.viewWithTag(tag) as! Bar
-                    bar.brew(isBar[yoko].bc)
-
-                } else if isBar[yoko].bp != Bars.Store {
-                    let bar: Bar = brewView.viewWithTag(tag) as! Bar
-                    bar.noBrew()
-                }
-                tag += 1
-            }
-        }
-    }
-
-    func storedDisplay() {
-        var tag: Int = 1
-        for tate in 0 ..< Tate {
-            let isBar: [Bs] = bars.values[tate]
-
-            for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Store {
-                    let bar = brewView.viewWithTag(tag) as! Bar
-                    bar.brew(isBar[yoko].bc)
-                } else {
-                    let bar = brewView.viewWithTag(tag) as! Bar
-                    bar.noBrew()
-                }
-                tag += 1
             }
         }
     }
