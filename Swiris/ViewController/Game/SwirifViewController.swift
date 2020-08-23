@@ -9,7 +9,7 @@ final class Swiris: UIViewController {
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: BrewView!
     @IBOutlet var levelLbl: UILabel!
-    var theBar: [[Int]]!
+    var theBar: [[Bs]]!
     var nextTheBar: [[Int]]!
     var moveBar: Timer!
     var CBColor: Int!
@@ -138,7 +138,7 @@ final class Swiris: UIViewController {
      [0,0,1,0], -> [1,1,1,0],
      [0,0,1,0]]    [1,0,0,0]]
      */
-    func rotation(bar: [[Int]]) {
+    func rotation(bar: [[Bs]]) {
         let rotations = bars.spin(bars: bar)
 
         if bars.fixPosition(bar: rotations) == true {
@@ -159,13 +159,12 @@ final class Swiris: UIViewController {
         theBar = nil
         brewView.barInitialze()
         nextBarField.initializeField()
-        theBar = Bars.getTheBar
+        CBColor = Color.radomNum()
+        theBar = Bars.getTheBar(color: CBColor)
         nextBarField.displayNextBar()
         bars = Bars()
         bars.cp.px = DPX
         bars.cp.py = DPY
-        CBColor = Color.radomNum()
-        theBar = Bars.getTheBar
         startGame()
     }
 
@@ -227,13 +226,13 @@ final class Swiris: UIViewController {
             || bars.judgementBrew()
         {
             bars.initalize()
-            setNextBar()
             bars.store(cbColor: CBColor)
             if bars.isInAgreement() {
                 brewView.barDisplay(bars: bars.values)
                 setScore(sc: bars.removeLists.count)
+                bars.store(cbColor: CBColor)
             }
-            bars.store(cbColor: CBColor)
+            setNextBar()
 
         } else {
             if !bars.judgementBrew() {

@@ -61,15 +61,15 @@ final class Bars {
         cp.py = DPY
     }
 
-    func move(bar: [[Int]], cColor: Int) {
+    func move(bar: [[Bs]], cColor: Int) {
         var noNeedCo: Int = 0
         var storeNoNeed: [Cp] = []
 
         for tate in 0 ..< bar.count {
-            let baryoko: [Int] = bar[tate]
+            let baryoko: [Bs] = bar[tate]
 
             for yoko in 0 ..< baryoko.count {
-                if baryoko[yoko] == 1 {
+                if baryoko[yoko].bp == 1 {
                     var brew: [Bs] = values[cp.py + tate]
                     brew[yoko + cp.px].bp = 1
                     brew[yoko + cp.px].bc = cColor
@@ -83,14 +83,14 @@ final class Bars {
         noneed = storeNoNeed
     }
 
-    func spin(bars: [[Int]]) -> [[Int]] {
-        var first: [Int] = Array()
-        var second: [Int] = Array()
-        var third: [Int] = Array()
-        var fourth: [Int] = Array()
+    func spin(bars: [[Bs]]) -> [[Bs]] {
+        var first: [Bs] = Array()
+        var second: [Bs] = Array()
+        var third: [Bs] = Array()
+        var fourth: [Bs] = Array()
 
         for tate in 0 ..< bars.count {
-            let barYoko: [Int] = bars[tate]
+            let barYoko: [Bs] = bars[tate]
 
             for yoko in 0 ..< barYoko.count {
                 switch yoko {
@@ -114,14 +114,14 @@ final class Bars {
             var isFlag = false
 
             for lv in rotations.last! {
-                if lv == 1 {
+                if lv.bp == Bars.Move {
                     isFlag = true
                 }
             }
 
             if isFlag != true {
                 rotations.remove(at: rotations.count - 1)
-                rotations.insert([0, 0, 0, 0], at: 0)
+                rotations.insert(yokoValue, at: 0)
             }
         }
         return rotations
@@ -131,7 +131,35 @@ final class Bars {
         BarLists[Int(arc4random_uniform(UInt32(BarLists.count)))]
     }
 
-    func fixPosition(bar: [[Int]]) -> Bool {
+    static func getTheBar(color: Int) -> [[Bs]] {
+        Bars.coloring(bars: Bars.getTheBar, color: color)
+    }
+
+    static func coloring(bars: [[Int]], color: Int) -> [[Bs]] {
+        var bar: [[Bs]] = []
+        for tate in 0 ..< bars.count {
+            var yoko = Bars.barYoko
+            for index in 0 ..< bars[tate].count {
+                if bars[tate][index] == Bars.Move {
+                    yoko[index].bc = color
+                    yoko[index].bp = 1
+                }
+            }
+            bar.append(yoko)
+        }
+
+        return bar
+    }
+
+    static var barYoko: [Bs] {
+        var bars: [Bs] = []
+        for _ in 0 ..< 4 {
+            bars.append(Bs())
+        }
+        return bars
+    }
+
+    func fixPosition(bar: [[Bs]]) -> Bool {
         if cp.px <= 0 {
             cp.px = 0
             // return true
@@ -143,14 +171,14 @@ final class Bars {
         }
 
         for tate in 0 ..< bar.count {
-            let baryoko: [Int] = bar[tate]
+            let baryoko: [Bs] = bar[tate]
 
             for yoko in 0 ..< baryoko.count {
-                if baryoko[yoko] == 1 {
+                if baryoko[yoko].bp == Bars.Move {
                     let brew: [Bs] = values[cp.py + tate]
                     let isRot = brew[cp.px + yoko]
 
-                    if isRot.bp == 2 {
+                    if isRot.bp == Bars.Store {
                         return true
                     }
                 }
@@ -163,13 +191,10 @@ final class Bars {
         values = storeBar(store: values, cbColor: cbColor)
     }
 
-    func down(bar: [[Int]], gameOver: () -> Void) {
+    func down(bar: [[Bs]], gameOver: () -> Void) {
         var isBottom = false
         var count = 1
-        let cCp: [Cp] = noneed
-
-        removeCurrent(cCp: cCp)
-
+        removeCurrent(cCp: noneed)
         while count < (numberOfCount - 1) {
             for current in (0 ..< noneed.count).reversed() {
                 let cP: Cp = noneed[current]
@@ -187,8 +212,8 @@ final class Bars {
 
                     cp.py = (count - 1) + cP.py
 
-                    for nd in 0 ..< noneed.count {
-                        var n = noneed[nd]
+                    for nd in noneed {
+                        var n = nd
                         cp.py = (count - 1) + n.py
 
                         if cp.py == 1 {
@@ -204,19 +229,18 @@ final class Bars {
                     break
                 }
             }
-            if isBottom == true {
+            if isBottom {
                 break
             }
             count += 1
         }
-
-        if isBottom == false {
+        if !isBottom {
             cp.py = count - 3
             for tate in 0 ..< bar.count {
-                let baryoko: [Int] = bar[tate]
+                let baryoko: [Bs] = bar[tate]
 
                 for yoko in 0 ..< baryoko.count {
-                    if baryoko[yoko] == Bars.Move {
+                    if baryoko[yoko].bp == Bars.Move {
                         var brew: [Bs] = values[cp.py + tate]
                         brew[yoko + cp.px].bp = 1
                         values[cp.py + tate] = brew
@@ -305,12 +329,12 @@ final class Bars {
         return false
     }
 
-    func isGameOver(bar: [[Int]]) -> Bool {
+    func isGameOver(bar: [[Bs]]) -> Bool {
         for tate in (0 ..< bar.count).reversed() {
-            let baryoko: [Int] = bar[tate]
+            let baryoko: [Bs] = bar[tate]
 
             for yoko in 0 ..< baryoko.count {
-                if baryoko[yoko] == 1 {
+                if baryoko[yoko].bp == Bars.Move {
                     let brew: [Bs] = values[cp.py + tate]
                     if brew[yoko + cp.px].bp != 0 {
                         print("GAME OVER")
