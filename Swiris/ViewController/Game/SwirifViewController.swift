@@ -226,13 +226,13 @@ final class Swiris: UIViewController {
             || bars.judgementBrew()
         {
             bars.initalize()
-            setNextBar()
             bars.store(cbColor: CBColor)
             if bars.isInAgreement() {
                 brewView.barDisplay(bars: bars.values)
                 setScore(sc: bars.removeLists.count)
+                bars.store(cbColor: CBColor)
             }
-            bars.store(cbColor: CBColor)
+            setNextBar()
 
         } else {
             if !bars.judgementBrew() {
