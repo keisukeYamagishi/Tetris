@@ -268,8 +268,7 @@ final class Bars {
     }
 
     func isInAgreement() -> Bool {
-        removeLists = []
-        BarLog(bar: values)
+        removeLists = []        
         var isInAgreement = false
         for index in 0..<numberOfCount {
             var isRemove = true
