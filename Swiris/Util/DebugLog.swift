@@ -10,15 +10,14 @@ import Foundation
 
 public func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-        Swift.print("\(items)", separator:separator, terminator: terminator)
+        Swift.print("\(items)", separator: separator, terminator: terminator)
     #endif
 }
 
-public func BarLog(bar: [Array<Bs>]) {
-    print ("")
+public func BarLog(bar: [[Bs]]) {
+    print("Bar")
     for f in bar {
-        print ("")
-        _ = f.map{ print ($0.bp, terminator: "") }
+        f.forEach { print($0.bp, terminator: "") }
+        print("")
     }
-    print ("")
 }

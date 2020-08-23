@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C708DEEB23D1F576005F6F32 /* UIViewController+.swift */; };
-		C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C771B6E71FE7FC7300F0C277 /* BarController.swift */; };
+		9002525624F0DA0300879652 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525524F0DA0300879652 /* UIViewController+.swift */; };
+		9002525824F0E7AF00879652 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525724F0E7AF00879652 /* UIColor+.swift */; };
+		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
+		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
+		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
+		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
+		90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EB67AA24F0D42E0051F920 /* Alert.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
 		C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7293F0F1FAD8F66006D4695 /* DebugLog.swift */; };
 		C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D7631FE61F2A00983F80 /* ColorPattern.swift */; };
@@ -50,9 +55,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C708DEEB23D1F576005F6F32 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		9002525524F0DA0300879652 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		9002525724F0E7AF00879652 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
+		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
+		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
+		90EB67AA24F0D42E0051F920 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
-		C771B6E71FE7FC7300F0C277 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		C791D7631FE61F2A00983F80 /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
 		C791D7661FE61F2A00983F80 /* BarFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFactory.swift; sourceTree = "<group>"; };
 		C791D76A1FE61F2A00983F80 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
@@ -91,10 +101,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90EB67A924F0D42E0051F920 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				90EB67AA24F0D42E0051F920 /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		C708DEEA23D1F4CE005F6F32 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				C708DEEB23D1F576005F6F32 /* UIViewController+.swift */,
+				9002525524F0DA0300879652 /* UIViewController+.swift */,
+				9002525724F0E7AF00879652 /* UIColor+.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -103,25 +122,28 @@
 			isa = PBXGroup;
 			children = (
 				C7E50F6120838EEE00D1B0BC /* HuAnimation */,
+				90453DA324EF4EA600B56A91 /* Bar.swift */,
+				90453DA724EFD2A400B56A91 /* NextBarField.swift */,
+				9045D85424F0F53C002A3BE7 /* BrewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		C791D75E1FE61F2A00983F80 /* Model */ = {
+		C791D75E1FE61F2A00983F80 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				C791D7631FE61F2A00983F80 /* ColorPattern.swift */,
 				C791D7651FE61F2A00983F80 /* GameComponent */,
 			);
-			path = Model;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		C791D7651FE61F2A00983F80 /* GameComponent */ = {
 			isa = PBXGroup;
 			children = (
-				C771B6E71FE7FC7300F0C277 /* BarController.swift */,
 				C791D7661FE61F2A00983F80 /* BarFactory.swift */,
 				C791D76A1FE61F2A00983F80 /* Level.swift */,
+				90453DA524EF61DA00B56A91 /* Bars.swift */,
 			);
 			path = GameComponent;
 			sourceTree = "<group>";
@@ -129,6 +151,7 @@
 		C7CF2BDE2037F5F900889C3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				90EB67A924F0D42E0051F920 /* Alert */,
 				C7CF2BE42037F5F900889C3C /* Game */,
 				C7CF2BE62037F5F900889C3C /* Home */,
 			);
@@ -208,7 +231,7 @@
 				F0B3356D1F0E517200A8F6DF /* Main.storyboard */,
 				C708DEEA23D1F4CE005F6F32 /* Extention */,
 				C7CF2BDE2037F5F900889C3C /* ViewController */,
-				C791D75E1FE61F2A00983F80 /* Model */,
+				C791D75E1FE61F2A00983F80 /* Component */,
 				C791D7121FE61E2A00983F80 /* View */,
 				F0A5C62C1F7CDDB0000BC9CE /* Util */,
 			);
@@ -287,10 +310,9 @@
 			};
 			buildConfigurationList = F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Swiris" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -337,20 +359,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */,
 				C791D7AB1FE6205E00983F80 /* Color.swift in Sources */,
 				C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */,
 				C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */,
-				C771B6E81FE7FC7300F0C277 /* BarController.swift in Sources */,
+				90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */,
 				C791D7BA1FE6205E00983F80 /* BarFactory.swift in Sources */,
-				C708DEEC23D1F576005F6F32 /* UIViewController+.swift in Sources */,
+				90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */,
+				9002525624F0DA0300879652 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
 				C7E50F6920838EEE00D1B0BC /* HuVertical.swift in Sources */,
 				C7E50F6820838EEE00D1B0BC /* HuTrangitionGhost.swift in Sources */,
 				C7E50F6720838EEE00D1B0BC /* HuAnimation.swift in Sources */,
+				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
 				C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */,
 				C7E50F6620838EEE00D1B0BC /* HorizonLine.swift in Sources */,
+				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,
+				9002525824F0E7AF00879652 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +422,7 @@
 				DEVELOPMENT_TEAM = D3DW67HS9F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SwirisTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -418,7 +445,7 @@
 				DEVELOPMENT_TEAM = D3DW67HS9F;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SwirisTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.SwirisTests;
@@ -485,6 +512,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -537,6 +566,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -558,7 +589,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Swiris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -579,7 +610,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Swiris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
