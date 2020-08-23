@@ -57,30 +57,12 @@ class BrewView: UIView {
             let isBar: [Bs] = bars[tate]
 
             for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Move {
+                if isBar[yoko].bp == Bars.Move || isBar[yoko].bp == Bars.Store {
                     let bar = viewWithTag(tag) as! Bar
                     bar.brew(isBar[yoko].bc)
 
-                } else if isBar[yoko].bp != Bars.Store {
-                    let bar: Bar = viewWithTag(tag) as! Bar
-                    bar.noBrew()
-                }
-                tag += 1
-            }
-        }
-    }
-
-    func storedDisplay(bars: [[Bs]]) {
-        var tag: Int = 1
-        for tate in 0 ..< Tate {
-            let isBar: [Bs] = bars[tate]
-
-            for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Store {
-                    let bar = viewWithTag(tag) as! Bar
-                    bar.brew(isBar[yoko].bc)
                 } else {
-                    let bar = viewWithTag(tag) as! Bar
+                    let bar: Bar = viewWithTag(tag) as! Bar
                     bar.noBrew()
                 }
                 tag += 1

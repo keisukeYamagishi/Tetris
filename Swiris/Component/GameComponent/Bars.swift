@@ -268,9 +268,9 @@ final class Bars {
     }
 
     func isInAgreement() -> Bool {
-        removeLists = []        
+        removeLists = []
         var isInAgreement = false
-        for index in 0..<numberOfCount {
+        for index in 0 ..< numberOfCount {
             var isRemove = true
             let yoko = values[index]
             for bar in yoko {
