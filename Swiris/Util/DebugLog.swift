@@ -21,3 +21,11 @@ public func BarLog(bar: [[Bs]]) {
         print("")
     }
 }
+
+public func ColorLog(bar: [[Bs]]) {
+    print("Color")
+    for f in bar {
+        f.forEach { print($0.bc, terminator: "") }
+        print("")
+    }
+}
