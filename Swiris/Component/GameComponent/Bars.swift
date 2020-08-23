@@ -269,41 +269,23 @@ final class Bars {
 
     func isInAgreement() -> Bool {
         removeLists = []
-
-        for be in 0 ..< numberOfCount {
-            let agreemnent: [Bs] = values[be]
-            var isRemove: Bool = false
-
-            for agr in agreemnent {
-                if agr.bp == 0 {
-                    isRemove = true
+        BarLog(bar: values)
+        var isInAgreement = false
+        for index in 0..<numberOfCount {
+            var isRemove = true
+            let yoko = values[index]
+            for bar in yoko {
+                if bar.bp == 0 {
+                    isRemove = false
                 }
             }
-            if isRemove != true {
-                removeLists.append(be)
-            }
-        }
-
-        var isRm = false
-
-        for rm in removeLists {
-            values.remove(at: rm)
-
-            values.insert(yokoValue, at: rm)
-
-            isRm = true
-        }
-
-        if isRm {
-            isRm = false
-
-            for rm in removeLists {
-                values.remove(at: rm)
+            if isRemove {
+                isInAgreement = true
+                values.remove(at: index)
                 values.insert(yokoValue, at: 0)
             }
-            return true
         }
-        return false
+        return isInAgreement
     }
 
     var isBottom: Bool {
