@@ -103,8 +103,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H7-Dx-O1d">
-                                <rect key="frame" x="278" y="457" width="80" height="91"/>
+                                <rect key="frame" x="281" y="324" width="74" height="149"/>
                                 <color key="backgroundColor" red="0.25779226420000001" green="0.6034293771" blue="0.83142292500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3H7-Dx-O1d" secondAttribute="height" multiplier="74:149" id="GER-Ar-Xt7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="46"/>
                                 <state key="normal" title="B">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,8 +117,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQd-5e-5dm">
-                                <rect key="frame" x="278" y="563.5" width="80" height="40"/>
+                                <rect key="frame" x="281" y="493" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.26939359307289124" green="0.6034315824508667" blue="0.83142292499542236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fQd-5e-5dm" secondAttribute="height" multiplier="1:1" id="auM-GP-wSR"/>
+                                    <constraint firstAttribute="width" constant="70" id="r0y-up-A0m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,8 +132,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-IF-fKy">
-                                <rect key="frame" x="278" y="610.5" width="80" height="40"/>
+                                <rect key="frame" x="281" y="583" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.26939359307289124" green="0.6034315824508667" blue="0.83142292499542236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="72e-mn-0Iq"/>
+                                    <constraint firstAttribute="width" secondItem="5Xi-IF-fKy" secondAttribute="height" multiplier="1:1" id="YuU-Ee-BAQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,29 +150,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3r0-h0-tBK" firstAttribute="top" secondItem="5Za-zb-CEb" secondAttribute="bottom" constant="30" id="1He-8v-jUZ"/>
-                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.304348" constant="-112.00011599999999" id="2al-gP-TZQ"/>
                             <constraint firstAttribute="trailing" secondItem="Kfe-ys-axO" secondAttribute="trailing" constant="6" id="7m9-Nm-c7J"/>
-                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.34" constant="55.609999999999957" id="Cgf-BH-esE"/>
-                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.05997" id="IdT-Cz-xlY"/>
+                            <constraint firstItem="dKw-ww-4ik" firstAttribute="top" secondItem="5Xi-IF-fKy" secondAttribute="bottom" constant="14" id="DrK-4e-Yie"/>
+                            <constraint firstItem="fQd-5e-5dm" firstAttribute="top" secondItem="3H7-Dx-O1d" secondAttribute="bottom" constant="20" id="GFe-X0-OqW"/>
+                            <constraint firstItem="fQd-5e-5dm" firstAttribute="leading" secondItem="3H7-Dx-O1d" secondAttribute="leading" id="LNC-gb-dj8"/>
                             <constraint firstItem="dKw-ww-4ik" firstAttribute="top" secondItem="bih-PD-Ely" secondAttribute="bottom" constant="13.5" id="Lpx-pL-1zF"/>
-                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="N94-jx-MfL"/>
+                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="top" secondItem="fQd-5e-5dm" secondAttribute="bottom" constant="20" id="LvB-IG-HyD"/>
                             <constraint firstItem="Kfe-ys-axO" firstAttribute="top" secondItem="YDI-f4-a2J" secondAttribute="bottom" constant="26" id="P9q-zA-Klk"/>
                             <constraint firstItem="bih-PD-Ely" firstAttribute="leading" secondItem="Ufc-N4-nEf" secondAttribute="leading" constant="10" id="Sbs-Db-gvD"/>
-                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="T5b-hN-17E"/>
                             <constraint firstItem="bih-PD-Ely" firstAttribute="top" secondItem="Kfe-ys-axO" secondAttribute="bottom" constant="15" id="Ukn-Bz-tEs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Za-zb-CEb" secondAttribute="trailing" constant="4" id="Vpr-79-6sB"/>
-                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="trailing" secondItem="3r0-h0-tBK" secondAttribute="trailing" id="W3X-GP-qhb"/>
                             <constraint firstItem="5Za-zb-CEb" firstAttribute="leading" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="11" id="YNX-qI-9TU"/>
                             <constraint firstItem="5Za-zb-CEb" firstAttribute="top" secondItem="Kfe-ys-axO" secondAttribute="bottom" constant="14" id="c8Q-NX-LJ5"/>
-                            <constraint firstItem="fQd-5e-5dm" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.75" id="cEJ-0o-Wb9"/>
+                            <constraint firstItem="3H7-Dx-O1d" firstAttribute="leading" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="11" id="cFu-EZ-luB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3r0-h0-tBK" secondAttribute="trailing" constant="1" id="dUH-sw-sbi"/>
                             <constraint firstItem="Kfe-ys-axO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ufc-N4-nEf" secondAttribute="leading" constant="20" symbolic="YES" id="eXe-3B-I1t"/>
-                            <constraint firstItem="fQd-5e-5dm" firstAttribute="width" secondItem="Ufc-N4-nEf" secondAttribute="width" multiplier="0.213333" id="fpz-Ca-z7L"/>
+                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="leading" secondItem="3H7-Dx-O1d" secondAttribute="leading" id="l2J-qG-kW3"/>
                             <constraint firstItem="3r0-h0-tBK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bih-PD-Ely" secondAttribute="trailing" constant="8" symbolic="YES" id="oIB-xj-x3p"/>
-                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="leading" secondItem="3H7-Dx-O1d" secondAttribute="leading" id="sjl-TN-M0c"/>
-                            <constraint firstItem="fQd-5e-5dm" firstAttribute="height" secondItem="Ufc-N4-nEf" secondAttribute="height" multiplier="0.05997" id="t9f-HA-skU"/>
-                            <constraint firstItem="fQd-5e-5dm" firstAttribute="leading" secondItem="5Xi-IF-fKy" secondAttribute="leading" id="uGe-yt-I2y"/>
-                            <constraint firstItem="5Xi-IF-fKy" firstAttribute="centerY" secondItem="Ufc-N4-nEf" secondAttribute="centerY" multiplier="1.89" id="wLU-3w-6ak"/>
+                            <constraint firstAttribute="trailing" secondItem="3H7-Dx-O1d" secondAttribute="trailing" constant="20" id="p3X-fw-98a"/>
                         </constraints>
                     </view>
                     <connections>
