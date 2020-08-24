@@ -35,7 +35,7 @@ final class Bars {
     var values: [[Bs]] = []
     var noneed: [Cp] = []
     var cp: Cp = Cp(px: 0, py: 0)
-    var removeLists: [Int] = []
+    var removeCount: Int = 0
     var numberOfCount: Int {
         values.count
     }
@@ -268,7 +268,7 @@ final class Bars {
     }
 
     func isInAgreement() -> Bool {
-        removeLists = []
+        removeCount = 0
         var isInAgreement = false
         for index in 0 ..< numberOfCount {
             var isRemove = true
@@ -280,6 +280,7 @@ final class Bars {
             }
             if isRemove {
                 isInAgreement = true
+                removeCount += 1
                 values.remove(at: index)
                 values.insert(yokoValue, at: 0)
             }

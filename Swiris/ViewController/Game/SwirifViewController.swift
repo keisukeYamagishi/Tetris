@@ -230,7 +230,7 @@ final class Swiris: UIViewController {
         if bars.isInAgreement() {
             BarLog(bar: bars.values)
             brewView.barDisplay(bars: bars.values)
-            setScore(sc: bars.removeLists.count)
+            setScore(sc: bars.removeCount)
             bars.store(cbColor: CBColor)
         }
         setNextBar()
