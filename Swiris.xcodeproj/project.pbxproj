@@ -12,6 +12,8 @@
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
+		904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904585F224F4B543006FAD52 /* Swiris.storyboard */; };
+		904585F524F4B575006FAD52 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904585F424F4B575006FAD52 /* Home.storyboard */; };
 		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
 		90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EB67AA24F0D42E0051F920 /* Alert.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
@@ -27,7 +29,6 @@
 		C7E50F6720838EEE00D1B0BC /* HuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6320838EEE00D1B0BC /* HuAnimation.swift */; };
 		C7E50F6820838EEE00D1B0BC /* HuTrangitionGhost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6420838EEE00D1B0BC /* HuTrangitionGhost.swift */; };
 		C7E50F6920838EEE00D1B0BC /* HuVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6520838EEE00D1B0BC /* HuVertical.swift */; };
-		F0B3356F1F0E517200A8F6DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B3356D1F0E517200A8F6DF /* Main.storyboard */; };
 		F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
+		904585F224F4B543006FAD52 /* Swiris.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swiris.storyboard; sourceTree = "<group>"; };
+		904585F424F4B575006FAD52 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		90EB67AA24F0D42E0051F920 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
@@ -78,7 +81,6 @@
 		F0A5C62D1F7CDDDC000BC9CE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F0B335661F0E517100A8F6DF /* Swiris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B335691F0E517100A8F6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0B3356E1F0E517200A8F6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0B335731F0E517200A8F6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0B335751F0E517200A8F6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */,
+				904585F224F4B543006FAD52 /* Swiris.storyboard */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				C7CF2BE72037F5F900889C3C /* HomeViewController.swift */,
+				904585F424F4B575006FAD52 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -228,7 +232,6 @@
 				F0B335691F0E517100A8F6DF /* AppDelegate.swift */,
 				F0B335751F0E517200A8F6DF /* Info.plist */,
 				F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */,
-				F0B3356D1F0E517200A8F6DF /* Main.storyboard */,
 				C708DEEA23D1F4CE005F6F32 /* Extention */,
 				C7CF2BDE2037F5F900889C3C /* ViewController */,
 				C791D75E1FE61F2A00983F80 /* Component */,
@@ -340,7 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */,
-				F0B3356F1F0E517200A8F6DF /* Main.storyboard in Resources */,
+				904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */,
+				904585F524F4B575006FAD52 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,14 +396,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F0B3356D1F0E517200A8F6DF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0B3356E1F0E517200A8F6DF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

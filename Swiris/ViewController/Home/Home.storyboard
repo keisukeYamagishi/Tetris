@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C3F-BT-Iba">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shichimi-->
+        <scene sceneID="f0w-yb-xWY">
+            <objects>
+                <viewController title="Shichimi" id="C3F-BT-Iba" customClass="HomeViewController" customModule="Swiris" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f7G-Ov-YhS"/>
+                        <viewControllerLayoutGuide type="bottom" id="jye-5U-VTJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="igj-UZ-foI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiris" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bc-Wz-lyc">
+                                <rect key="frame" x="158" y="178" width="98.5" height="40.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Lm-Lt-XmM">
+                                <rect key="frame" x="177" y="428.5" width="60" height="39"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-G9-sni">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="39"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                        <state key="normal" title="Start!">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pushInButton:" destination="C3F-BT-Iba" eventType="touchUpInside" id="HAr-Em-sci"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92550897600000004" green="0.92548894879999999" blue="0.92549288269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2Lm-Lt-XmM" firstAttribute="centerY" secondItem="igj-UZ-foI" secondAttribute="centerY" id="8rS-Br-afu"/>
+                            <constraint firstItem="6bc-Wz-lyc" firstAttribute="top" secondItem="f7G-Ov-YhS" secondAttribute="bottom" constant="134" id="Ghk-B9-R2O"/>
+                            <constraint firstItem="6bc-Wz-lyc" firstAttribute="centerX" secondItem="igj-UZ-foI" secondAttribute="centerX" id="tJy-kr-mtz"/>
+                            <constraint firstItem="2Lm-Lt-XmM" firstAttribute="centerX" secondItem="igj-UZ-foI" secondAttribute="centerX" id="uwR-VA-USC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jTL-dk-I7D"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c6o-kG-YX5"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="gameTitle" destination="6bc-Wz-lyc" id="rf4-iz-5qj"/>
+                        <outlet property="startGame" destination="Xf5-G9-sni" id="d67-b2-48M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Og-mS-uWv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="-646"/>
+        </scene>
+    </scenes>
+</document>
