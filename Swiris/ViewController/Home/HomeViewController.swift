@@ -18,8 +18,9 @@ final class HomeViewController: UIViewController {
     }
 
     @IBAction func pushInButton(_: Any) {
-        let brewris = (storyboard?.instantiateViewController(withIdentifier: "Swiris"))! as! Swiris
-        navigationController?.pushViewController(brewris, animated: true)
+        let storyboard = UIStoryboard(name: "Swiris", bundle: nil)
+        let brewris = storyboard.instantiateInitialViewController()
+        navigationController?.pushViewController(brewris!, animated: true)
     }
 }
 

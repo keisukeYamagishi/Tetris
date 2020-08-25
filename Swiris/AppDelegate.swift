@@ -15,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        rootViewController()
         return true
+    }
+
+    private func rootViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeViewController = storyboard.instantiateInitialViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController!)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 }
