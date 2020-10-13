@@ -5,6 +5,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private var gameTitle: UILabel!
     @IBOutlet private var startGame: UIButton!
 
+    // MARK: lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
