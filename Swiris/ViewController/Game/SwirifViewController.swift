@@ -9,9 +9,9 @@ final class Swiris: UIViewController {
     var firstTap: CGFloat = 0
     @IBOutlet private var brewView: BrewView!
     @IBOutlet private var levelLbl: UILabel!
-    var theBar: [[Bs]]!
-    var nextTheBar: [[Int]]!
-    var moveBar: Timer!
+    private var theBar: [[Bs]]!
+    private var nextTheBar: [[Int]]!
+    private var moveBar: Timer!
     var CBColor: Int!
     var levelMng: LevelManager!
     var bars: Bars! = Bars()
