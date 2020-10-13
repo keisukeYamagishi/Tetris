@@ -3,8 +3,8 @@ import UIKit
 @available(iOS 10.0, *)
 final class Swiris: UIViewController {
     var score: Int = 0
-    @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet var nextBarField: NextBarField!
+    private @IBOutlet var scoreLabel: UILabel!
+    private @IBOutlet var nextBarField: NextBarField!
     @IBOutlet var rotstionButton: UIButton!
     var firstTap: CGFloat = 0
     @IBOutlet var brewView: BrewView!
