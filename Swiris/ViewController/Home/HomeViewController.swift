@@ -17,7 +17,7 @@ final class HomeViewController: UIViewController {
         gameTitle.layer.cornerRadius = 10
     }
 
-    @IBAction func pushInButton(_: Any) {
+    @IBAction private func pushInButton(_: Any) {
         let storyboard = UIStoryboard(name: "Swiris", bundle: nil)
         let brewris = storyboard.instantiateInitialViewController()
         navigationController?.pushViewController(brewris!, animated: true)
