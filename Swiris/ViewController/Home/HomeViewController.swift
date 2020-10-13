@@ -2,8 +2,8 @@ import UIKit
 
 @available(iOS 10.0, *)
 final class HomeViewController: UIViewController {
-    @IBOutlet var gameTitle: UILabel!
-    @IBOutlet var startGame: UIButton!
+    @IBOutlet private var gameTitle: UILabel!
+    @IBOutlet private var startGame: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
