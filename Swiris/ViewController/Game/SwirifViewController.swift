@@ -12,9 +12,9 @@ final class Swiris: UIViewController {
     private var theBar: [[Bs]]!
     private var nextTheBar: [[Int]]!
     private var moveBar: Timer!
-    var CBColor: Int!
-    var levelMng: LevelManager!
-    var bars: Bars! = Bars()
+    private var CBColor: Int!
+    private var levelMng: LevelManager!
+    private var bars: Bars! = Bars()
 
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
