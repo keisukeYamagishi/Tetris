@@ -25,12 +25,12 @@ final class Swiris: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationItem.titleView = navigationTitle(title: "Swiris")
         levelMng = LevelManager()
-        setGesture()
+        configureGesture()
         scoreLabel.adjustsFontSizeToFitWidth = true
         scoreLabel.text = "0"
     }
 
-    func setGesture() {
+    func configureGesture() {
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(pushRotation))
         view.addGestureRecognizer(tapGes)
 
