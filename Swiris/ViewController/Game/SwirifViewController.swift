@@ -19,6 +19,7 @@ final class Swiris: UIViewController {
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
 
+    /// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
