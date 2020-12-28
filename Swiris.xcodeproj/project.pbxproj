@@ -25,10 +25,6 @@
 		C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */; };
 		C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE72037F5F900889C3C /* HomeViewController.swift */; };
 		C7D6F4C323D48BBA004EE460 /* SwirisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6F4C223D48BBA004EE460 /* SwirisTests.swift */; };
-		C7E50F6620838EEE00D1B0BC /* HorizonLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6220838EEE00D1B0BC /* HorizonLine.swift */; };
-		C7E50F6720838EEE00D1B0BC /* HuAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6320838EEE00D1B0BC /* HuAnimation.swift */; };
-		C7E50F6820838EEE00D1B0BC /* HuTrangitionGhost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6420838EEE00D1B0BC /* HuTrangitionGhost.swift */; };
-		C7E50F6920838EEE00D1B0BC /* HuVertical.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E50F6520838EEE00D1B0BC /* HuVertical.swift */; };
 		F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +70,6 @@
 		C7D6F4C023D48BBA004EE460 /* SwirisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwirisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D6F4C223D48BBA004EE460 /* SwirisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwirisTests.swift; sourceTree = "<group>"; };
 		C7D6F4C423D48BBA004EE460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7E50F6220838EEE00D1B0BC /* HorizonLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizonLine.swift; sourceTree = "<group>"; };
-		C7E50F6320838EEE00D1B0BC /* HuAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuAnimation.swift; sourceTree = "<group>"; };
-		C7E50F6420838EEE00D1B0BC /* HuTrangitionGhost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuTrangitionGhost.swift; sourceTree = "<group>"; };
-		C7E50F6520838EEE00D1B0BC /* HuVertical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuVertical.swift; sourceTree = "<group>"; };
 		F0A5C62D1F7CDDDC000BC9CE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F0B335661F0E517100A8F6DF /* Swiris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B335691F0E517100A8F6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +115,6 @@
 		C791D7121FE61E2A00983F80 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7E50F6120838EEE00D1B0BC /* HuAnimation */,
 				90453DA324EF4EA600B56A91 /* Bar.swift */,
 				90453DA724EFD2A400B56A91 /* NextBarField.swift */,
 				9045D85424F0F53C002A3BE7 /* BrewView.swift */,
@@ -185,17 +176,6 @@
 				C7D6F4C423D48BBA004EE460 /* Info.plist */,
 			);
 			path = SwirisTests;
-			sourceTree = "<group>";
-		};
-		C7E50F6120838EEE00D1B0BC /* HuAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				C7E50F6320838EEE00D1B0BC /* HuAnimation.swift */,
-				C7E50F6420838EEE00D1B0BC /* HuTrangitionGhost.swift */,
-				C7E50F6220838EEE00D1B0BC /* HorizonLine.swift */,
-				C7E50F6520838EEE00D1B0BC /* HuVertical.swift */,
-			);
-			path = HuAnimation;
 			sourceTree = "<group>";
 		};
 		F0A5C62C1F7CDDB0000BC9CE /* Util */ = {
@@ -372,12 +352,8 @@
 				90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */,
 				9002525624F0DA0300879652 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
-				C7E50F6920838EEE00D1B0BC /* HuVertical.swift in Sources */,
-				C7E50F6820838EEE00D1B0BC /* HuTrangitionGhost.swift in Sources */,
-				C7E50F6720838EEE00D1B0BC /* HuAnimation.swift in Sources */,
 				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
 				C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */,
-				C7E50F6620838EEE00D1B0BC /* HorizonLine.swift in Sources */,
 				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,

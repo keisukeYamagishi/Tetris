@@ -8,7 +8,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        navigationController?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -21,18 +20,5 @@ final class HomeViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Swiris", bundle: nil)
         let brewris = storyboard.instantiateInitialViewController()
         navigationController?.pushViewController(brewris!, animated: true)
-    }
-}
-
-@available(iOS 10.0, *)
-extension HomeViewController: UINavigationControllerDelegate {
-    func navigationController(_: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from _: UIViewController,
-                              to _: UIViewController) -> UIViewControllerAnimatedTransitioning?
-    {
-        let tngition: HUTransitionAnimator = HUTransitionVerticalLinesAnimator()
-        tngition.presenting = (operation == .pop) ? false : true
-        return tngition
     }
 }

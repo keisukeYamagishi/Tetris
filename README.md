@@ -6,7 +6,7 @@
 [![](https://img.shields.io/badge/twitter-brew__0__O-blue)](https://twitter.com/brew_0_O)
 
 
-<img src=./doc/Swirif.gif>
+<img src=./doc/demo.mov.gif>
 
 ## Travis CI
 
