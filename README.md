@@ -3,7 +3,7 @@
 
 [![](https://img.shields.io/badge/Language-swif-ff69b4.svg)](https://developer.apple.com/swift/)
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/keisukeYamagishi/Brewris/blob/master/LICENSE)
-[![](https://img.shields.io/badge/twitter-brew__0__O-blue)](https://twitter.com/brew_0_O)
+[![](https://img.shields.io/badge/HP-shichimitoucarashi-00acee)](https://shichimitoucarashi.com/)
 
 
 <img src=./doc/demo.mov.gif>
