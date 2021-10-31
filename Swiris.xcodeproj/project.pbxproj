@@ -13,7 +13,6 @@
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
 		904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904585F224F4B543006FAD52 /* Swiris.storyboard */; };
-		904585F524F4B575006FAD52 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904585F424F4B575006FAD52 /* Home.storyboard */; };
 		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
 		90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EB67AA24F0D42E0051F920 /* Alert.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
@@ -23,20 +22,8 @@
 		C791D7BE1FE6205E00983F80 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D76A1FE61F2A00983F80 /* Level.swift */; };
 		C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B335691F0E517100A8F6DF /* AppDelegate.swift */; };
 		C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */; };
-		C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE72037F5F900889C3C /* HomeViewController.swift */; };
-		C7D6F4C323D48BBA004EE460 /* SwirisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6F4C223D48BBA004EE460 /* SwirisTests.swift */; };
 		F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C7D6F4C523D48BBA004EE460 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0B3355E1F0E517000A8F6DF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0B335651F0E517100A8F6DF;
-			remoteInfo = Swiris;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F0E8A8071F937A0F00258E76 /* Embed Frameworks */ = {
@@ -58,7 +45,6 @@
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
 		904585F224F4B543006FAD52 /* Swiris.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swiris.storyboard; sourceTree = "<group>"; };
-		904585F424F4B575006FAD52 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
 		90EB67AA24F0D42E0051F920 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
@@ -66,10 +52,6 @@
 		C791D7661FE61F2A00983F80 /* BarFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFactory.swift; sourceTree = "<group>"; };
 		C791D76A1FE61F2A00983F80 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwirifViewController.swift; sourceTree = "<group>"; };
-		C7CF2BE72037F5F900889C3C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C7D6F4C023D48BBA004EE460 /* SwirisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwirisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7D6F4C223D48BBA004EE460 /* SwirisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwirisTests.swift; sourceTree = "<group>"; };
-		C7D6F4C423D48BBA004EE460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0A5C62D1F7CDDDC000BC9CE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F0B335661F0E517100A8F6DF /* Swiris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B335691F0E517100A8F6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,13 +60,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C7D6F4BD23D48BBA004EE460 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0B335631F0E517100A8F6DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,7 +121,6 @@
 			children = (
 				90EB67A924F0D42E0051F920 /* Alert */,
 				C7CF2BE42037F5F900889C3C /* Game */,
-				C7CF2BE62037F5F900889C3C /* Home */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -158,24 +132,6 @@
 				904585F224F4B543006FAD52 /* Swiris.storyboard */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		C7CF2BE62037F5F900889C3C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				C7CF2BE72037F5F900889C3C /* HomeViewController.swift */,
-				904585F424F4B575006FAD52 /* Home.storyboard */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		C7D6F4C123D48BBA004EE460 /* SwirisTests */ = {
-			isa = PBXGroup;
-			children = (
-				C7D6F4C223D48BBA004EE460 /* SwirisTests.swift */,
-				C7D6F4C423D48BBA004EE460 /* Info.plist */,
-			);
-			path = SwirisTests;
 			sourceTree = "<group>";
 		};
 		F0A5C62C1F7CDDB0000BC9CE /* Util */ = {
@@ -191,9 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B335681F0E517100A8F6DF /* Swiris */,
-				C7D6F4C123D48BBA004EE460 /* SwirisTests */,
 				F0B335671F0E517100A8F6DF /* Products */,
-				F1838A09A8E2A0DB6D09B2D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				F0B335661F0E517100A8F6DF /* Swiris.app */,
-				C7D6F4C023D48BBA004EE460 /* SwirisTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,34 +174,9 @@
 			path = Swiris;
 			sourceTree = "<group>";
 		};
-		F1838A09A8E2A0DB6D09B2D5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7D6F4BF23D48BBA004EE460 /* SwirisTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C7D6F4C723D48BBB004EE460 /* Build configuration list for PBXNativeTarget "SwirisTests" */;
-			buildPhases = (
-				C7D6F4BC23D48BBA004EE460 /* Sources */,
-				C7D6F4BD23D48BBA004EE460 /* Frameworks */,
-				C7D6F4BE23D48BBA004EE460 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C7D6F4C623D48BBA004EE460 /* PBXTargetDependency */,
-			);
-			name = SwirisTests;
-			productName = SwirisTests;
-			productReference = C7D6F4C023D48BBA004EE460 /* SwirisTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		F0B335651F0E517100A8F6DF /* Swiris */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0B335781F0E517200A8F6DF /* Build configuration list for PBXNativeTarget "Swiris" */;
@@ -277,12 +205,6 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = shichimitoucarashi;
 				TargetAttributes = {
-					C7D6F4BF23D48BBA004EE460 = {
-						CreatedOnToolsVersion = 11.2.1;
-						DevelopmentTeam = D3DW67HS9F;
-						ProvisioningStyle = Automatic;
-						TestTargetID = F0B335651F0E517100A8F6DF;
-					};
 					F0B335651F0E517100A8F6DF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = D3DW67HS9F;
@@ -305,40 +227,23 @@
 			projectRoot = "";
 			targets = (
 				F0B335651F0E517100A8F6DF /* Swiris */,
-				C7D6F4BF23D48BBA004EE460 /* SwirisTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C7D6F4BE23D48BBA004EE460 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0B335641F0E517100A8F6DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */,
 				904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */,
-				904585F524F4B575006FAD52 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C7D6F4BC23D48BBA004EE460 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7D6F4C323D48BBA004EE460 /* SwirisTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0B335621F0E517100A8F6DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,7 +258,6 @@
 				9002525624F0DA0300879652 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
 				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
-				C7CF2BF32037F5F900889C3C /* HomeViewController.swift in Sources */,
 				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,
@@ -362,14 +266,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C7D6F4C623D48BBA004EE460 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0B335651F0E517100A8F6DF /* Swiris */;
-			targetProxy = C7D6F4C523D48BBA004EE460 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */ = {
@@ -383,51 +279,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C7D6F4C823D48BBB004EE460 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3DW67HS9F;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SwirisTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.SwirisTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiris.app/Swiris";
-			};
-			name = Debug;
-		};
-		C7D6F4C923D48BBB004EE460 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D3DW67HS9F;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SwirisTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.SwirisTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swiris.app/Swiris";
-			};
-			name = Release;
-		};
 		F0B335761F0E517200A8F6DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -591,15 +442,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7D6F4C723D48BBB004EE460 /* Build configuration list for PBXNativeTarget "SwirisTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7D6F4C823D48BBB004EE460 /* Debug */,
-				C7D6F4C923D48BBB004EE460 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Swiris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
