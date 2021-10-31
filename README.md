@@ -6,7 +6,7 @@
 [![](https://img.shields.io/badge/HP-shichimitoucarashi-00acee)](https://shichimitoucarashi.com/)
 
 
-<img src=./doc/demo.mov.gif>
+<img src=./doc/Tetris.mov.gif>
 
 ## Travis CI
 

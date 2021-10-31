@@ -7,12 +7,6 @@ jobs:
     runs-on: macOS-latest
     strategy:
       matrix:
-        destination: [
-          'macOS', 
-          'iOS Simulator,name=iPhone 8', 
-          'tvOS Simulator,name=Apple TV', 
-          'watchOS Simulator,name=Apple Watch Series 5 - 40mm'
-        ]
         swift-version: [5.0, 4.2, 4.0]
     steps:
       - uses: actions/checkout@v1
@@ -23,12 +17,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-      - name: Bundle setup
-        run: brew update
-      - name: Bundle install
-        run: bundle install
-      - name: Run tests
+      - name: Build
         env:
-          DESTINATION: platform=${{ matrix.destination }}
           SWIFT_VERSION: ${{ matrix.swift-version }}
-        run: bundle exec fastlane scan
+        run: make debug
