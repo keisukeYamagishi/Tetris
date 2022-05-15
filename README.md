@@ -1,4 +1,4 @@
-# Brewris
+# tetris　⌐◨-◨
 
 
 [![](https://img.shields.io/badge/Language-swif-ff69b4.svg)](https://developer.apple.com/swift/)
@@ -12,18 +12,4 @@
 
 ***Build*** [![Build Status](https://travis-ci.org/keisukeYamagishi/Swiris.svg?branch=master)](https://travis-ci.org/keisukeYamagishi/Swiris)
 
-# tetris ! LOL this is Swirif!!!🎉🎉🎉🎉🎉🎉🎉🎉
- 
- 🍻
- 
- too many bug take care of play
- 
- 🍺
- 
- ##### ~bug~
- #### ~bug~
- ### ~bug~
- ## ~bug~
- # bug 
- # 蟲
-***smells like tetris game***
+# tetris　⌐◨-◨
