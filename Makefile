@@ -2,6 +2,6 @@ debug:
 	xcodebuild \
 	-sdk iphoneos \
 	-configuration Debug \
-	-project Swiris.xcodeproj \
-	-scheme Swiris \
+	-project Tetris.xcodeproj \
+	-scheme Tetris \
 	build CODE_SIGNING_ALLOWED=NO

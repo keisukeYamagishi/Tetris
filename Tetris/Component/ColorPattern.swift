@@ -1,6 +1,6 @@
 //
 //  ColorPattern.swift
-//  Breris
+//  Tetris
 //
 //  Created by shichimi on 2017/09/28.
 //  Copyright © 2017年 shichimitoucarashi. All rights reserved.
