@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func rootViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Swiris", bundle: nil)
+        let storyboard = UIStoryboard(name: "Tetris", bundle: nil)
         let tetrisViewController = storyboard.instantiateInitialViewController()
         window?.rootViewController = tetrisViewController
         window?.makeKeyAndVisible()

@@ -1,7 +1,7 @@
 import UIKit
 
 @available(iOS 10.0, *)
-final class Swiris: UIViewController {
+final class TetrisViewController: UIViewController {
     var score: Int = 0
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var nextBarField: NextBarField!
@@ -22,7 +22,7 @@ final class Swiris: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
-        navigationItem.titleView = navigationTitle(title: "Swiris")
+        navigationItem.titleView = navigationTitle(title: "Tetris")
         levelMng = LevelManager()
         setGesture()
         scoreLabel.adjustsFontSizeToFitWidth = true
@@ -166,7 +166,7 @@ final class Swiris: UIViewController {
     func startEngine() {
         moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(levelMng.levelCount / 10),
                                        target: self,
-                                       selector: #selector(Swiris.brewrisEngine),
+                                       selector: #selector(TetrisViewController.brewrisEngine),
                                        userInfo: nil, repeats: true)
     }
 

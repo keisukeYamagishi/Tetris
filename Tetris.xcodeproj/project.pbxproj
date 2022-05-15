@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		9002525624F0DA0300879652 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525524F0DA0300879652 /* UIViewController+.swift */; };
 		9002525824F0E7AF00879652 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525724F0E7AF00879652 /* UIColor+.swift */; };
+		904060302830BB4400FD6974 /* Tetris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040602F2830BB4400FD6974 /* Tetris.storyboard */; };
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA624EF61DA00B56A91 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA524EF61DA00B56A91 /* Bars.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
-		904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904585F224F4B543006FAD52 /* Swiris.storyboard */; };
 		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
-		90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EB67AA24F0D42E0051F920 /* Alert.swift */; };
+		90938A152830BA6800356CC5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90938A142830BA6800356CC5 /* Alert.swift */; };
 		C791D7AB1FE6205E00983F80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5C62D1F7CDDDC000BC9CE /* Color.swift */; };
 		C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7293F0F1FAD8F66006D4695 /* DebugLog.swift */; };
 		C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D7631FE61F2A00983F80 /* ColorPattern.swift */; };
 		C791D7BA1FE6205E00983F80 /* BarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D7661FE61F2A00983F80 /* BarFactory.swift */; };
 		C791D7BE1FE6205E00983F80 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791D76A1FE61F2A00983F80 /* Level.swift */; };
 		C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B335691F0E517100A8F6DF /* AppDelegate.swift */; };
-		C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */; };
+		C7CF2BF22037F5F900889C3C /* TetrisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CF2BE52037F5F900889C3C /* TetrisViewController.swift */; };
 		F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -41,19 +41,19 @@
 /* Begin PBXFileReference section */
 		9002525524F0DA0300879652 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		9002525724F0E7AF00879652 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		9040602F2830BB4400FD6974 /* Tetris.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tetris.storyboard; sourceTree = "<group>"; };
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		90453DA524EF61DA00B56A91 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
-		904585F224F4B543006FAD52 /* Swiris.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swiris.storyboard; sourceTree = "<group>"; };
 		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
-		90EB67AA24F0D42E0051F920 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		90938A142830BA6800356CC5 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C7293F0F1FAD8F66006D4695 /* DebugLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		C791D7631FE61F2A00983F80 /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
 		C791D7661FE61F2A00983F80 /* BarFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarFactory.swift; sourceTree = "<group>"; };
 		C791D76A1FE61F2A00983F80 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwirifViewController.swift; sourceTree = "<group>"; };
+		C7CF2BE52037F5F900889C3C /* TetrisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TetrisViewController.swift; sourceTree = "<group>"; };
 		F0A5C62D1F7CDDDC000BC9CE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		F0B335661F0E517100A8F6DF /* Swiris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiris.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B335661F0E517100A8F6DF /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B335691F0E517100A8F6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0B335731F0E517200A8F6DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0B335751F0E517200A8F6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,14 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		90EB67A924F0D42E0051F920 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				90EB67AA24F0D42E0051F920 /* Alert.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		C708DEEA23D1F4CE005F6F32 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C791D7631FE61F2A00983F80 /* ColorPattern.swift */,
+				90938A142830BA6800356CC5 /* Alert.swift */,
 				C791D7651FE61F2A00983F80 /* GameComponent */,
 			);
 			path = Component;
@@ -119,7 +112,6 @@
 		C7CF2BDE2037F5F900889C3C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				90EB67A924F0D42E0051F920 /* Alert */,
 				C7CF2BE42037F5F900889C3C /* Game */,
 			);
 			path = ViewController;
@@ -128,8 +120,8 @@
 		C7CF2BE42037F5F900889C3C /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				C7CF2BE52037F5F900889C3C /* SwirifViewController.swift */,
-				904585F224F4B543006FAD52 /* Swiris.storyboard */,
+				C7CF2BE52037F5F900889C3C /* TetrisViewController.swift */,
+				9040602F2830BB4400FD6974 /* Tetris.storyboard */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -146,7 +138,7 @@
 		F0B3355D1F0E517000A8F6DF = {
 			isa = PBXGroup;
 			children = (
-				F0B335681F0E517100A8F6DF /* Swiris */,
+				F0B335681F0E517100A8F6DF /* Tetris */,
 				F0B335671F0E517100A8F6DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,12 +146,12 @@
 		F0B335671F0E517100A8F6DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0B335661F0E517100A8F6DF /* Swiris.app */,
+				F0B335661F0E517100A8F6DF /* Tetris.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F0B335681F0E517100A8F6DF /* Swiris */ = {
+		F0B335681F0E517100A8F6DF /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
 				F0B335691F0E517100A8F6DF /* AppDelegate.swift */,
@@ -171,15 +163,15 @@
 				C791D7121FE61E2A00983F80 /* View */,
 				F0A5C62C1F7CDDB0000BC9CE /* Util */,
 			);
-			path = Swiris;
+			path = Tetris;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F0B335651F0E517100A8F6DF /* Swiris */ = {
+		F0B335651F0E517100A8F6DF /* Tetris */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0B335781F0E517200A8F6DF /* Build configuration list for PBXNativeTarget "Swiris" */;
+			buildConfigurationList = F0B335781F0E517200A8F6DF /* Build configuration list for PBXNativeTarget "Tetris" */;
 			buildPhases = (
 				F0B335621F0E517100A8F6DF /* Sources */,
 				F0B335631F0E517100A8F6DF /* Frameworks */,
@@ -190,9 +182,9 @@
 			);
 			dependencies = (
 			);
-			name = Swiris;
+			name = Tetris;
 			productName = Breris;
-			productReference = F0B335661F0E517100A8F6DF /* Swiris.app */;
+			productReference = F0B335661F0E517100A8F6DF /* Tetris.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +205,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Swiris" */;
+			buildConfigurationList = F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Tetris" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,7 +218,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0B335651F0E517100A8F6DF /* Swiris */,
+				F0B335651F0E517100A8F6DF /* Tetris */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B335741F0E517200A8F6DF /* LaunchScreen.storyboard in Resources */,
-				904585F324F4B543006FAD52 /* Swiris.storyboard in Resources */,
+				904060302830BB4400FD6974 /* Tetris.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,15 +244,15 @@
 				C791D7AB1FE6205E00983F80 /* Color.swift in Sources */,
 				C791D7AC1FE6205E00983F80 /* DebugLog.swift in Sources */,
 				C791D7B81FE6205E00983F80 /* ColorPattern.swift in Sources */,
-				90EB67AC24F0D42E0051F920 /* Alert.swift in Sources */,
 				C791D7BA1FE6205E00983F80 /* BarFactory.swift in Sources */,
 				90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */,
+				90938A152830BA6800356CC5 /* Alert.swift in Sources */,
 				9002525624F0DA0300879652 /* UIViewController+.swift in Sources */,
 				C791D7BE1FE6205E00983F80 /* Level.swift in Sources */,
 				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
 				90453DA624EF61DA00B56A91 /* Bars.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
-				C7CF2BF22037F5F900889C3C /* SwirifViewController.swift in Sources */,
+				C7CF2BF22037F5F900889C3C /* TetrisViewController.swift in Sources */,
 				9002525824F0E7AF00879652 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,9 +399,11 @@
 				DEVELOPMENT_TEAM = D3DW67HS9F;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited)";
-				INFOPLIST_FILE = Swiris/Info.plist;
+				INFOPLIST_FILE = Tetris/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Swiris;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Tetris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -428,9 +422,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3DW67HS9F;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Swiris/Info.plist;
+				INFOPLIST_FILE = Tetris/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Swiris;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shichimitoucarashi.Tetris;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -442,7 +438,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Swiris" */ = {
+		F0B335611F0E517000A8F6DF /* Build configuration list for PBXProject "Tetris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0B335761F0E517200A8F6DF /* Debug */,
@@ -451,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0B335781F0E517200A8F6DF /* Build configuration list for PBXNativeTarget "Swiris" */ = {
+		F0B335781F0E517200A8F6DF /* Build configuration list for PBXNativeTarget "Tetris" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0B335791F0E517200A8F6DF /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  Bars.swift
-//  Swiris
+//  Tetris
 //
 //  Created by keisuke yamagishi on 2020/08/21.
 //  Copyright © 2020 shichimitoucarashi. All rights reserved.
