@@ -58,7 +58,7 @@ final class NextBarField: UIView {
     func displayNextBar() {
         var tag: Int = 1
         nextBar = Bars.getTheBar(color: NBColor)
-        NBColor = Color.radomNum()
+        NBColor = Color.randomNumber()
         for tate in 0 ..< 4 {
             let nb = nextBar[tate]
 
