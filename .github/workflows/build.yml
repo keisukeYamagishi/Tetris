@@ -21,3 +21,8 @@ jobs:
         env:
           SWIFT_VERSION: ${{ matrix.swift-version }}
         run: make debug
+      - name: Debug Test
+        env:
+          SWIFT_VERSION: ${{ matrix.swift-version }}
+        run: make test
+
