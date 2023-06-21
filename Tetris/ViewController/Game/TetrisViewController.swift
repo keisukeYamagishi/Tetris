@@ -147,7 +147,7 @@ final class TetrisViewController: UIViewController {
         theBar = nil
         brewView.barInitialze()
         nextBarField.initializeField()
-        CBColor = Color.radomNum()
+        CBColor = Color.randomNumber()
         theBar = Bars.getTheBar(color: CBColor)
         nextBarField.displayNextBar()
         bars = Bars()

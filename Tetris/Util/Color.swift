@@ -9,15 +9,9 @@
 import UIKit
 
 class Color {
-    init() {}
-
-    var colorNumbner: Int = 0
 
     public func barColor() -> UIColor {
-        colorNumbner = Int(arc4random_uniform(UInt32(ColorPattern.count)))
-        let colorRandom: String = ColorPattern[colorNumbner]
-
-        return UIColor(hex: colorRandom)
+        UIColor(hex: ColorPattern[Color.randomNumber()])
     }
 
     static func NaviBarColor() -> UIColor {
@@ -37,7 +31,7 @@ class Color {
         UIColor(hex: naviBarTitleColor)
     }
 
-    static func radomNum() -> Int {
+    static func randomNumber() -> Int {
         Int(arc4random_uniform(UInt32(ColorPattern.count)))
     }
 }
