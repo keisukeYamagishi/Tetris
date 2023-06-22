@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900064312A442E5F008B7CF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900064302A442E5F008B7CF9 /* Constants.swift */; };
+		900064332A442E7E008B7CF9 /* Cp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900064322A442E7E008B7CF9 /* Cp.swift */; };
+		900064352A442E9A008B7CF9 /* Which.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900064342A442E9A008B7CF9 /* Which.swift */; };
 		9002525624F0DA0300879652 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525524F0DA0300879652 /* UIViewController+.swift */; };
 		9002525824F0E7AF00879652 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002525724F0E7AF00879652 /* UIColor+.swift */; };
 		904060302830BB4400FD6974 /* Tetris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040602F2830BB4400FD6974 /* Tetris.storyboard */; };
@@ -18,6 +21,7 @@
 		907F47192A43558900F079AF /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47132A43558900F079AF /* Bars.swift */; };
 		907F471A2A43558900F079AF /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47142A43558900F079AF /* Level.swift */; };
 		907F471B2A43558900F079AF /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47162A43558900F079AF /* DebugLog.swift */; };
+		907F471F2A43F02800F079AF /* Bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F471E2A43F02800F079AF /* Bs.swift */; };
 		90938A152830BA6800356CC5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90938A142830BA6800356CC5 /* Alert.swift */; };
 		9095E5B22A4291D900BD97F1 /* TetrisUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095E5B12A4291D900BD97F1 /* TetrisUnitTest.swift */; };
 		9095E5B92A4297CA00BD97F1 /* TetrisBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095E5B82A4297CA00BD97F1 /* TetrisBarTest.swift */; };
@@ -51,6 +55,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		900064302A442E5F008B7CF9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		900064322A442E7E008B7CF9 /* Cp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cp.swift; sourceTree = "<group>"; };
+		900064342A442E9A008B7CF9 /* Which.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Which.swift; sourceTree = "<group>"; };
 		9002525524F0DA0300879652 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		9002525724F0E7AF00879652 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9040602F2830BB4400FD6974 /* Tetris.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tetris.storyboard; sourceTree = "<group>"; };
@@ -62,6 +69,7 @@
 		907F47132A43558900F079AF /* Bars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
 		907F47142A43558900F079AF /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		907F47162A43558900F079AF /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
+		907F471E2A43F02800F079AF /* Bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bs.swift; sourceTree = "<group>"; };
 		90938A142830BA6800356CC5 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		9095E5AF2A4291D900BD97F1 /* TetrisUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9095E5B12A4291D900BD97F1 /* TetrisUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisUnitTest.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		907F470A2A43556B00F079AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				907F471D2A43F01C00F079AF /* Store */,
 				907F470F2A43558900F079AF /* Component */,
 				C708DEEA23D1F4CE005F6F32 /* Extention */,
 				907F47152A43558900F079AF /* Util */,
@@ -126,7 +135,6 @@
 		907F47112A43558900F079AF /* GameComponent */ = {
 			isa = PBXGroup;
 			children = (
-				907F47122A43558900F079AF /* BarStore.swift */,
 				907F47132A43558900F079AF /* Bars.swift */,
 				907F47142A43558900F079AF /* Level.swift */,
 			);
@@ -148,6 +156,18 @@
 				F0A5C62D1F7CDDDC000BC9CE /* Color.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		907F471D2A43F01C00F079AF /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				907F471E2A43F02800F079AF /* Bs.swift */,
+				900064302A442E5F008B7CF9 /* Constants.swift */,
+				900064322A442E7E008B7CF9 /* Cp.swift */,
+				900064342A442E9A008B7CF9 /* Which.swift */,
+				907F47122A43558900F079AF /* BarStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		9095E5B02A4291D900BD97F1 /* TetrisUnitTest */ = {
@@ -348,9 +368,13 @@
 				907F47172A43558900F079AF /* ColorPattern.swift in Sources */,
 				90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */,
 				907F47182A43558900F079AF /* BarStore.swift in Sources */,
+				900064312A442E5F008B7CF9 /* Constants.swift in Sources */,
 				90938A152830BA6800356CC5 /* Alert.swift in Sources */,
+				900064332A442E7E008B7CF9 /* Cp.swift in Sources */,
+				907F471F2A43F02800F079AF /* Bs.swift in Sources */,
 				9002525624F0DA0300879652 /* UIViewController+.swift in Sources */,
 				90453DA424EF4EA600B56A91 /* Bar.swift in Sources */,
+				900064352A442E9A008B7CF9 /* Which.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				907F47192A43558900F079AF /* Bars.swift in Sources */,
 				C7CF2BF22037F5F900889C3C /* TetrisViewController.swift in Sources */,
