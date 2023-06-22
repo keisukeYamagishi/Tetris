@@ -49,7 +49,7 @@ final class NextBarField: UIView {
         for _ in 0 ..< 4 {
             for _ in 0 ..< 4 {
                 let bar = viewWithTag(tag) as! Bar
-                bar.noBrew()
+                bar.empty()
                 tag += 1
             }
         }
@@ -65,10 +65,10 @@ final class NextBarField: UIView {
             for yoko in 0 ..< 4 {
                 if nb[yoko].bp == Bars.Move {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.brew(NBColor)
+                    bar.present(NBColor)
                 } else {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.noBrew()
+                    bar.empty()
                 }
                 tag += 1
             }

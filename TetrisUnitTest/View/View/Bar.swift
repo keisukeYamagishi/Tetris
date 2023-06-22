@@ -29,13 +29,13 @@ class Bar: UIView {
         layer.borderWidth = 1.0
     }
 
-    func noBrew() {
-        backgroundColor = UIColor.white
+    func empty() {
+        backgroundColor = .white
         layer.borderColor = BorderColor.cgColor
         layer.borderWidth = 1.0
     }
 
-    func brew(_ color: Int) {
+    func present(_ color: Int) {
         backgroundColor = Color.colorList(cNum: color)
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 1.0
