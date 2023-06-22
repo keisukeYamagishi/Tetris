@@ -12,7 +12,7 @@
 		904060302830BB4400FD6974 /* Tetris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040602F2830BB4400FD6974 /* Tetris.storyboard */; };
 		90453DA424EF4EA600B56A91 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA324EF4EA600B56A91 /* Bar.swift */; };
 		90453DA824EFD2A400B56A91 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90453DA724EFD2A400B56A91 /* NextBarField.swift */; };
-		9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* BrewView.swift */; };
+		9045D85524F0F53C002A3BE7 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9045D85424F0F53C002A3BE7 /* FieldView.swift */; };
 		907F47172A43558900F079AF /* ColorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47102A43558900F079AF /* ColorPattern.swift */; };
 		907F47182A43558900F079AF /* BarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47122A43558900F079AF /* BarStore.swift */; };
 		907F47192A43558900F079AF /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F47132A43558900F079AF /* Bars.swift */; };
@@ -56,7 +56,7 @@
 		9040602F2830BB4400FD6974 /* Tetris.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tetris.storyboard; sourceTree = "<group>"; };
 		90453DA324EF4EA600B56A91 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		90453DA724EFD2A400B56A91 /* NextBarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
-		9045D85424F0F53C002A3BE7 /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
+		9045D85424F0F53C002A3BE7 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		907F47102A43558900F079AF /* ColorPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPattern.swift; sourceTree = "<group>"; };
 		907F47122A43558900F079AF /* BarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarStore.swift; sourceTree = "<group>"; };
 		907F47132A43558900F079AF /* Bars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				90453DA324EF4EA600B56A91 /* Bar.swift */,
-				9045D85424F0F53C002A3BE7 /* BrewView.swift */,
+				9045D85424F0F53C002A3BE7 /* FieldView.swift */,
 				90453DA724EFD2A400B56A91 /* NextBarField.swift */,
 			);
 			path = View;
@@ -342,7 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				907F471A2A43558900F079AF /* Level.swift in Sources */,
-				9045D85524F0F53C002A3BE7 /* BrewView.swift in Sources */,
+				9045D85524F0F53C002A3BE7 /* FieldView.swift in Sources */,
 				907F471B2A43558900F079AF /* DebugLog.swift in Sources */,
 				C791D7AB1FE6205E00983F80 /* Color.swift in Sources */,
 				907F47172A43558900F079AF /* ColorPattern.swift in Sources */,

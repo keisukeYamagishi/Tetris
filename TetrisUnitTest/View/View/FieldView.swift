@@ -8,13 +8,13 @@
 
 import UIKit
 
-class BrewView: UIView {
+class FieldView: UIView {
     var barSize: CGFloat {
         frame.size.width / CGFloat(Yoko)
     }
 
-    var fieldHeight: CGFloat {
-        return barSize * CGFloat(Tate)
+    var height: CGFloat {
+        barSize * CGFloat(Tate)
     }
 
     required init?(coder: NSCoder) {
@@ -22,28 +22,25 @@ class BrewView: UIView {
     }
 
     func configure() {
-        configureField()
-    }
-
-    func configureField() {
         var barTag = 1
         for tate in 0 ..< Tate {
             for yoko in 0 ..< Yoko {
                 let bar: Bar = Bar(frame: CGRect(x: CGFloat(yoko) * barSize,
                                                  y: CGFloat(tate) * barSize,
                                                  width: CGFloat(barSize),
-                                                 height: CGFloat(barSize)), tag: barTag)
+                                                 height: CGFloat(barSize)),
+                                   tag: barTag)
                 addSubview(bar)
                 barTag += 1
             }
         }
     }
 
-    func barInitialze() {
-        var tag: Int = 1
+    func initialze() {
+        var tag = 1
         for _ in 0 ..< Tate {
             for _ in 0 ..< Yoko {
-                let bar: Bar = viewWithTag(tag) as! Bar
+                let bar = viewWithTag(tag) as! Bar
                 bar.empty()
                 tag += 1
             }
@@ -51,16 +48,14 @@ class BrewView: UIView {
     }
 
     func barDisplay(bars: [[Bs]]) {
-        var tag: Int = 1
-
+        var tag = 1
         for tate in 0 ..< Tate {
             let isBar: [Bs] = bars[tate]
-
             for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Move || isBar[yoko].bp == Bars.Store {
+                if isBar[yoko].bp == Bars.Move
+                    || isBar[yoko].bp == Bars.Store {
                     let bar = viewWithTag(tag) as! Bar
                     bar.present(isBar[yoko].bc)
-
                 } else {
                     let bar: Bar = viewWithTag(tag) as! Bar
                     bar.empty()

@@ -7,7 +7,7 @@ final class TetrisViewController: UIViewController {
     @IBOutlet var nextBarField: NextBarField!
     @IBOutlet var rotstionButton: UIButton!
     var firstTap: CGFloat = 0
-    @IBOutlet var brewView: BrewView!
+    @IBOutlet var fieldView: FieldView!
     @IBOutlet var levelLbl: UILabel!
     var theBar: [[Bs]]!
     var nextTheBar: [[Int]]!
@@ -87,7 +87,7 @@ final class TetrisViewController: UIViewController {
                 bars.removeCurrent(cCp: cCp)
                 bars.cp.px -= 1
                 bars.move(bar: theBar, cColor: CBColor)
-                brewView.barDisplay(bars: bars.values)
+                fieldView.barDisplay(bars: bars.values)
             }
         }
     }
@@ -99,7 +99,7 @@ final class TetrisViewController: UIViewController {
                 bars.removeCurrent(cCp: cCp)
                 bars.cp.px += 1
                 bars.move(bar: theBar, cColor: CBColor)
-                brewView.barDisplay(bars: bars.values)
+                fieldView.barDisplay(bars: bars.values)
             }
         }
     }
@@ -136,7 +136,7 @@ final class TetrisViewController: UIViewController {
         bars.removeCurrent(cCp: cCp)
         theBar = rotations
         bars.move(bar: theBar, cColor: CBColor)
-        brewView.barDisplay(bars: bars.values)
+        fieldView.barDisplay(bars: bars.values)
     }
 
     func startBrew() {
@@ -145,7 +145,7 @@ final class TetrisViewController: UIViewController {
         score = 0
         nextTheBar = nil
         theBar = nil
-        brewView.barInitialze()
+        fieldView.initialze()
         nextBarField.initializeField()
         CBColor = Color.randomNumber()
         theBar = Bars.getTheBar(color: CBColor)
@@ -180,8 +180,8 @@ final class TetrisViewController: UIViewController {
     }
 
     func barInit() {
-        brewViewHeightConstraint.constant = brewView.fieldHeight
-        brewView.configure()
+        brewViewHeightConstraint.constant = fieldView.height
+        fieldView.configure()
     }
 
     func setNextBar() {
@@ -207,7 +207,7 @@ final class TetrisViewController: UIViewController {
         BarLog(bar: bars.values)
         if !bars.judgementBrew() {
             bars.move(bar: theBar, cColor: CBColor)
-            brewView.barDisplay(bars: bars.values)
+            fieldView.barDisplay(bars: bars.values)
         }
 
         if bars.isBottom
@@ -229,7 +229,7 @@ final class TetrisViewController: UIViewController {
         BarLog(bar: bars.values)
         if bars.isInAgreement() {
             BarLog(bar: bars.values)
-            brewView.barDisplay(bars: bars.values)
+            fieldView.barDisplay(bars: bars.values)
             setScore(sc: bars.removeCount)
             bars.store(cbColor: CBColor)
         }
