@@ -44,7 +44,7 @@ class BrewView: UIView {
         for _ in 0 ..< Tate {
             for _ in 0 ..< Yoko {
                 let bar: Bar = viewWithTag(tag) as! Bar
-                bar.noBrew()
+                bar.empty()
                 tag += 1
             }
         }
@@ -59,11 +59,11 @@ class BrewView: UIView {
             for yoko in 0 ..< Yoko {
                 if isBar[yoko].bp == Bars.Move || isBar[yoko].bp == Bars.Store {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.brew(isBar[yoko].bc)
+                    bar.present(isBar[yoko].bc)
 
                 } else {
                     let bar: Bar = viewWithTag(tag) as! Bar
-                    bar.noBrew()
+                    bar.empty()
                 }
                 tag += 1
             }
