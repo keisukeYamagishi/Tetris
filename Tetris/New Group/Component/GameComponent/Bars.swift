@@ -6,27 +6,7 @@
 //  Copyright © 2020 shichimitoucarashi. All rights reserved.
 //
 
-import UIKit
-
-var Yoko: Int = 10 // 7
-var Tate: Int = 20 // 11var brewrisYoko: Int = 10 // 7
-var DPX = 4
-var DPY = 0
-
-struct Cp {
-    var px = 0
-    var py = 0
-}
-
-enum Which: Int {
-    case left = 0
-    case right = 1
-}
-
-public struct Bs {
-    var bp = 0
-    var bc = 0
-}
+import Foundation
 
 final class Bars {
     static let Noting = 0
@@ -34,29 +14,18 @@ final class Bars {
     static let Store = 2
     var values: [[Bs]] = []
     var noneed: [Cp] = []
-    var cp: Cp = Cp(px: 0, py: 0)
+    var cp = Cp(px: 0, py: 0)
     var removeCount: Int = 0
     var numberOfCount: Int {
         values.count
     }
 
-    var yokoValue: [Bs] {
-        var yoko: [Bs] = []
-        for _ in 0 ..< Yoko {
-            let bs = Bs()
-            yoko.append(bs)
-        }
-        return yoko
-    }
-
     init() {
-        for _ in 0 ..< Tate {
-            values.append(yokoValue)
-        }
+        values = Bs.inital
     }
 
     func initalize() {
-        noneed = Array()
+        noneed = []
         cp.px = DPX
         cp.py = DPY
     }
@@ -84,13 +53,15 @@ final class Bars {
     }
 
     func spin(bars: [[Bs]]) -> [[Bs]] {
-        var first: [Bs] = Array()
-        var second: [Bs] = Array()
-        var third: [Bs] = Array()
-        var fourth: [Bs] = Array()
+        var first: [Bs] = []
+        var second: [Bs] = []
+        var third: [Bs] = []
+        var fourth: [Bs] = []
 
+        BarLog(bar: bars)
+        
         for tate in 0 ..< bars.count {
-            let barYoko: [Bs] = bars[tate]
+            let barYoko = bars[tate]
 
             for yoko in 0 ..< barYoko.count {
                 switch yoko {
@@ -107,7 +78,7 @@ final class Bars {
                 }
             }
         }
-
+        BarLog(bar: bars)
         var rotations = [first, second, third, fourth]
 
         for _ in 0 ..< rotations.count {
@@ -118,10 +89,11 @@ final class Bars {
                     isFlag = true
                 }
             }
-
+            BarLog(bar: bars)
             if isFlag != true {
+                BarLog(bar: bars)
                 rotations.remove(at: rotations.count - 1)
-                rotations.insert(yokoValue, at: 0)
+                rotations.insert(Bs.yoko, at: 0)
             }
         }
         return rotations
@@ -282,7 +254,7 @@ final class Bars {
                 isInAgreement = true
                 removeCount += 1
                 values.remove(at: index)
-                values.insert(yokoValue, at: 0)
+                values.insert(Bs.yoko, at: 0)
             }
         }
         return isInAgreement

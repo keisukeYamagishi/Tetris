@@ -14,7 +14,7 @@ final class TetrisViewController: UIViewController {
     var moveBar: Timer!
     var CBColor: Int!
     var levelMng: LevelManager!
-    var bars: Bars! = Bars()
+    var bars: Bars = Bars()
 
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
     var brewCount: Float = 0.0
