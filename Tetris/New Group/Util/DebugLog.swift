@@ -8,13 +8,13 @@
 
 import Foundation
 
-public func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+func print(_ items: Any..., separator: String = " ", terminator: String = "\n") {
     #if DEBUG
         Swift.print("\(items)", separator: separator, terminator: terminator)
     #endif
 }
 
-public func BarLog(bar: [[Bs]]) {
+func BarLog(bar: [[Bs]]) {
     print("Bar")
     for f in bar {
         f.forEach { print($0.bp, terminator: "") }
@@ -22,7 +22,7 @@ public func BarLog(bar: [[Bs]]) {
     }
 }
 
-public func ColorLog(bar: [[Bs]]) {
+func ColorLog(bar: [[Bs]]) {
     print("Color")
     for f in bar {
         f.forEach { print($0.bc, terminator: "") }

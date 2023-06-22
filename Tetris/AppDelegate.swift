@@ -7,9 +7,6 @@
 //
 
 import UIKit
-
-@available(iOS 10.0, *)
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
