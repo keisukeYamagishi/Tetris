@@ -195,10 +195,10 @@ final class TetrisViewController: UIViewController {
     }
 
     func gameOverAlert() {
-        let actions = [AlertAction(title: "Ok", style: .default, handler: { [weak self] _, _ in
-            self?.startBrew()
-        }), AlertAction(title: "Cancel", style: .cancel, handler: { [weak self] _, _ in
-            self?.startBrew()
+        let actions = [AlertAction(title: "Ok",
+                                   style: .default,
+                                   handler: {_,_  in
+            self.startBrew()
         })]
         alert(title: "GAME OVER", message: "Out of move", actions: actions)
     }
