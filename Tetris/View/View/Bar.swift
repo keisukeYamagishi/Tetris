@@ -8,36 +8,52 @@
 
 import UIKit
 
-class Bar: UIView {
+@MainActor
+final class Bar: UIView {
+
+    @IBOutlet private var imageView: UIImageView!
+
+    @IBOutlet var view: UIView! {
+        didSet {
+            view.frame = bounds
+            view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+            addSubview(view)
+        }
+    }
+
     convenience init(frame: CGRect, tag: Int) {
         self.init(frame: frame)
+        setup()
         self.tag = tag
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func configure() {
-        backgroundColor = UIColor.white
-        layer.borderColor = BorderColor.cgColor
-        layer.borderWidth = 1.0
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
     func empty() {
-        backgroundColor = .white
-        layer.borderColor = BorderColor.cgColor
-        layer.borderWidth = 1.0
+        imageView.image = UIImage(named: "empty.png")
     }
 
-    func present(_ color: Int) {
-        backgroundColor = Color.colorList(cNum: color)
-        layer.borderColor = UIColor.white.cgColor
-        layer.borderWidth = 1.0
+    func present() {
+        imageView.image = UIImage(named: "bar.png")
+    }
+
+    private func setup(){
+        loadNib()
+        backgroundColor = UIColor.white
+        layer.borderColor = UIColor(hex: "b4c5b5").cgColor
+        layer.borderWidth = 2.0
+    }
+
+    private func loadNib() {
+        UINib(nibName: type(of: self).nibName,
+              bundle: nil)
+        .instantiate(withOwner: self,
+                     options: nil)
     }
 }

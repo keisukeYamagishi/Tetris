@@ -10,7 +10,6 @@ final class TetrisViewController: UIViewController {
     @IBOutlet var levelLbl: UILabel!
     var nextTheBar: [[Int]]!
     var moveBar: Timer!
-    var CBColor: Int!
     var levelMng: LevelManager!
     var bars = Bars()
 
@@ -134,10 +133,9 @@ final class TetrisViewController: UIViewController {
         nextTheBar = nil
         fieldView.initialze()
         nextBarField.initializeField()
-        CBColor = Color.randomNumber()
         nextBarField.displayNextBar()
         bars = Bars()
-        bars.getTheBar(color: CBColor)
+        bars.getTheBar()
         bars.setBar()
         bars.cp.px = DPX
         bars.cp.py = DPY
@@ -210,7 +208,6 @@ final class TetrisViewController: UIViewController {
         bars.theBar = nextBarField.nextBar
         bars.setBar()
         nextBarField.displayNextBar()
-        CBColor = nextBarField.NBColor
     }
 
     func setScore(sc: Int) {

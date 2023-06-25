@@ -8,7 +8,7 @@
 
 import Foundation
 
-var Yoko: Int = 10 // 7
+var Yoko: Int = 8 // 7
 var Tate: Int = 20 // 11var brewrisYoko: Int = 10 // 7
 
 let TateRange: Range<Int> = 0 ..< Tate

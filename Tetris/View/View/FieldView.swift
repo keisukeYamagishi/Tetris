@@ -56,7 +56,7 @@ class FieldView: UIView {
                     || isBar[yoko].status == .store
                 {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.present(isBar[yoko].color)
+                    bar.present()
                 } else {
                     let bar: Bar = viewWithTag(tag) as! Bar
                     bar.empty()

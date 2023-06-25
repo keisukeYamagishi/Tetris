@@ -27,35 +27,35 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-fz-fI2" customClass="NextBarField" customModule="Tetris" customModuleProvider="target">
-                                <rect key="frame" x="316" y="109" width="74" height="74"/>
-                                <color key="backgroundColor" red="0.78823529410000004" green="0.79215686269999996" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="316" y="118" width="74" height="74"/>
+                                <color key="backgroundColor" red="0.70588235294117641" green="0.76078431372549016" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ohk-fz-fI2" secondAttribute="height" multiplier="1:1" id="3b7-TQ-shy"/>
                                     <constraint firstAttribute="width" constant="74" id="ZJX-BG-RAV"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678912" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-Kk-5tD">
-                                <rect key="frame" x="288.5" y="74" width="119.5" height="21"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="19"/>
+                                <rect key="frame" x="240" y="74" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv:1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-34-3CO">
-                                <rect key="frame" x="366" y="213" width="27" height="32"/>
+                                <rect key="frame" x="351.5" y="222" width="41.5" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="cHq-pP-WVO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nT-xt-Rwc">
                                 <rect key="frame" x="316" y="511" width="78" height="157"/>
-                                <color key="backgroundColor" red="0.25779226420000001" green="0.6034293771" blue="0.83142292500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7nT-xt-Rwc" secondAttribute="height" multiplier="74:149" id="XtQ-cR-Lqx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="46"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="46"/>
                                 <state key="normal" title="B">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,12 +65,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRF-82-wyS">
                                 <rect key="frame" x="316" y="688" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.2693935931" green="0.60343158249999995" blue="0.83142292500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Wb8-HP-cIE"/>
                                     <constraint firstAttribute="width" secondItem="JRF-82-wyS" secondAttribute="height" multiplier="1:1" id="ux6-L0-BCc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -80,12 +80,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZd-lt-khk">
                                 <rect key="frame" x="316" y="778" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.2693935931" green="0.60343158249999995" blue="0.83142292500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="XIc-dO-AmO"/>
                                     <constraint firstAttribute="width" secondItem="IZd-lt-khk" secondAttribute="height" multiplier="1:1" id="pwh-pc-OgU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -95,7 +95,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4J-oo-Ozj"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.70588235294117641" green="0.76078431372549016" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Nim-Kk-5tD" firstAttribute="top" secondItem="bpY-LK-tzr" secondAttribute="bottom" constant="26" id="1x2-ys-att"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="14" id="3vg-ox-Qdn"/>

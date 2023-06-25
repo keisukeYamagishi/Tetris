@@ -59,14 +59,14 @@ final class NextBarField: UIView {
     func displayNextBar() {
         var tag: Int = 1
         let bars = Bars()
-        bars.getTheBar(color: Color.randomNumber())
+        bars.getTheBar()
         nextBar = bars.theBar
         for tate in 0 ..< 4 {
             let nb = nextBar[tate]
             for yoko in 0 ..< 4 {
                 if nb[yoko].status == .move {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.present(NBColor)
+                    bar.present()
                 } else {
                     let bar = viewWithTag(tag) as! Bar
                     bar.empty()
