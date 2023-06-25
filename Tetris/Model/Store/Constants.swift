@@ -15,5 +15,5 @@ let TateRange: Range<Int> = 0 ..< Tate
 
 let YokoRange: Range<Int> = 0 ..< Yoko
 
-var DPX = 4
+var DPX = 3
 var DPY = 0

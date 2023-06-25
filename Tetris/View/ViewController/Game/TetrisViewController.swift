@@ -1,6 +1,5 @@
 import UIKit
 
-@available(iOS 10.0, *)
 final class TetrisViewController: UIViewController {
     var score: Int = 0
     @IBOutlet var scoreLabel: UILabel!
@@ -9,15 +8,14 @@ final class TetrisViewController: UIViewController {
     var firstTap: CGFloat = 0
     @IBOutlet var fieldView: FieldView!
     @IBOutlet var levelLbl: UILabel!
-    var theBar: [[Bs]]!
     var nextTheBar: [[Int]]!
     var moveBar: Timer!
     var CBColor: Int!
     var levelMng: LevelManager!
-    var bars: Bars = Bars()
+    var bars = Bars()
 
     @IBOutlet var brewViewHeightConstraint: NSLayoutConstraint!
-    var brewCount: Float = 0.0
+    var tetrisCount: Float = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,26 +79,18 @@ final class TetrisViewController: UIViewController {
     }
 
     func swipeLeft() {
-        if bars.isSwipe(which: .left) {
-            if !bars.judgementBrew() {
-                let cCp: [Cp] = bars.noneed
-                bars.removeCurrent(cCp: cCp)
-                bars.cp.px -= 1
-                bars.move(bar: theBar, cColor: CBColor)
-                fieldView.barDisplay(bars: bars.values)
-            }
+        if bars.isSwipe(.left) {
+            bars.cp.px -= 1
+            bars.move()
+            fieldView.barDisplay(bars: bars.values)
         }
     }
 
     func swipeRight() {
-        if bars.isSwipe(which: .right) {
-            if !bars.judgementBrew() {
-                let cCp: [Cp] = bars.noneed
-                bars.removeCurrent(cCp: cCp)
-                bars.cp.px += 1
-                bars.move(bar: theBar, cColor: CBColor)
-                fieldView.barDisplay(bars: bars.values)
-            }
+        if bars.isSwipe(.right) {
+            bars.cp.px += 1
+            bars.move()
+            fieldView.barDisplay(bars: bars.values)
         }
     }
 
@@ -109,7 +99,7 @@ final class TetrisViewController: UIViewController {
     }
 
     @objc func downBar() {
-        bars.down(bar: theBar) {
+        bars.down {
             moveBar.invalidate()
             gameOverAlert()
         }
@@ -117,7 +107,7 @@ final class TetrisViewController: UIViewController {
     }
 
     @objc func tapRotation() {
-        rotation(bar: theBar)
+        rotation()
     }
 
     /*
@@ -126,16 +116,14 @@ final class TetrisViewController: UIViewController {
      [0,0,1,0], -> [1,1,1,0],
      [0,0,1,0]]    [1,0,0,0]]
      */
-    func rotation(bar: [[Bs]]) {
-        let rotations = bars.spin(bars: bar)
+    func rotation() {
+        bars.spin()
 
-        if bars.fixPosition(bar: rotations) == true {
+        if bars.fixPosition() {
             return
         }
-        let cCp: [Cp] = bars.noneed
-        bars.removeCurrent(cCp: cCp)
-        theBar = rotations
-        bars.move(bar: theBar, cColor: CBColor)
+        bars.RMS()
+        bars.move()
         fieldView.barDisplay(bars: bars.values)
     }
 
@@ -144,13 +132,13 @@ final class TetrisViewController: UIViewController {
         scoreLabel.text = "0"
         score = 0
         nextTheBar = nil
-        theBar = nil
         fieldView.initialze()
         nextBarField.initializeField()
         CBColor = Color.randomNumber()
-        theBar = Bars.getTheBar(color: CBColor)
         nextBarField.displayNextBar()
         bars = Bars()
+        bars.getTheBar(color: CBColor)
+        bars.setBar()
         bars.cp.px = DPX
         bars.cp.py = DPY
         startGame()
@@ -166,16 +154,15 @@ final class TetrisViewController: UIViewController {
     func startEngine() {
         moveBar = Timer.scheduledTimer(timeInterval: TimeInterval(levelMng.levelCount / 10),
                                        target: self,
-                                       selector: #selector(TetrisViewController.brewrisEngine),
+                                       selector: #selector(engine),
                                        userInfo: nil, repeats: true)
     }
 
-    @objc func brewrisEngine() {
-        brewCount += 0.1
-
-        if brewCount >= levelMng.levelCount {
-            brewCount = 0
-            moveBarBrew()
+    @objc func engine() {
+        tetrisCount += 0.1
+        if tetrisCount >= levelMng.levelCount {
+            tetrisCount = 0
+            move()
         }
     }
 
@@ -184,56 +171,46 @@ final class TetrisViewController: UIViewController {
         fieldView.configure()
     }
 
-    func setNextBar() {
-        theBar = nextBarField.nextBar
-        if bars.isGameOver(bar: theBar) {
-            moveBar.invalidate()
-            gameOverAlert()
-        }
-        CBColor = nextBarField.NBColor
-        nextBarField.displayNextBar()
-    }
-
     func gameOverAlert() {
         let actions = [AlertAction(title: "Ok",
                                    style: .default,
-                                   handler: {_,_  in
-            self.startBrew()
-        })]
+                                   handler: { _, _ in
+                                       self.startBrew()
+                                   })]
         alert(title: "GAME OVER", message: "Out of move", actions: actions)
     }
 
-    @objc func moveBarBrew() {
-        BarLog(bar: bars.values)
-        if !bars.judgementBrew() {
-            bars.move(bar: theBar, cColor: CBColor)
+    @objc func move() {
+        if bars.isBottom {
+            bars.move()
             fieldView.barDisplay(bars: bars.values)
-        }
-
-        if bars.isBottom
-            || bars.judgementBrew()
-        {
-            onTheBar()
-
+            bars.cp.py += 1
         } else {
-            if !bars.judgementBrew() {
-                bars.noNeedEmurate()
-                bars.cp.py += 1
-            }
+            bars.initalize()
+            onTheBar()
         }
+        BarLog(bar: bars.values)
     }
 
     func onTheBar() {
-        bars.initalize()
-        bars.store(cbColor: CBColor)
-        BarLog(bar: bars.values)
-        if bars.isInAgreement() {
-            BarLog(bar: bars.values)
+        if bars.isRemove() {
             fieldView.barDisplay(bars: bars.values)
             setScore(sc: bars.removeCount)
-            bars.store(cbColor: CBColor)
         }
+        bars.store()
         setNextBar()
+    }
+
+    func setNextBar() {
+        if bars.isGameOver {
+            moveBar.invalidate()
+            gameOverAlert()
+            return
+        }
+        bars.theBar = nextBarField.nextBar
+        bars.setBar()
+        nextBarField.displayNextBar()
+        CBColor = nextBarField.NBColor
     }
 
     func setScore(sc: Int) {

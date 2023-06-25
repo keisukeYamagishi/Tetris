@@ -25,6 +25,7 @@
 		900064822A447513008B7CF9 /* NextBarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000647A2A447513008B7CF9 /* NextBarField.swift */; };
 		900064832A447513008B7CF9 /* TetrisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000647D2A447513008B7CF9 /* TetrisViewController.swift */; };
 		900064842A447513008B7CF9 /* Tetris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9000647E2A447513008B7CF9 /* Tetris.storyboard */; };
+		900064862A47368B008B7CF9 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900064852A47368B008B7CF9 /* Random.swift */; };
 		9095E5B22A4291D900BD97F1 /* TetrisUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095E5B12A4291D900BD97F1 /* TetrisUnitTest.swift */; };
 		9095E5B92A4297CA00BD97F1 /* TetrisBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095E5B82A4297CA00BD97F1 /* TetrisBarTest.swift */; };
 		C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B335691F0E517100A8F6DF /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		9000647A2A447513008B7CF9 /* NextBarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextBarField.swift; sourceTree = "<group>"; };
 		9000647D2A447513008B7CF9 /* TetrisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TetrisViewController.swift; sourceTree = "<group>"; };
 		9000647E2A447513008B7CF9 /* Tetris.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tetris.storyboard; sourceTree = "<group>"; };
+		900064852A47368B008B7CF9 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		9095E5AF2A4291D900BD97F1 /* TetrisUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9095E5B12A4291D900BD97F1 /* TetrisUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisUnitTest.swift; sourceTree = "<group>"; };
 		9095E5B82A4297CA00BD97F1 /* TetrisBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisBarTest.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				900064582A44750A008B7CF9 /* DebugLog.swift */,
+				900064852A47368B008B7CF9 /* Random.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				9000646B2A44750A008B7CF9 /* Level.swift in Sources */,
 				C791D7D81FE6205E00983F80 /* AppDelegate.swift in Sources */,
 				900064702A44750B008B7CF9 /* Bs.swift in Sources */,
+				900064862A47368B008B7CF9 /* Random.swift in Sources */,
 				900064822A447513008B7CF9 /* NextBarField.swift in Sources */,
 				9000646F2A44750A008B7CF9 /* Constants.swift in Sources */,
 			);

@@ -25,11 +25,11 @@ class FieldView: UIView {
         var barTag = 1
         for tate in 0 ..< Tate {
             for yoko in 0 ..< Yoko {
-                let bar: Bar = Bar(frame: CGRect(x: CGFloat(yoko) * barSize,
-                                                 y: CGFloat(tate) * barSize,
-                                                 width: CGFloat(barSize),
-                                                 height: CGFloat(barSize)),
-                                   tag: barTag)
+                let bar = Bar(frame: CGRect(x: CGFloat(yoko) * barSize,
+                                            y: CGFloat(tate) * barSize,
+                                            width: CGFloat(barSize),
+                                            height: CGFloat(barSize)),
+                              tag: barTag)
                 addSubview(bar)
                 barTag += 1
             }
@@ -52,10 +52,11 @@ class FieldView: UIView {
         for tate in 0 ..< Tate {
             let isBar: [Bs] = bars[tate]
             for yoko in 0 ..< Yoko {
-                if isBar[yoko].bp == Bars.Move
-                    || isBar[yoko].bp == Bars.Store {
+                if isBar[yoko].status == .move
+                    || isBar[yoko].status == .store
+                {
                     let bar = viewWithTag(tag) as! Bar
-                    bar.present(isBar[yoko].bc)
+                    bar.present(isBar[yoko].color)
                 } else {
                     let bar: Bar = viewWithTag(tag) as! Bar
                     bar.empty()
