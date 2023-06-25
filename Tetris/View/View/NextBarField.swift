@@ -10,6 +10,7 @@ import UIKit
 
 final class NextBarField: UIView {
     var bar: Bar!
+    var bars = Bars()
     var nextBar: [[Bs]] = []
     var NBColor: Int = 0
     var color: UIColor {
@@ -57,13 +58,13 @@ final class NextBarField: UIView {
 
     func displayNextBar() {
         var tag: Int = 1
-        nextBar = Bars.getTheBar(color: NBColor)
-        NBColor = Color.randomNumber()
+        let bars = Bars()
+        bars.getTheBar(color: Color.randomNumber())
+        nextBar = bars.theBar
         for tate in 0 ..< 4 {
             let nb = nextBar[tate]
-
             for yoko in 0 ..< 4 {
-                if nb[yoko].bp == Bars.Move {
+                if nb[yoko].status == .move {
                     let bar = viewWithTag(tag) as! Bar
                     bar.present(NBColor)
                 } else {

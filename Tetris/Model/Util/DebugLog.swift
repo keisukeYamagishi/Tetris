@@ -15,17 +15,19 @@ func print(_ items: Any..., separator: String = " ", terminator: String = "\n") 
 }
 
 func BarLog(bar: [[Bs]]) {
-    print("Bar")
+    var count = 0
+    print("Tetris👾")
     for f in bar {
-        f.forEach { print($0.bp, terminator: "") }
-        print("")
+        f.forEach { print($0.status.rawValue, terminator: "") }
+        print(count)
+        count += 1
     }
 }
 
 func ColorLog(bar: [[Bs]]) {
     print("Color")
     for f in bar {
-        f.forEach { print($0.bc, terminator: "") }
+        f.forEach { print($0.status, terminator: "") }
         print("")
     }
 }

@@ -9,7 +9,6 @@
 import UIKit
 
 class Color {
-
     public func barColor() -> UIColor {
         UIColor(hex: ColorPattern[Color.randomNumber()])
     }
@@ -32,6 +31,6 @@ class Color {
     }
 
     static func randomNumber() -> Int {
-        Int(arc4random_uniform(UInt32(ColorPattern.count)))
+        Tetris.randomNumber(ColorPattern.count - 1)
     }
 }

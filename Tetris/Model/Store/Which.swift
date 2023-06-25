@@ -12,3 +12,14 @@ enum Which: Int {
     case left = 0
     case right = 1
 }
+
+extension Which {
+    var toValue: Int {
+        switch self {
+        case .left:
+            return -1
+        case .right:
+            return 1
+        }
+    }
+}
