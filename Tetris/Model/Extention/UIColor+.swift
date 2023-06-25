@@ -11,9 +11,6 @@ import UIKit.UIColor
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var h = hex
-        if h.hasPrefix("#") {
-            h = h.replacingOccurrences(of: "#", with: "")
-        }
 
         let hs = h.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
 

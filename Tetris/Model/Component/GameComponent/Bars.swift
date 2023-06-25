@@ -83,23 +83,21 @@ final class Bars {
     }
 
     var bar: [[Int]] {
-        BarLists[Tetris.randomNumber(BarLists.count)]
+        BarLists[Tetris.randomNumber(BarLists.count - 1)]
     }
 
-    func getTheBar(color: Int) {
-        theBar = Bars.coloring(bars: bar, color: color)
+    func getTheBar() {
+        theBar = Bars.createBar(bars: bar)
         setBar()
     }
 
-    static func coloring(bars: [[Int]],
-                         color: Int) -> [[Bs]]
+    static func createBar(bars: [[Int]]) -> [[Bs]]
     {
         var bar: [[Bs]] = []
         for tate in 0 ..< bars.count {
             var yoko = Bs.barYoko
             for index in 0 ..< bars[tate].count {
                 if bars[tate][index] == 1 {
-                    yoko[index].color = color
                     yoko[index].status = .move
                 }
             }

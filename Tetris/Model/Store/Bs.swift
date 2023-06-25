@@ -16,7 +16,6 @@ enum BarStatus: Int {
 
 struct Bs {
     var status: BarStatus = .nothing
-    var color = 0
     init() {}
 }
 
