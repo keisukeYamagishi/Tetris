@@ -23,7 +23,7 @@ final class TetrisBarTest: XCTestCase {
                         [0, 1, 0, 0],
                         [0, 1, 1, 0],
                         [0, 0, 1, 0]]
-        assertArraysEqual(array1: TestData, array2: funya)
+        assertArraysEqual(array1: TestData, array2: sBar)
     }
 
     func testBarBou() throws {
@@ -47,7 +47,7 @@ final class TetrisBarTest: XCTestCase {
                         [0, 0, 1, 0],
                         [0, 1, 1, 0],
                         [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: gfunya)
+        assertArraysEqual(array1: TestData, array2: zBar)
     }
 
     func testBarKagi() throws {
@@ -55,7 +55,7 @@ final class TetrisBarTest: XCTestCase {
                         [0, 1, 1, 0],
                         [0, 0, 1, 0],
                         [0, 0, 1, 0]]
-        assertArraysEqual(array1: TestData, array2: kagi)
+        assertArraysEqual(array1: TestData, array2: lBar)
     }
 
     func testBarLKagi() throws {
@@ -63,87 +63,7 @@ final class TetrisBarTest: XCTestCase {
                         [0, 1, 1, 0],
                         [0, 1, 0, 0],
                         [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: lKagi)
-    }
-
-    func testBarWBar() throws {
-        let TestData = [[1, 1, 0, 0],
-                        [1, 1, 0, 0],
-                        [1, 1, 0, 0],
-                        [1, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: wBar)
-    }
-
-    func testBarTheOne() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 0, 0, 0],
-                        [0, 0, 0, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: theOne)
-    }
-
-    func testBarBrew() throws {
-        let TestData = [[1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1],
-                        [1, 1, 1, 1]]
-        assertArraysEqual(array1: TestData, array2: brew)
-    }
-
-    func testBarLDao() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 0, 0, 0],
-                        [0, 1, 1, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: ldao)
-    }
-
-    func testBarlRdao() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 0, 0, 0],
-                        [0, 1, 1, 0],
-                        [0, 0, 1, 0]]
-        assertArraysEqual(array1: TestData, array2: lRdao)
-    }
-
-    func testBarThree() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: three)
-    }
-
-    func testBarTwo() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 0, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: two)
-    }
-
-    func testBarBlock() throws {
-        let TestData = [[0, 0, 0, 0],
-                        [0, 1, 1, 1],
-                        [0, 1, 1, 1],
-                        [0, 1, 1, 1]]
-        assertArraysEqual(array1: TestData, array2: block)
-    }
-
-    func testBarLongLagi() throws {
-        let TestData = [[0, 1, 1, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: longLagi)
-    }
-
-    func testBarLongRKagi() throws {
-        let TestData = [[1, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0],
-                        [0, 1, 0, 0]]
-        assertArraysEqual(array1: TestData, array2: longRKagi)
+        assertArraysEqual(array1: TestData, array2: jBar)
     }
 
     private func assertArraysEqual(array1: [[Int]],
