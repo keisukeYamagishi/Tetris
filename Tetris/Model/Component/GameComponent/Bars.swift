@@ -131,15 +131,14 @@ final class Bars {
             return
         }
         for _ in 0 ..< Tate {
-            cp.py += 1
-            if cp.py >= 17 {
-                cp.py = 16
-            }
-            move()
+            BarLog(bar: values)
             guard isBottom else {
                 initalize()
                 break
             }
+            cp.py += 1
+            move()
+            BarLog(bar: values)
         }
         initalize()
     }
@@ -176,7 +175,7 @@ final class Bars {
 
     var isBottom: Bool {
         for tate in 0 ..< values.count {
-            for yoko in 0 ..< values[tate].count - 1 {
+            for yoko in 0 ..< values[tate].count {
                 if values[tate][yoko].status == .move {
                     if tate >= Tate - 1 {
                         return false
