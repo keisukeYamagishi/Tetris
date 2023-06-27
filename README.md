@@ -12,7 +12,7 @@
 
 |***Build configure***|Result|
 |---:|---:|
-|development|[![Build Status](https://app.bitrise.io/app/44f6b8da-7a7c-46ae-a704-50b34109d27b/status.svg?token=kVSuTbDDZm080HKyb8_k0Q&branch=master)](https://app.bitrise.io/app/44f6b8da-7a7c-46ae-a704-50b34109d27b)|
+|bitrise|[![Build Status](https://app.bitrise.io/app/44f6b8da-7a7c-46ae-a704-50b34109d27b/status.svg?token=kVSuTbDDZm080HKyb8_k0Q&branch=main)](https://app.bitrise.io/app/44f6b8da-7a7c-46ae-a704-50b34109d27b)|
 |Github Actions|[![build](https://github.com/keisukeYamagishi/Tetris/actions/workflows/build.yml/badge.svg)](https://github.com/keisukeYamagishi/Tetris/actions/workflows/build.yml)|
 
 # tetris　⌐◨-◨
