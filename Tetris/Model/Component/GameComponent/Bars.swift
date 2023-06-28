@@ -83,7 +83,7 @@ final class Bars {
     }
 
     var bar: [[Int]] {
-        BarLists[Tetris.randomNumber(BarLists.count - 1)]
+        BarLists[Tetris.randomNumber(BarLists.count)]
     }
 
     func getTheBar() {

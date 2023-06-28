@@ -43,4 +43,9 @@ let jBar = [[0, 0, 0, 0],
              [0, 1, 0, 0],
              [0, 1, 0, 0]]
 
-public var BarLists = [lBar,jBar,zBar,yama, bou,shikaku, sBar]
+let stair = [[1, 0, 0, 0],
+             [1, 1, 0, 0],
+             [1, 1, 1, 0],
+             [1, 1, 1, 1]]
+
+public var BarLists = [lBar,jBar,zBar,yama,bou,shikaku,sBar,stair]
