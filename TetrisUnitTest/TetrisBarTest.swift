@@ -66,6 +66,14 @@ final class TetrisBarTest: XCTestCase {
         assertArraysEqual(array1: TestData, array2: jBar)
     }
 
+    func testStairBar() throws {
+        let TestData = [[1, 0, 0, 0],
+                        [1, 1, 0, 0],
+                        [1, 1, 1, 0],
+                        [1, 1, 1, 1]]
+        assertArraysEqual(array1: TestData, array2: stair)
+    }
+
     private func assertArraysEqual(array1: [[Int]],
                                    array2: [[Int]])
     {
