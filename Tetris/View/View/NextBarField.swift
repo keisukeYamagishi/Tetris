@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 final class NextBarField: UIView {
     var bar: Bar!
     var bars = Bars()
