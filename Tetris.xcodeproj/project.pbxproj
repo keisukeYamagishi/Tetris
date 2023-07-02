@@ -110,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				900064592A44750A008B7CF9 /* Component */,
-				9000645E2A44750A008B7CF9 /* Extention */,
 				900064622A44750A008B7CF9 /* Store */,
 				900064572A44750A008B7CF9 /* Util */,
 			);
@@ -129,24 +128,15 @@
 		900064592A44750A008B7CF9 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				9000645B2A44750A008B7CF9 /* GameComponent */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
-		9000645B2A44750A008B7CF9 /* GameComponent */ = {
-			isa = PBXGroup;
-			children = (
 				9000645C2A44750A008B7CF9 /* Bars.swift */,
 				9000645D2A44750A008B7CF9 /* Level.swift */,
 			);
-			path = GameComponent;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		9000645E2A44750A008B7CF9 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				9000645F2A44750A008B7CF9 /* Alert.swift */,
 				900064602A44750A008B7CF9 /* UIViewController+.swift */,
 				9000648B2A4875A3008B7CF9 /* UIView+.swift */,
 				901524042A48970F005B1AE0 /* UIColor+.swift */,
@@ -157,6 +147,7 @@
 		900064622A44750A008B7CF9 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				9000645F2A44750A008B7CF9 /* Alert.swift */,
 				900064662A44750A008B7CF9 /* BarStore.swift */,
 				900064642A44750A008B7CF9 /* Bs.swift */,
 				900064632A44750A008B7CF9 /* Constants.swift */,
@@ -246,6 +237,7 @@
 				F0B335691F0E517100A8F6DF /* AppDelegate.swift */,
 				F0B335751F0E517200A8F6DF /* Info.plist */,
 				F0B335721F0E517200A8F6DF /* LaunchScreen.storyboard */,
+				9000645E2A44750A008B7CF9 /* Extention */,
 				900064562A44750A008B7CF9 /* Model */,
 				900064742A447513008B7CF9 /* View */,
 			);
