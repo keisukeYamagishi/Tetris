@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GFN-hn-ISo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GFN-hn-ISo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="acknowtt.ttf">
+            <string>AcknowledgeTTBRK</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tetris View Controller-->
         <scene sceneID="T3R-GR-96B">
@@ -27,7 +32,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-fz-fI2" customClass="NextBarField" customModule="Tetris" customModuleProvider="target">
-                                <rect key="frame" x="316" y="118" width="74" height="74"/>
+                                <rect key="frame" x="316" y="128" width="74" height="74"/>
                                 <color key="backgroundColor" red="0.70588235294117641" green="0.76078431372549016" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ohk-fz-fI2" secondAttribute="height" multiplier="1:1" id="3b7-TQ-shy"/>
@@ -35,17 +40,17 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678912" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-Kk-5tD">
-                                <rect key="frame" x="240" y="74" width="168" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="175" y="74" width="233" height="40"/>
+                                <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv:1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-34-3CO">
-                                <rect key="frame" x="351.5" y="222" width="41.5" height="32"/>
+                                <rect key="frame" x="318" y="232" width="75" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="cHq-pP-WVO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,7 +60,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7nT-xt-Rwc" secondAttribute="height" multiplier="74:149" id="XtQ-cR-Lqx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="46"/>
+                                <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="56"/>
                                 <state key="normal" title="B">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,7 +75,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Wb8-HP-cIE"/>
                                     <constraint firstAttribute="width" secondItem="JRF-82-wyS" secondAttribute="height" multiplier="1:1" id="ux6-L0-BCc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="55"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -85,7 +90,7 @@
                                     <constraint firstAttribute="width" constant="70" id="XIc-dO-AmO"/>
                                     <constraint firstAttribute="width" secondItem="IZd-lt-khk" secondAttribute="height" multiplier="1:1" id="pwh-pc-OgU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="37"/>
+                                <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="55"/>
                                 <state key="normal" title="&gt;">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -115,6 +120,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="N6f-34-3CO" secondAttribute="trailing" constant="1" id="kk7-Jl-cnk"/>
                             <constraint firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="6" id="saU-r5-sUw"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="top" secondItem="7nT-xt-Rwc" secondAttribute="bottom" constant="20" id="uVu-Kk-PB2"/>
+                            <constraint firstItem="Wio-x1-ADx" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="38.5" id="yn0-yb-mH9"/>
                         </constraints>
                     </view>
                     <connections>
