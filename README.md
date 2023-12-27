@@ -8,7 +8,7 @@
 
 <img src=./doc/Tetris.mov.gif width="50%" height="50%">
 
-## Travis CI
+## CI
 
 |***Build configure***|Result|
 |---:|---:|
