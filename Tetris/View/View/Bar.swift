@@ -8,7 +8,6 @@
 
 import UIKit
 
-@MainActor
 final class Bar: UIView {
 
     @IBOutlet private var imageView: UIImageView!
