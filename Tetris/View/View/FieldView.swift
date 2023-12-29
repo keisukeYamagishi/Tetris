@@ -8,8 +8,8 @@
 
 import UIKit
 
-@MainActor
 final class FieldView: UIView {
+    
     var barSize: CGFloat {
         frame.size.width / CGFloat(Yoko)
     }
