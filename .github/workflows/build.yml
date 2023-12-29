@@ -7,7 +7,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
       matrix:
-        swift-version: [5.0, 4.2, 4.0]
+        swift-version: [5.0]
     steps:
       - uses: actions/checkout@v1
       - uses: actions/cache@v1
@@ -17,6 +17,8 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+      - name: build config
+        run: make config
       - name: Build
         env:
           SWIFT_VERSION: ${{ matrix.swift-version }}
@@ -25,10 +27,5 @@ jobs:
         env:
           SWIFT_VERSION: ${{ matrix.swift-version }}
         run: make test
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: fail
-          files: ./coverage_report.lcov
-          verbose: true
+      - name: code-coverage
+        run: make code-coverage

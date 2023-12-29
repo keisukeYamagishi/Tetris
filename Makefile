@@ -1,3 +1,5 @@
+config:
+	bundle install
 debug:
 	xcodebuild \
 	-sdk iphoneos \
@@ -14,3 +16,6 @@ test:
 	-scheme Tetris \
 	-destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
 	clean test CODE_SIGNING_ALLOWED=NO
+
+code-coverage:
+	 slather coverage -s --scheme Tetris --configuration debug Tetris.xcodeproj
