@@ -152,25 +152,20 @@ final class Bars {
             }
         }
     }
-
+    
     func isRemove() -> Bool {
         removeCount = 0
-        var isInAgreement = false
-        for tate in 0 ..< values.count {
-            var isRemove = true
-            for bar in values[tate] {
-                if bar.status == .nothing {
-                    isRemove = false
-                }
-            }
+        var isDisappear = false
+        for index in 0 ..< values.count {
+            let isRemove = values[index].allSatisfy({ $0.status != .nothing })
             if isRemove {
-                isInAgreement = true
                 removeCount += 1
-                values.remove(at: tate)
+                isDisappear = true
+                values.remove(at: index)
                 values.insert(Bs.yoko, at: 0)
             }
         }
-        return isInAgreement
+        return isDisappear
     }
 
     var isBottom: Bool {
