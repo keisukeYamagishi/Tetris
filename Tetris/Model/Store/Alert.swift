@@ -27,7 +27,7 @@ public struct AlertAction {
         self.type = type
         self.textField = textField
         if self.textField != nil,
-            placeholder != nil
+           placeholder != nil
         {
             self.textField?.placeholder = placeholder
         }

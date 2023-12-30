@@ -9,7 +9,6 @@
 import UIKit
 
 final class Bar: UIView {
-
     @IBOutlet private var imageView: UIImageView!
 
     @IBOutlet var view: UIView! {
@@ -42,7 +41,7 @@ final class Bar: UIView {
         imageView.image = UIImage(named: "bar.png")
     }
 
-    private func setup(){
+    private func setup() {
         loadNib()
         backgroundColor = UIColor.white
         layer.borderColor = UIColor(named: "TetrisBackgroundColor")?.cgColor
@@ -52,7 +51,7 @@ final class Bar: UIView {
     private func loadNib() {
         UINib(nibName: type(of: self).nibName,
               bundle: nil)
-        .instantiate(withOwner: self,
-                     options: nil)
+            .instantiate(withOwner: self,
+                         options: nil)
     }
 }
