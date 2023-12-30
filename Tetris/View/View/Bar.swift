@@ -45,7 +45,7 @@ final class Bar: UIView {
     private func setup(){
         loadNib()
         backgroundColor = UIColor.white
-        layer.borderColor = UIColor(hex: "b4c5b5").cgColor
+        layer.borderColor = UIColor(named: "TetrisBackgroundColor")?.cgColor
         layer.borderWidth = 2.0
     }
 
