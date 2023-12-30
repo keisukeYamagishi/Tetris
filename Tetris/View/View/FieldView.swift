@@ -59,7 +59,7 @@ final class FieldView: UIView {
                     let bar = viewWithTag(tag) as! Bar
                     bar.present()
                 } else {
-                    let bar: Bar = viewWithTag(tag) as! Bar
+                    let bar = viewWithTag(tag) as! Bar
                     bar.empty()
                 }
                 tag += 1
