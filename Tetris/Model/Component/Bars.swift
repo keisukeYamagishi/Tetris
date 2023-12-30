@@ -91,8 +91,7 @@ final class Bars {
         setBar()
     }
 
-    static func createBar(bars: [[Int]]) -> [[Bs]]
-    {
+    static func createBar(bars: [[Int]]) -> [[Bs]] {
         var bar: [[Bs]] = []
         for tate in 0 ..< bars.count {
             var yoko = Bs.barYoko
@@ -152,12 +151,12 @@ final class Bars {
             }
         }
     }
-    
+
     func isRemove() -> Bool {
         removeCount = 0
         var isDisappear = false
         for index in 0 ..< values.count {
-            let isRemove = values[index].allSatisfy({ $0.status != .nothing })
+            let isRemove = values[index].allSatisfy { $0.status != .nothing }
             if isRemove {
                 removeCount += 1
                 isDisappear = true
@@ -187,8 +186,7 @@ final class Bars {
     var isGameOver: Bool {
         for tate in 0 ..< theBar.count {
             for yoko in 0 ..< values[tate].count {
-                if values[tate][yoko].status == .store
-                {
+                if values[tate][yoko].status == .store {
                     print("-----------\n🫡GAME OVER🫡\n-----------")
                     return true
                 }

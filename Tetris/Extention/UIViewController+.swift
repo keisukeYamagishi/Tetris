@@ -11,7 +11,7 @@ import UIKit
 // MARK: - UIAlertController
 
 extension UIAlertController {
-    public func addAction(actions: [AlertAction]) {
+    func addAction(actions: [AlertAction]) {
         actions.forEach { action in
             if let textField = action.textField {
                 self.addTextField { text in
@@ -29,11 +29,11 @@ extension UIAlertController {
 // MARK: - UIViewController
 
 extension UIViewController {
-    public func alert(title: String?,
-                      message: String? = nil,
-                      actions: [AlertAction] = [AlertAction(title: "OK")],
-                      preferredStyle: UIAlertController.Style = .alert,
-                      vc: UIViewController? = nil)
+    func alert(title: String?,
+               message: String? = nil,
+               actions: [AlertAction] = [AlertAction(title: "OK")],
+               preferredStyle: UIAlertController.Style = .alert,
+               vc: UIViewController? = nil)
     {
         let parentVc = vc ?? self
         let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
