@@ -17,10 +17,6 @@
         <scene sceneID="T3R-GR-96B">
             <objects>
                 <viewController storyboardIdentifier="Tetris" id="GFN-hn-ISo" customClass="TetrisViewController" customModule="Tetris" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bpY-LK-tzr"/>
-                        <viewControllerLayoutGuide type="bottom" id="m9t-C7-6wL"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="thF-QD-kL1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,26 +95,26 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="g4J-oo-Ozj"/>
+                        <viewLayoutGuide key="safeArea" id="SQK-Nc-t3v"/>
                         <color key="backgroundColor" red="0.70588235294117641" green="0.76078431372549016" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Nim-Kk-5tD" firstAttribute="top" secondItem="bpY-LK-tzr" secondAttribute="bottom" constant="26" id="1x2-ys-att"/>
+                            <constraint firstItem="Nim-Kk-5tD" firstAttribute="top" secondItem="SQK-Nc-t3v" secondAttribute="top" constant="26" id="1x2-ys-att"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="14" id="3vg-ox-Qdn"/>
-                            <constraint firstAttribute="trailing" secondItem="7nT-xt-Rwc" secondAttribute="trailing" constant="20" id="6Lo-2A-GvH"/>
-                            <constraint firstItem="Nim-Kk-5tD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="thF-QD-kL1" secondAttribute="leading" constant="20" symbolic="YES" id="74Y-Ch-cGM"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="7nT-xt-Rwc" secondAttribute="trailing" constant="20" id="6Lo-2A-GvH"/>
+                            <constraint firstItem="Nim-Kk-5tD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SQK-Nc-t3v" secondAttribute="leading" constant="20" symbolic="YES" id="74Y-Ch-cGM"/>
                             <constraint firstItem="N6f-34-3CO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="8" symbolic="YES" id="Cyw-mQ-QWK"/>
-                            <constraint firstItem="Wio-x1-ADx" firstAttribute="leading" secondItem="thF-QD-kL1" secondAttribute="leading" constant="10" id="EQi-Qp-g2O"/>
+                            <constraint firstItem="Wio-x1-ADx" firstAttribute="leading" secondItem="SQK-Nc-t3v" secondAttribute="leading" constant="10" id="EQi-Qp-g2O"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="EZO-3M-Xy9"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="FUP-5s-995"/>
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="centerY" secondItem="thF-QD-kL1" secondAttribute="centerY" id="Qdj-Gg-SeO"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="top" secondItem="JRF-82-wyS" secondAttribute="bottom" constant="20" id="VFg-SA-6ec"/>
                             <constraint firstItem="7nT-xt-Rwc" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="11" id="Vba-PD-tek"/>
                             <constraint firstItem="N6f-34-3CO" firstAttribute="top" secondItem="ohk-fz-fI2" secondAttribute="bottom" constant="30" id="dWa-Hk-pfp"/>
-                            <constraint firstItem="m9t-C7-6wL" firstAttribute="top" secondItem="IZd-lt-khk" secondAttribute="bottom" constant="14" id="gBr-Ce-8O4"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="bottom" secondItem="IZd-lt-khk" secondAttribute="bottom" constant="14" id="gBr-Ce-8O4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ohk-fz-fI2" secondAttribute="trailing" constant="4" id="jJa-b1-zCH"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="11" id="kNg-HN-nPr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N6f-34-3CO" secondAttribute="trailing" constant="1" id="kk7-Jl-cnk"/>
-                            <constraint firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="6" id="saU-r5-sUw"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="6" id="saU-r5-sUw"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="top" secondItem="7nT-xt-Rwc" secondAttribute="bottom" constant="20" id="uVu-Kk-PB2"/>
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="38.5" id="yn0-yb-mH9"/>
                         </constraints>
@@ -134,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdK-QI-9ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.5999999999999" y="-646.32683658170924"/>
+            <point key="canvasLocation" x="2485.6000000000004" y="-646.32683658170924"/>
         </scene>
     </scenes>
 </document>
