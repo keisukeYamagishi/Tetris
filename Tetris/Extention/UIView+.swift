@@ -12,4 +12,16 @@ extension UIView {
     class var nibName: String {
         String(describing: self)
     }
+
+    func flashAnimation(_ completion: @escaping () -> Void) {
+        alpha = 1.0
+        UIView.animate(withDuration: 1.0,
+                       delay: 1.0,
+                       animations: { [self] in
+            alpha = 0.0
+        }, completion: { [self] _ in
+            alpha = 1.0
+            completion()
+        })
+    }
 }

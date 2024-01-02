@@ -160,13 +160,25 @@ final class Bars {
             if isRemove {
                 removeCount += 1
                 isDisappear = true
-                values.remove(at: index)
-                values.insert(Bs.yoko, at: 0)
+                values[index] = Bs.animationYoko
             }
         }
         return isDisappear
     }
 
+    func removeAnimation() {
+        BarLog(bar: values)
+        for index in 0 ..< values.count {
+            let isRemove = values[index].allSatisfy { $0.status == .animation }
+            if isRemove {
+                values.remove(at: index)
+                BarLog(bar: values)
+                values.insert(Bs.yoko, at: 0)
+                BarLog(bar: values)
+            }
+        }
+    }
+    
     var isBottom: Bool {
         for tate in 0 ..< values.count {
             for yoko in 0 ..< values[tate].count {
