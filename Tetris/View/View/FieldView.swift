@@ -9,8 +9,9 @@
 import UIKit
 
 final class FieldView: UIView {
+    
     var barSize: CGFloat {
-        frame.size.width / CGFloat(Yoko)
+        frame.height / CGFloat(Tate)
     }
 
     var height: CGFloat {
