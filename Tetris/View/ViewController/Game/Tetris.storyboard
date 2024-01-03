@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GFN-hn-ISo">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -18,17 +18,14 @@
             <objects>
                 <viewController storyboardIdentifier="Tetris" id="GFN-hn-ISo" customClass="TetrisViewController" customModule="Tetris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="thF-QD-kL1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wio-x1-ADx" customClass="FieldView" customModule="Tetris" customModuleProvider="target">
-                                <rect key="frame" x="10" y="152.5" width="295" height="591.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="591.5" id="Out-Hb-HHi"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="104.5" width="230" height="453.5"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohk-fz-fI2" customClass="NextBarField" customModule="Tetris" customModuleProvider="target">
-                                <rect key="frame" x="316" y="128" width="74" height="74"/>
+                                <rect key="frame" x="245" y="80" width="74" height="74"/>
                                 <color key="backgroundColor" red="0.70588235294117641" green="0.76078431372549016" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ohk-fz-fI2" secondAttribute="height" multiplier="1:1" id="3b7-TQ-shy"/>
@@ -36,25 +33,23 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678912" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nim-Kk-5tD">
-                                <rect key="frame" x="175" y="74" width="233" height="40"/>
+                                <rect key="frame" x="86" y="26" width="233" height="40"/>
                                 <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv 1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-34-3CO">
-                                <rect key="frame" x="326" y="232" width="67" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="cHq-pP-WVO"/>
-                                </constraints>
+                                <rect key="frame" x="245" y="184" width="67" height="33"/>
                                 <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nT-xt-Rwc">
-                                <rect key="frame" x="316" y="511" width="78" height="157"/>
+                                <rect key="frame" x="245" y="223" width="75" height="151"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7nT-xt-Rwc" secondAttribute="height" multiplier="74:149" id="XtQ-cR-Lqx"/>
+                                    <constraint firstAttribute="width" constant="75" id="jWQ-WC-tDc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="56"/>
                                 <state key="normal" title="B">
@@ -65,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRF-82-wyS">
-                                <rect key="frame" x="316" y="688" width="70" height="70"/>
+                                <rect key="frame" x="245" y="394" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Wb8-HP-cIE"/>
@@ -80,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZd-lt-khk">
-                                <rect key="frame" x="316" y="778" width="70" height="70"/>
+                                <rect key="frame" x="245" y="484" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.76078431369999999" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="XIc-dO-AmO"/>
@@ -100,27 +95,25 @@
                         <constraints>
                             <constraint firstItem="Nim-Kk-5tD" firstAttribute="top" secondItem="SQK-Nc-t3v" secondAttribute="top" constant="26" id="1x2-ys-att"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="14" id="3vg-ox-Qdn"/>
-                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="7nT-xt-Rwc" secondAttribute="trailing" constant="20" id="6Lo-2A-GvH"/>
-                            <constraint firstItem="Nim-Kk-5tD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SQK-Nc-t3v" secondAttribute="leading" constant="20" symbolic="YES" id="74Y-Ch-cGM"/>
-                            <constraint firstItem="N6f-34-3CO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="8" symbolic="YES" id="Cyw-mQ-QWK"/>
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="leading" secondItem="SQK-Nc-t3v" secondAttribute="leading" constant="10" id="EQi-Qp-g2O"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="EZO-3M-Xy9"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="FUP-5s-995"/>
-                            <constraint firstItem="Wio-x1-ADx" firstAttribute="centerY" secondItem="thF-QD-kL1" secondAttribute="centerY" id="Qdj-Gg-SeO"/>
+                            <constraint firstItem="IZd-lt-khk" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="UjV-Rx-nyJ"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="top" secondItem="JRF-82-wyS" secondAttribute="bottom" constant="20" id="VFg-SA-6ec"/>
-                            <constraint firstItem="7nT-xt-Rwc" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="11" id="Vba-PD-tek"/>
+                            <constraint firstItem="7nT-xt-Rwc" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="XQu-Yf-vG5"/>
+                            <constraint firstItem="N6f-34-3CO" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="YhS-Sz-qcf"/>
                             <constraint firstItem="N6f-34-3CO" firstAttribute="top" secondItem="ohk-fz-fI2" secondAttribute="bottom" constant="30" id="dWa-Hk-pfp"/>
                             <constraint firstItem="SQK-Nc-t3v" firstAttribute="bottom" secondItem="IZd-lt-khk" secondAttribute="bottom" constant="14" id="gBr-Ce-8O4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ohk-fz-fI2" secondAttribute="trailing" constant="4" id="jJa-b1-zCH"/>
-                            <constraint firstItem="ohk-fz-fI2" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="11" id="kNg-HN-nPr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="N6f-34-3CO" secondAttribute="trailing" constant="1" id="kk7-Jl-cnk"/>
-                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="6" id="saU-r5-sUw"/>
+                            <constraint firstItem="JRF-82-wyS" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="kJb-5y-Ihy"/>
+                            <constraint firstItem="ohk-fz-fI2" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="5" id="kNg-HN-nPr"/>
+                            <constraint firstItem="ohk-fz-fI2" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" id="pZg-3f-9PH"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="1" id="saU-r5-sUw"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="top" secondItem="7nT-xt-Rwc" secondAttribute="bottom" constant="20" id="uVu-Kk-PB2"/>
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="38.5" id="yn0-yb-mH9"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="bottom" secondItem="Wio-x1-ADx" secondAttribute="bottom" constant="10" id="zhb-v2-ZGs"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="brewViewHeightConstraint" destination="Out-Hb-HHi" id="voP-ib-KGM"/>
                         <outlet property="fieldView" destination="Wio-x1-ADx" id="Z4f-7g-fL9"/>
                         <outlet property="levelLbl" destination="N6f-34-3CO" id="uRt-Sg-EuW"/>
                         <outlet property="nextBarField" destination="ohk-fz-fI2" id="gKK-E7-HEE"/>

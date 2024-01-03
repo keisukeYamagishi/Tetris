@@ -165,7 +165,6 @@ final class TetrisViewController: UIViewController {
     }
 
     func barInit() {
-        brewViewHeightConstraint.constant = fieldView.height
         fieldView.configure()
     }
 
