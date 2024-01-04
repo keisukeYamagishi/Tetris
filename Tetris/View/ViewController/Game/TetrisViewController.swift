@@ -165,7 +165,6 @@ final class TetrisViewController: UIViewController {
     }
 
     func barInit() {
-        brewViewHeightConstraint.constant = fieldView.height
         fieldView.configure()
     }
 
@@ -192,11 +191,21 @@ final class TetrisViewController: UIViewController {
 
     func onTheBar() {
         if bars.isRemove() {
+            bars.store()
             fieldView.barDisplay(bars: bars.values)
-            setScore(sc: bars.removeCount)
+            moveBar.invalidate()
+            BarLog(bar: bars.values)
+            fieldView.animation(bars: bars.values) { [self] in
+                startEngine()
+                bars.removeAnimation()
+                fieldView.barDisplay(bars: bars.values)
+                setScore(sc: bars.removeCount)
+                setNextBar()
+            }
+        } else {
+            bars.store()
+            setNextBar()
         }
-        bars.store()
-        setNextBar()
     }
 
     func setNextBar() {

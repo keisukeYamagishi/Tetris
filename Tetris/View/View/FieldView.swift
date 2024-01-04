@@ -9,8 +9,9 @@
 import UIKit
 
 final class FieldView: UIView {
+    
     var barSize: CGFloat {
-        frame.size.width / CGFloat(Yoko)
+        frame.height / CGFloat(Tate)
     }
 
     var height: CGFloat {
@@ -47,6 +48,29 @@ final class FieldView: UIView {
         }
     }
 
+    func animation(bars: [[Bs]],
+                   completion: @escaping () -> Void) {
+        var tag = 1
+        var willAnimation = 0
+        var didAnimation = 0
+        for tate in 0 ..< Tate {
+            let isBar: [Bs] = bars[tate]
+            for yoko in 0 ..< Yoko {
+                if isBar[yoko].status == .animation {
+                    willAnimation += 1
+                    let bar = viewWithTag(tag) as! Bar
+                    bar.flashAnimation {
+                        didAnimation += 1
+                        if willAnimation == didAnimation {
+                            completion()
+                        }
+                    }
+                }
+                tag += 1
+            }
+        }
+    }
+
     func barDisplay(bars: [[Bs]]) {
         var tag = 1
         for tate in 0 ..< Tate {
@@ -54,6 +78,7 @@ final class FieldView: UIView {
             for yoko in 0 ..< Yoko {
                 if isBar[yoko].status == .move
                     || isBar[yoko].status == .store
+                    || isBar[yoko].status == .animation
                 {
                     let bar = viewWithTag(tag) as! Bar
                     bar.present()
