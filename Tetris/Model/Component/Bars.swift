@@ -178,7 +178,7 @@ final class Bars {
             }
         }
     }
-    
+
     var isBottom: Bool {
         for tate in 0 ..< values.count {
             for yoko in 0 ..< values[tate].count {
