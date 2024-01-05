@@ -38,7 +38,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv 1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-34-3CO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Lv:9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-34-3CO">
                                 <rect key="frame" x="245" y="184" width="67" height="33"/>
                                 <fontDescription key="fontDescription" name="AcknowledgeTTBRK" family="Acknowledge TT BRK" pointSize="37"/>
                                 <nil key="textColor"/>
@@ -98,16 +98,17 @@
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="leading" secondItem="SQK-Nc-t3v" secondAttribute="leading" constant="10" id="EQi-Qp-g2O"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="EZO-3M-Xy9"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="leading" secondItem="7nT-xt-Rwc" secondAttribute="leading" id="FUP-5s-995"/>
+                            <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N6f-34-3CO" secondAttribute="trailing" constant="3" id="JpW-L7-Th6"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="UjV-Rx-nyJ"/>
                             <constraint firstItem="IZd-lt-khk" firstAttribute="top" secondItem="JRF-82-wyS" secondAttribute="bottom" constant="20" id="VFg-SA-6ec"/>
                             <constraint firstItem="7nT-xt-Rwc" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="XQu-Yf-vG5"/>
-                            <constraint firstItem="N6f-34-3CO" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="YhS-Sz-qcf"/>
                             <constraint firstItem="N6f-34-3CO" firstAttribute="top" secondItem="ohk-fz-fI2" secondAttribute="bottom" constant="30" id="dWa-Hk-pfp"/>
                             <constraint firstItem="SQK-Nc-t3v" firstAttribute="bottom" secondItem="IZd-lt-khk" secondAttribute="bottom" constant="14" id="gBr-Ce-8O4"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="leading" secondItem="ohk-fz-fI2" secondAttribute="leading" id="kJb-5y-Ihy"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="5" id="kNg-HN-nPr"/>
                             <constraint firstItem="ohk-fz-fI2" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" id="pZg-3f-9PH"/>
                             <constraint firstItem="SQK-Nc-t3v" firstAttribute="trailing" secondItem="Nim-Kk-5tD" secondAttribute="trailing" constant="1" id="saU-r5-sUw"/>
+                            <constraint firstItem="N6f-34-3CO" firstAttribute="leading" secondItem="Wio-x1-ADx" secondAttribute="trailing" constant="5" id="tTo-FA-EAY"/>
                             <constraint firstItem="JRF-82-wyS" firstAttribute="top" secondItem="7nT-xt-Rwc" secondAttribute="bottom" constant="20" id="uVu-Kk-PB2"/>
                             <constraint firstItem="Wio-x1-ADx" firstAttribute="top" secondItem="Nim-Kk-5tD" secondAttribute="bottom" constant="38.5" id="yn0-yb-mH9"/>
                             <constraint firstItem="SQK-Nc-t3v" firstAttribute="bottom" secondItem="Wio-x1-ADx" secondAttribute="bottom" constant="10" id="zhb-v2-ZGs"/>
