@@ -9,10 +9,6 @@
 import UIKit.UIView
 
 extension UIView {
-    class var nibName: String {
-        String(describing: self)
-    }
-
     func flashAnimation(_ completion: @escaping () -> Void) {
         alpha = 1.0
         UIView.animate(withDuration: 1.0,
