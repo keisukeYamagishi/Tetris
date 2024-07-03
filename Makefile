@@ -14,7 +14,7 @@ test:
 	-configuration Debug \
 	-project Tetris.xcodeproj \
 	-scheme Tetris \
-	-destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
+	-destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0.1' \
 	clean test CODE_SIGNING_ALLOWED=NO
 
 code-coverage:
