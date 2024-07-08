@@ -217,7 +217,25 @@ final class Bars {
         }
     }
 
-    func isSwipe(_ which: Which) -> Bool {
+    var right: Bool {
+        if swipe(.right) {
+            cp.px += 1
+            move()
+            return true
+        }
+        return false
+    }
+
+    var left: Bool {
+        if swipe(.left) {
+            cp.px -= 1
+            move()
+            return true
+        }
+        return false
+    }
+
+    private func swipe(_ which: Which) -> Bool {
         for tate in 0 ..< values.count {
             for yoko in 0 ..< values[tate].count {
                 if values[tate][yoko].status == .move {
