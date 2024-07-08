@@ -78,17 +78,13 @@ final class TetrisViewController: UIViewController {
     }
 
     func swipeLeft() {
-        if bars.isSwipe(.left) {
-            bars.cp.px -= 1
-            bars.move()
+        if bars.left {
             fieldView.barDisplay(bars: bars.values)
         }
     }
 
     func swipeRight() {
-        if bars.isSwipe(.right) {
-            bars.cp.px += 1
-            bars.move()
+        if bars.right {
             fieldView.barDisplay(bars: bars.values)
         }
     }
